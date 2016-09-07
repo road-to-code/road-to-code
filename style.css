@@ -1,0 +1,20 @@
+#container{
+  width: 500px;
+  height: 500px;
+  position: relative;
+  outline: 1px solid black;
+}
+.grass{
+  height: 50px;
+  width: 50px;
+  position: relative;
+  float: left;
+  background-color: green;
+}
+.dirt{
+  height: 50px;
+  width: 50px;
+  position: relative;
+  float: left;
+  background-color: tan;
+}
