@@ -1,36 +1,33 @@
-var shuffle = this.shuffle;
+(function(exports){
 
-var mapArray=[
-[0, 0, 0, 0, 0, 0, 1, 1, 0, 1],
-[0, 1, 1, 0, 0, 0, 0, 0, 1, 1],
-[0, 0, 0, 0, 0, 0, 1, 1, 0, 1],
-[0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
-[0, 0, 0, 1, 1, 1, 1, 0, 0, 1],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[1, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
-[0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
-];
-
-function drawMap(){
-
-  for(var i=0; i < mapArray.length; i++){
-    for(var j=0; j < mapArray[i].length; j++){
-
-      if(parseInt(mapArray[i][j]) === 0){
-        $('#container').append('<div class="grass"></div>');
-      }
-      if(parseInt(mapArray[i][j]) === 1){
-        $('#container').append('<div class="dirt"></div>');
-      }
-    }
+   function Map(){
+    this.array = [
+    [0, 0, 0, 0, 0, 0, 1, 1, 0, 1],
+    [0, 1, 1, 0, 0, 0, 0, 0, 1, 1],
+    [0, 0, 0, 0, 0, 0, 1, 1, 0, 1],
+    [0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+    [0, 0, 0, 1, 1, 1, 1, 0, 0, 1],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+    [0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+    ];
   }
 
-}
+  Map.prototype.drawMap = function(){
+    for(var i=0; i < this.array.length; i++){
+      for(var j=0; j < this.array[i].length; j++){
 
+        if(parseInt(this.array[i][j]) === 0){
+          $('#container').append('<div class="grass"></div>');
+        }
+        if(parseInt(this.array[i][j]) === 1){
+          $('#container').append('<div class="dirt"></div>');
+        }
+      }
+    }
+  };
 
-window.onload=function(){
-  shuffle(mapArray);
-  drawMap();
-};
+  exports.Map = Map;
+})(this);
