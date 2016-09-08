@@ -10,6 +10,9 @@
 
   Character.prototype.moveLeft = function(number) {
     this.position[0] -= (number * 10);
+    if(this.position[0] <= 0){
+      this.position[0] = 0;
+    }
   };
 
   Character.prototype.moveDown = function(number) {

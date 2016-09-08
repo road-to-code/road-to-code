@@ -3,12 +3,12 @@ describe ("instructions", function() {
 
   it("should add instructions to the typed variable", function() {
     instructions.displayInstructions("moveUp");
-    expect(Instructions.typed).toEqual(["moveUp"]);
+    expect(instructions.typed).toEqual("moveUp\n");
   });
 
   it("should add instructions to the instructions array", function() {
     instructions.addInstructions("moveUp");
-    expect(Instructions.instructionsArr).toEqual(["moveUp"]);
+    expect(instructions.instructionsArr).toContain("moveUp");
   });
 
 });
