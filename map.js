@@ -29,5 +29,10 @@
     }
   };
 
+  Map.prototype.size = function(){
+    var dimensions = [this.array[0].length, this.array.length];
+    return dimensions;
+  };
+
   exports.Map = Map;
 })(this);

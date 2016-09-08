@@ -12,4 +12,7 @@ describe("mapArray", function() {
       expect(map.array[i].length).toEqual(10);
     }
   });
+  it("should return its dimensions", function(){
+    expect(map.size()).toEqual([10, 10]);
+  });
 });
