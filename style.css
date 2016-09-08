@@ -18,3 +18,12 @@
   float: left;
   background-color: tan;
 }
+
+#character {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  outline: 1px solid black;
+  background-color: red;
+  z-index: 1;
+}
