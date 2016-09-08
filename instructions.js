@@ -1,17 +1,22 @@
 (function(exports){
 
   function Instructions () {
-    this.instructions = [];
+    this.instructionsArr = [];
     this.typed = "";
   }
 
-  $(document).on("#addInstructions").click(function() {
-         this.typed = this.typed || "";
-         this.typed += $('#typed-text').val();
-         this.instructions += $('#typed-text').val();
-         document.getElementById('typed-text').value = "";
-         $('#entered-text').html(this.typed);
-  });
+  Instructions.prototype.displayInstructions = function(typedText) {
+    this.typed = this.typed || "";
+    this.typed += typedText;
+    this.typed += "\n";
+    return this.typed;
+  };
+
+  Instructions.prototype.addInstructions = function(typedText) {
+    this.instructionsArr = this.instructionsArr || [];
+    this.instructionsArr.push(typedText);
+    return this.instructionsArr;
+  };
 
   exports.Instructions = Instructions;
 })(this);

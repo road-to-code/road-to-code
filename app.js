@@ -17,13 +17,20 @@ document.addEventListener("click", function() {
 });
 
 
+$("#addInstructions").on("click", function() {
+  var typedText = $('#typed-text').val();
+  var text = instructions.displayInstructions(typedText);
+  document.getElementById('typed-text').value = "";
+  $('#entered-text').html(text);
+  var instructionsArr = instructions.addInstructions(typedText);
+});
+
+$("#runInstructions").on("click", function() {
+  console.log(instructions.instructionsArr);
+});
+
+
 function moveRight() {
   characterLeft += 10;
   displayChar.style.left = characterLeft + 'px';
-
-  console.log('function called');
 }
-
-$("#runInstructions").on("click", function() {
-
-});

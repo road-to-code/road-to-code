@@ -31,4 +31,5 @@ describe('home page', function() {
     this.browser.assert.text("#entered-text", "moveRight");
   });
 
+
 });

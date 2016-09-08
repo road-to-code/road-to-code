@@ -17,6 +17,4 @@ describe('home page', function() {
     this.browser.assert.element('#runInstructions');
   });
 
-
-
 });
