@@ -5,7 +5,7 @@ var character = new Character();
 window.onload=function(){
   shuffle(map.array);
   map.drawMap();
-};
+
 
 var container = document.getElementById('container');
 var displayChar = document.getElementById('character');
@@ -19,6 +19,5 @@ document.addEventListener("click", function() {
 function moveRight() {
   characterLeft += 10;
   displayChar.style.left = characterLeft + 'px';
-
-  console.log('function called');
 }
+};
