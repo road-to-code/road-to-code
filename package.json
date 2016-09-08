@@ -1,0 +1,26 @@
+{
+  "name": "road-to-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/road-to-code/road-to-code.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/road-to-code/road-to-code/issues"
+  },
+  "homepage": "https://github.com/road-to-code/road-to-code#readme",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "jasmine": "^2.5.0",
+    "jasmine-node": "^1.14.5",
+    "mocha": "^3.0.2",
+    "zombie": "^4.2.1"
+  }
+}
