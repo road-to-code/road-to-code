@@ -1,14 +1,22 @@
-$(document).ready(function() {
-var typed = "";
-var instructions = [];
+(function(exports){
 
-  $(document).on("keypress", "#typed-text", function(e) {
-       if (e.which == 13) {
-         typed += $('#typed-text').val();
-         instructions += $('#typed-text').val();
-         document.getElementById('typed-text').value = "";
-         $('#entered-text').html(typed);
-       }
-  });
+  function Instructions () {
+    this.instructionsArr = [];
+    this.typed = "";
+  }
 
-});
+  Instructions.prototype.displayInstructions = function(typedText) {
+    this.typed = this.typed || "";
+    this.typed += typedText;
+    this.typed += "\n";
+    return this.typed;
+  };
+
+  Instructions.prototype.addInstructions = function(typedText) {
+    this.instructionsArr = this.instructionsArr || [];
+    this.instructionsArr.push(typedText);
+    return this.instructionsArr;
+  };
+
+  exports.Instructions = Instructions;
+})(this);
