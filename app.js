@@ -26,7 +26,7 @@ $("#addInstructions").on("click", function() {
 });
 
 $("#runInstructions").on("click", function() {
-  console.log(instructions.instructionsArr);
+  var instructionsList = instructions.instructionsArr;
 });
 
 
