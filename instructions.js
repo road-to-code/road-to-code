@@ -7,8 +7,7 @@
 
   Instructions.prototype.displayInstructions = function(typedText) {
     this.typed = this.typed || "";
-    this.typed += typedText;
-    this.typed += "\n";
+    this.typed += typedText + "\n";
     return this.typed;
   };
 
