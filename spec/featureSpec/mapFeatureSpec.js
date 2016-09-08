@@ -18,8 +18,9 @@ describe('home page', function() {
   });
 
   it('loads the grid', function(){
-    waits(500);
+    this.browser.wait(function (){
       this.browser.assert.element('#container');
     });
+  });
 
 });
