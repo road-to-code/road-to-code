@@ -1,0 +1,14 @@
+describe ("instructions", function() {
+  var instructions = new Instructions();
+
+  it("should add instructions to the typed variable", function() {
+    instructions.displayInstructions("moveUp");
+    expect(Instructions.typed).toEqual(["moveUp"]);
+  });
+
+  it("should add instructions to the instructions array", function() {
+    instructions.addInstructions("moveUp");
+    expect(Instructions.instructionsArr).toEqual(["moveUp"]);
+  });
+
+});
