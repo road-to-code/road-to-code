@@ -1,14 +1,17 @@
-$(document).ready(function() {
-var typed = "";
-var instructions = [];
+(function(exports){
 
-  $(document).on("keypress", "#typed-text", function(e) {
-       if (e.which == 13) {
-         typed += $('#typed-text').val();
-         instructions += $('#typed-text').val();
+  function Instructions () {
+    this.instructions = [];
+    this.typed = "";
+  }
+
+  $(document).on("#addInstructions").click(function() {
+         this.typed = this.typed || "";
+         this.typed += $('#typed-text').val();
+         this.instructions += $('#typed-text').val();
          document.getElementById('typed-text').value = "";
-         $('#entered-text').html(typed);
-       }
+         $('#entered-text').html(this.typed);
   });
 
-});
+  exports.Instructions = Instructions;
+})(this);
