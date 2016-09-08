@@ -9,15 +9,13 @@ window.onload=function(){
 
 var container = document.getElementById('container');
 var displayChar = document.getElementById('character');
-var characterLeft = 0;
+
 
 document.addEventListener("click", function() {
-  moveRight();
+  character.moveRight();
+  displayChar.style.left = character.position[0] + 'px';
 });
 
 
-function moveRight() {
-  characterLeft += 10;
-  displayChar.style.left = characterLeft + 'px';
-}
+
 };
