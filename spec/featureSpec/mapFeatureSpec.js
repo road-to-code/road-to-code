@@ -4,18 +4,16 @@ var chai = require('chai');
 var expect  = chai.expect;
 var assert = chai.assert;
 
-Browser.localhost('example.com', 3000);
-
-describe('The map page', function(){
-
-  var browser = new Browser();
-
-  before(function(done){
-    browser.visit('/', done);
+describe('home page', function() {
+  beforeEach(function() {
+    this.browser = new Browser({ site: 'http://localhost:8080' });
   });
 
-  it('renders a map', function(){
-    assert.ok(this.browser.success);
-  })
+  beforeEach(function(done) {
+    this.browser.visit('/', done);
+  });
 
-})
+  it('should load', function(){
+    assert.ok(this.browser.success);
+  });
+});
