@@ -13,7 +13,7 @@ var displayChar = document.getElementById('character');
 
 
 document.addEventListener("click", function() {
-  character.moveLeft(1);
+  character.moveRight(1);
   if(character.position[0] <= 0){
     character.position[0] = 0;
   }
