@@ -13,7 +13,10 @@ var displayChar = document.getElementById('character');
 
 
 document.addEventListener("click", function() {
-  character.moveRight();
+  character.moveLeft(1);
+  if(character.position[0] <= 0){
+    character.position[0] = 0;
+  }
   displayChar.style.left = character.position[0] + 'px';
 });
 
