@@ -16,4 +16,10 @@ describe('home page', function() {
   it('should load', function(){
     assert.ok(this.browser.success);
   });
+
+  it('loads the grid', function(){
+    waits(500);
+      this.browser.assert.element('#container');
+    });
+
 });
