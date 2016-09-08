@@ -18,9 +18,11 @@
   "homepage": "https://github.com/road-to-code/road-to-code#readme",
   "dependencies": {
     "chai": "^3.5.0",
+    "chai-webdriver": "^1.2.0",
     "jasmine": "^2.5.0",
     "jasmine-node": "^1.14.5",
     "mocha": "^3.0.2",
+    "selenium-webdriver": "^2.53.3",
     "zombie": "^4.2.1"
   }
 }
