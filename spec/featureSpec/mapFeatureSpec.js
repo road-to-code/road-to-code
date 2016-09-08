@@ -18,9 +18,12 @@ describe('home page', function() {
   });
 
   it('loads the grid', function(){
-    this.browser.wait(function (){
-      this.browser.assert.element('#container');
-    });
+    this.browser.assert.element('#container');
+  });
+
+  it('loads the grid with coloured tiles', function(){
+    this.browser.assert.attribute('.dirt');
+    this.browser.assert.attribute('.grass');
   });
 
 });
