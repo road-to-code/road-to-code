@@ -22,7 +22,7 @@ describe('home page', function() {
  });
 
  it('loads the grid with coloured tiles', function(){
-   // this.browser.assert.attribute('.dirt');
+   this.browser.assert.attribute('.diamond');
    this.browser.assert.attribute('.grass');
  });
  it('loads the 1s with an emoji', function(){
