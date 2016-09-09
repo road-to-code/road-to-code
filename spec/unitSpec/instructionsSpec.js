@@ -2,7 +2,7 @@ describe ("instructions", function() {
   var instructions = new Instructions();
 
   it("should add instructions to the typed variable", function() {
-    instructions.displayInstructions("moveUp");
+    instructions.append("moveUp");
     expect(instructions.typed).toEqual("moveUp\n");
   });
 

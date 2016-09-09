@@ -5,10 +5,8 @@
     this.typed = "";
   }
 
-  Instructions.prototype.displayInstructions = function(typedText) {
-    this.typed = this.typed || "";
-    this.typed += typedText + "\n";
-    return this.typed;
+  Instructions.prototype.append = function(typedText) {
+    return (this.typed += typedText + "\n");
   };
 
   Instructions.prototype.addInstructions = function(typedText) {
