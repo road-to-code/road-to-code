@@ -17,12 +17,12 @@
 
   Map.prototype.drawMap = function(){
     var emojis = [
-                  { 1: "👑"},//[0,1]
-                  { 2: "💍"},//[1,2]
+                  { 1: "👑"},
+                  { 2: "💍"},
                   { 3: "💛"},
-                  { 4: "💰"},//[3,4]
+                  { 4: "💰"},
                   { 5: "🍕"},
-                  { 6: "🍩 "},
+                  { 6: "🍩"},
                   { 7: "✨"},
                   { 8: "👼🏼"},
                   { 9: "💩"},
@@ -40,7 +40,7 @@
           var myEmoji = emojis[emoji-1][emoji];
           var x = i.toString();
           var y = j.toString();
-          var emojiTile = i+j;
+          var emojiTile = x+y;
           $('#container').append('<div id=' + "a" + emojiTile + ' class="grass emoji diamond">' + myEmoji + '</div>');
         }
       }

@@ -26,6 +26,6 @@ describe('home page', function() {
    this.browser.assert.attribute('.grass');
  });
  it('loads the 1s with an emoji', function(){
-   this.browser.assert.attribute('#a11', "💍");
+   this.browser.assert.text('#a11', "👑");
  });
 });

@@ -4,7 +4,7 @@ var character = new Character();
 var instructions = new Instructions();
 
 window.onload=function(){
-  shuffle(map.array);
+  // shuffle(map.array);
   map.drawMap();
 };
 
