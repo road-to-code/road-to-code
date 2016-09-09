@@ -23,7 +23,10 @@
           $('#container').append('<div class="grass"></div>');
         }
         if(parseInt(this.array[i][j]) === 1){
-          $('#container').append('<div class="dirt"></div>');
+          var x = i.toString();
+          var y = j.toString();
+          var emojiTile = i+j;
+          $('#container').append('<div id=' + "a" + emojiTile + ' class="grass diamond">💍</div>');
         }
       }
     }

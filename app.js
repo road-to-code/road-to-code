@@ -31,4 +31,9 @@ $("#addInstructions").on("click", function() {
 
 $("#runInstructions").on("click", function() {
   var instructionsList = instructions.instructionsArr;
+  for(var i = 0; i < instructionsList.length; i++){
+    var func = instructionsList[i].match(/[a-zA-Z]/g).join('');
+    var number = parseInt(instructionsList[i].match(/[1-9]/)[0]);
+    character[func](number, displayChar);
+  }
 });
