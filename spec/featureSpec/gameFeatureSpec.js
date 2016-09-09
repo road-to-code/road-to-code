@@ -17,11 +17,11 @@ describe('home page', function() {
     this.browser.assert.element('#runInstructions');
   });
 
-  xit('should move the character 2 tiles to the right', function(){
+  it('should move the character 2 spaces to the right', function(){
     this.browser.fill('#typed-text', "moveRight(2)");
     this.browser.pressButton('Add Instruction');
     this.browser.pressButton('Run');
-    this.browser.assert.style('#character', 'left', "100px");
+    this.browser.assert.style('#character', 'left', "40px");
   });
 
 });

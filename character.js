@@ -6,6 +6,7 @@
 
   Character.prototype.moveRight = function(number) {
     this.position[0] += (number * 10);
+    displayChar.style.left = character.position[0] + 'px';
   };
 
   Character.prototype.moveLeft = function(number) {
