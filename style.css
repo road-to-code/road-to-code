@@ -28,3 +28,7 @@
   z-index: 1;
   left: 0;
 }
+
+.emoji {
+  font-size: 30px;
+}
