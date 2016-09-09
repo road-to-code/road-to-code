@@ -1,11 +1,11 @@
+var gameController = new GameController();
 var shuffle = this.shuffle;
 var map = new Map();
 var character = new Character();
 var instructions = new Instructions();
 
 window.onload=function(){
-  shuffle(map.array);
-  map.drawMap();
+  gameController.startGame();
 };
 
 var container = document.getElementById('container');
