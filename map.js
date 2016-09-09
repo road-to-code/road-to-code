@@ -13,10 +13,8 @@
     [5, 0, 7, 0, 0, 5, 4, 0, 3, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     ];
-  }
 
-  Map.prototype.drawMap = function(){
-    var emojiList = [
+    this.emojiList = [
                   { 1: "👑"},
                   { 2: "💍"},
                   { 3: "💛"},
@@ -27,25 +25,10 @@
                   { 8: "👼"},
                   { 9: "💩"},
                   { 10: "👺"},
-
     ];
-    for(var i=0; i < this.array.length; i++){
-      for(var j=0; j < this.array[i].length; j++){
+  }
 
-        if(parseInt(this.array[i][j]) === 0){
-          $('#container').append('<div class="grass"></div>');
-        }
-        else{
-          var currentMapValue = parseInt(this.array[i][j]);
-          var emoji = emojiList[currentMapValue-1][currentMapValue];
-          var x = i.toString();
-          var y = j.toString();
-          var emojiTile = x+y;
-          $('#container').append('<div id=' + "a" + emojiTile + ' class="grass emoji diamond">' + emoji + '</div>');
-        }
-      }
-    }
-  };
+  
 
   Map.prototype.size = function(){
     var dimensions = [this.array[0].length, this.array.length];

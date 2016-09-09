@@ -6,8 +6,8 @@
   function GameController(){}
 
   GameController.prototype.startGame = function(){
-    shuffle(map.array);
-    map.drawMap();
+    // shuffle(map.array);
+    this.drawMap();
   };
 
   GameController.prototype.processInstructions = function(instructionsList){
@@ -25,6 +25,22 @@
     }
   };
 
+  GameController.prototype.drawMap = function(){
+    for(var y=0; y < map.array.length; y++){
+      for(var x=0; x < map.array[y].length; x++){
+
+        if(map.array[y][x] === 0){
+          displayEmptyTile();
+        }
+        else{
+          var currentMapValue = map.array[y][x];
+          var emoji = map.emojiList[currentMapValue-1][currentMapValue];
+          var emojiTile = y.toString() + x.toString();
+          displayEmoji(emoji, emojiTile);
+        }
+      }
+    }
+  };
 
 exports.GameController = GameController;
   })(this);
