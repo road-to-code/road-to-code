@@ -3,14 +3,12 @@
   var character = new Character();
   var shuffle = this.shuffle;
 
-  function GameController(){
-
-  };
+  function GameController(){}
 
   GameController.prototype.startGame = function(){
     shuffle(map.array);
     map.drawMap();
-  }
+  };
 
   GameController.prototype.processInstructions = function(instructionsList){
     for(var i = 0; i < instructionsList.length; i++){
@@ -25,7 +23,7 @@
       console.log(character.position);
 
     }
-  }
+  };
 
 
 exports.GameController = GameController;
