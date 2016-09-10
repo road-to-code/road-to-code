@@ -15,20 +15,40 @@
     ];
 
     this.emojiList = [
-                  { 1: "👑"},
-                  { 2: "💍"},
-                  { 3: "💛"},
-                  { 4: "💰"},
-                  { 5: "🍕"},
-                  { 6: "🍩"},
-                  { 7: "✨"},
-                  { 8: "👼"},
-                  { 9: "💩"},
-                  { 10: "👺"},
+                  { 1: "👑",
+                    "points": 100,
+                    "class": "crown"},
+                  { 2: "💍",
+                    "points": 90,
+                    "class": "diamond"},
+                  { 3: "💛",
+                    "points": 80,
+                    "class": "heart"},
+                  { 4: "💰",
+                    "points": 70,
+                    "class": "money"},
+                  { 5: "🍕",
+                    "points": 60,
+                    "class": "pizza"},
+                  { 6: "🍩",
+                    "points": 50,
+                    "class": "doughnut"},
+                  { 7: "✨",
+                    "points": 40,
+                    "class": "sparkles"},
+                  { 8: "👼",
+                    "points": 30,
+                    "class": "angel"},
+                  { 9: "💩",
+                    "points": -100,
+                    "class": "excrement"},
+                  { 10: "👺",
+                    "points": -100,
+                    "class": "mask"},
     ];
   }
 
-  
+
 
   Map.prototype.size = function(){
     var dimensions = [this.array[0].length, this.array.length];

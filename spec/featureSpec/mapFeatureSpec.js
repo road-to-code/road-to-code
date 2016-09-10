@@ -27,5 +27,6 @@ describe('home page', function() {
  });
  it('loads the 1s with an emoji', function(){
    this.browser.assert.text('#a11', "👑");
+   this.browser.assert.attribute('.crown')
  });
 });
