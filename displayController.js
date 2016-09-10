@@ -27,7 +27,36 @@ function displayEmoji(emoji, emojiTile, emojiClass) {
   ' class="grass emoji' +  " " + emojiClass + '">' + emoji + '</div>');
 }
 
-function moveCharacter(startPos) {
-  displayChar.style.left = (startPos[0] * tileSize) + 'px';
-  displayChar.style.top = (startPos[1] * tileSize) + 'px';
+function myMove(newPos, axis) {
+  if(axis === 'left'){
+    newPos = newPos[0] * tileSize;
+    var pos = displayChar.style.left;
+  }
+  else{
+    newPos = newPos[1] * tileSize;
+    var pos = displayChar.style.top;
+  }
+   var id = setInterval(frame, 5);
+   function frame() {
+       if (pos == newPos) {
+           clearInterval(id);
+       } else {
+           pos++;
+           if(axis === 'left'){
+            displayChar.style.left = pos + 'px';
+           }
+           else{
+             displayChar.style.top = pos + 'px';
+           }
+       }
+   }
+}
+
+// myMove([5, 0], 'left');
+
+function moveCharacter(newPos) {
+  myMove(newPos, 'left');
+  myMove(newPos, "top");
+  // displayChar.style.left = (startPos[0] * tileSize) + 'px';
+  // displayChar.style.top = (startPos[1] * tileSize) + 'px';
 }
