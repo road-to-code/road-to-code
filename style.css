@@ -20,14 +20,15 @@
 }
 
 #character {
-  position: absolute;
-  height: 50px;
-  width: 50px;
-  outline: 1px solid black;
-  background-color: red;
-  z-index: 1;
-  left: 0;
-
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-image: url("spec/lib/pink-bird.png");
+    left: 0;
+    z-index: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: inherit;
 }
 
 .emoji {
