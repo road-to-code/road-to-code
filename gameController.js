@@ -13,15 +13,9 @@
   GameController.prototype.processInstructions = function(instructionsList){
     for(var i = 0; i < instructionsList.length; i++){
       var func = instructionsList[i].match(/[a-zA-Z]/g).join('');
-      console.log('this is the func:');
-      console.log(func);
       var number = parseInt(instructionsList[i].match(/[0-9]+/)[0]);
-      console.log("this is the number");
-      console.log(number);
       character[func](number);
-      console.log("character pos:");
-      console.log(character.position);
-
+      moveCharacter(character.position);
     }
   };
 

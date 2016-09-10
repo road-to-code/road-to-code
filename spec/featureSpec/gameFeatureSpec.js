@@ -21,7 +21,29 @@ describe('home page', function() {
     this.browser.fill('#typed-text', "moveRight(2)");
     this.browser.pressButton('Add Instruction');
     this.browser.pressButton('Run');
-    this.browser.assert.style('#character', 'left', "40px");
+    this.browser.assert.style('#character', 'left', "100px");
+  });
+
+  it('should move the character 2 spaces down', function(){
+    this.browser.fill('#typed-text', "moveDown(2)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.pressButton('Run');
+    this.browser.assert.style('#character', 'top', "100px");
+  });
+
+  it('should respond to multiple instructions', function(){
+    this.browser.fill('#typed-text', "moveRight(4)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.fill('#typed-text', "moveDown(4)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.fill('#typed-text', "moveUp(2)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.fill('#typed-text', "moveLeft(2)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.pressButton('Run');
+    this.browser.assert.style('#character', 'left', "100px");
+    this.browser.assert.style('#character', 'top', "100px");
+
   });
 
 });
