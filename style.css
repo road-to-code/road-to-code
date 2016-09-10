@@ -23,7 +23,7 @@
     position: absolute;
     height: 50px;
     width: 50px;
-    background-image: url("spec/lib/pink-bird.png");
+    background-image: url("assets/pink-bird.png");
     left: 0;
     z-index: 1;
     background-size: contain;
