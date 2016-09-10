@@ -34,9 +34,10 @@
         }
         else{
           var currentMapValue = map.array[y][x];
+          var emojiClass = map.emojiList[currentMapValue-1].class;
           var emoji = map.emojiList[currentMapValue-1][currentMapValue];
           var emojiTile = y.toString() + x.toString();
-          displayEmoji(emoji, emojiTile);
+          displayEmoji(emoji, emojiTile, emojiClass);
         }
       }
     }

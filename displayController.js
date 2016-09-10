@@ -21,8 +21,8 @@ function displayEmptyTile() {
   container.append('<div class="grass"></div>');
 }
 
-function displayEmoji(emoji, emojiTile) {
+function displayEmoji(emoji, emojiTile, emojiClass) {
   // hardcoded 'a' to make the numerical div id accessible
   container.append('<div id=' + "a" + emojiTile +
-  ' class="grass emoji diamond">' + emoji + '</div>');
+  ' class="grass emoji' +  " " + emojiClass + '">' + emoji + '</div>');
 }
