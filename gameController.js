@@ -1,6 +1,6 @@
 (function(exports){
   var map = new Map();
-  var character = new Character();
+  // var character = new Character();
   var shuffle = this.shuffle;
 
   function GameController(){}
@@ -10,14 +10,33 @@
     this.drawMap();
   };
 
-  GameController.prototype.processInstructions = function(instructionsList){
-    for(var i = 0; i < instructionsList.length; i++){
-      var func = instructionsList[i].match(/[a-zA-Z]/g).join('');
-      var number = parseInt(instructionsList[i].match(/[0-9]+/)[0]);
-      character[func](number);
-      moveCharacter(character.position);
-    }
-  };
+  // GameController.prototype.processInstructions = function(instructionsList){
+  //
+  //   	function sendInstructions(instructionsList, callback) {//defining sendInstructions
+  //       for (var i = 0; i < instructionsList.length; i++){
+  //       var func = instructionsList[i].match(/[a-zA-Z]/g).join('');
+  //       var number = parseInt(instructionsList[i].match(/[0-9]+/)[0]);
+  //       character[func](number);
+  //     }
+  //     	var movedCharacter = moveCharacter(this.position);
+  //     	callback(movedCharacter);
+  //     	}
+  //
+  //   	sendInstructions(instructionsList, function(movedCharacter){
+  //
+  //   	});
+  //
+  // };
+
+
+  // GameController.prototype.processInstructions = function(instructionsList){
+    // for(var i = 0; i < instructionsList.length; i++){
+    //   var func = instructionsList[i].match(/[a-zA-Z]/g).join('');
+    //   var number = parseInt(instructionsList[i].match(/[0-9]+/)[0]);
+    //   character[func](number);
+    //   moveCharacter(character.position);
+  //   }
+  // };
 
   GameController.prototype.drawMap = function(){
     for(var y=0; y < map.array.length; y++){

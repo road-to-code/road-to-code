@@ -1,4 +1,5 @@
 var instructions = new Instructions();
+var character = new Character();
 var displayChar = document.getElementById('character');
 var container = $('#container');
 var tileSize = 50;
@@ -11,10 +12,29 @@ $("#addInstructions").on("click", function() {
   var instructionsArr = instructions.addInstructions(typedText);
 });
 
-
 $("#runInstructions").on("click", function() {
   var instructionsList = instructions.instructionsArr;
-  gameController.processInstructions(instructionsList);
+
+  (function theLoop (instructionsList, i) {
+    var instruction = instructionsList[i];
+    var func = instruction.match(/[a-zA-Z]/g).join('');
+    var number = parseInt(instruction.match(/[0-9]+/)[0]);
+    character[func](number);
+    i = i + 1;
+    setTimeout(function () {
+      moveCharacter(character.position);
+      if (i < instructionsList.length) {
+        theLoop(instructionsList, i);  // Call the loop again
+      }
+    }, 400);
+  })(instructionsList, 0);
+
+  function moveCharacter(newPos){
+      $('#container').find('#character').animate({
+        left: newPos[0] * 50,
+        top: newPos[1] * 50
+      }, 'slow');
+    }
 });
 
 function displayEmptyTile() {
@@ -25,38 +45,4 @@ function displayEmoji(emoji, emojiTile, emojiClass) {
   // hardcoded 'a' to make the numerical div id accessible
   container.append('<div id=' + "a" + emojiTile +
   ' class="grass emoji' +  " " + emojiClass + '">' + emoji + '</div>');
-}
-
-function myMove(newPos, axis) {
-  if(axis === 'left'){
-    newPos = newPos[0] * tileSize;
-    var pos = displayChar.style.left;
-  }
-  else{
-    newPos = newPos[1] * tileSize;
-    var pos = displayChar.style.top;
-  }
-   var id = setInterval(frame, 5);
-   function frame() {
-       if (pos == newPos) {
-           clearInterval(id);
-       } else {
-           pos++;
-           if(axis === 'left'){
-            displayChar.style.left = pos + 'px';
-           }
-           else{
-             displayChar.style.top = pos + 'px';
-           }
-       }
-   }
-}
-
-// myMove([5, 0], 'left');
-
-function moveCharacter(newPos) {
-  myMove(newPos, 'left');
-  myMove(newPos, "top");
-  // displayChar.style.left = (startPos[0] * tileSize) + 'px';
-  // displayChar.style.top = (startPos[1] * tileSize) + 'px';
 }
