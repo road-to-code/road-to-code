@@ -1,15 +1,21 @@
+body {
+  margin: 5%;
+}
+
 #container{
   width: 500px;
   height: 500px;
   position: relative;
   outline: 1px solid black;
+  float: right;
 }
+
 .grass{
   height: 50px;
   width: 50px;
   position: relative;
   float: left;
-  background-color: green;
+  background-color: #3FA34D;
 }
 .dirt{
   height: 50px;
@@ -33,4 +39,29 @@
 
 .emoji {
   font-size: 30px;
+}
+
+#runInstructions {
+  margin: 1.5% 0 1.5% 0;
+}
+
+#addInstructions{
+  margin: 1.5% 0 1.5% 0;
+}
+
+.form-control{
+  width: 30%;
+}
+
+#entered-text {
+  background-color: #F1FAEE;
+}
+
+#page-title {
+  font-family: helvetica;
+  font-size: 40px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: -20px;
+  color: #3D405B;
 }
