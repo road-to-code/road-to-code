@@ -31,8 +31,8 @@ $("#runInstructions").on("click", function() {
 
   function moveCharacter(newPos){
       $('#container').find('#character').animate({
-        left: newPos[0] * 50,
-        top: newPos[1] * 50
+        left: newPos[0] * tileSize,
+        top: newPos[1] * tileSize
       }, 'slow');
     }
 });
