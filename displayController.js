@@ -46,8 +46,12 @@ $("#runInstructions").on("click", function() {
 
 function updateTile(x, y){
   var idNumber = "a" + x.toString() + y.toString();
-  console.log(idNumber);
   document.getElementById(idNumber).innerHTML = "";
+}
+
+function drawPath(x, y){
+  var idNumber = "a" + x.toString() + y.toString();
+  document.getElementById(idNumber).setAttribute("class", "dirt");
 }
 
 function displayEmptyTile() {

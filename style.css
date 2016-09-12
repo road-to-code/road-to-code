@@ -21,9 +21,10 @@ body {
 .dirt{
   height: 50px;
   width: 50px;
+  outline: 1px solid rgba(0, 0, 0, 0.35);
   position: relative;
   float: left;
-  background-color: #3FA34D;
+  background-color: #3c763d;
 }
 
 #character {
