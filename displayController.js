@@ -32,7 +32,7 @@ $("#runInstructions").on("click", function() {
       if (i < instructionsList.length) {
         theLoop(instructionsList, i);
       }
-    }, 200);
+    }, 300);
   })(instructionsList, 0);
 
   function moveCharacter(newPos){
