@@ -10,5 +10,17 @@ describe ("instructions", function() {
     instructions.addInstructions("moveUp");
     expect(instructions.instructionsArr).toContain("moveUp");
   });
+//
+// describe 'process'
+// beforeEach
+//   var insturctionsArr = "moveRight(2)", "moveLeft(4)"]);
+// 
+//   it('should parse instructions and return a function', function(){
+//     instructions.process()
+//   });
+//
+//   it('should parse instructions and return a number', function(){
+//
+//   });
 
 });

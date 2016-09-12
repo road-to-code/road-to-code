@@ -3,7 +3,6 @@ var character = new Character();
 var gameController = new GameController();
 var displayChar = document.getElementById('character');
 var container = $('#container');
-var tileSize = 50;
 
 function displayPoints(points){
   document.getElementById('points-score').innerHTML = points;
@@ -23,12 +22,8 @@ $("#runInstructions").on("click", function() {
   (function theLoop (instructionsList, i) {
     var instruction = instructionsList[i];
     character[instruction]();
-    if (instruction == "moveLeft"){
-      flipLeft();
-    }
-    else if(instruction == "moveRight") {
-      flipRight();
-    }
+    if (instruction == "moveLeft"){flipLeft();}
+    else if(instruction == "moveRight") {flipRight();}
     i ++;
     setTimeout(function () {
       moveCharacter(character.position);
@@ -40,7 +35,9 @@ $("#runInstructions").on("click", function() {
   })(instructionsList, 0);
 
   function moveCharacter(newPos){
-    $('#container').find('#character').animate({
+    var tileSize = $('#a11').width();
+    console.log(tileSize);
+        $('#container').find('#character').animate({
       left: newPos[0] * tileSize,
       top: newPos[1] * tileSize
     }, 200);

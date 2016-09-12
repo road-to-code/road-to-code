@@ -46,4 +46,11 @@ describe('home page', function() {
 
   });
 
+  // it('should turn the path behind a darker green', function(){
+  //   this.browser.fill('#typed-text', "moveRight(4)");
+  //   this.browser.pressButton('Add Instruction');
+  //   this.browser.pressButton('Run');
+  //   this.browser.assert.text('#a04', 'dirt');
+  // });
+
 });
