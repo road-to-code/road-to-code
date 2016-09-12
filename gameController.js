@@ -35,6 +35,7 @@
     var x = position[1];
     var y = position[0];
     var arrValue = map.array[x][y];
+    drawPath(x, y);
     if(map.emojiList[arrValue-1]){
       this.points += map.emojiList[arrValue-1].points;
       map.array[x][y] = 0;
