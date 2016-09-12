@@ -8,26 +8,28 @@ describe ("character", function() {
     character.position = [0, 0];
   });
 
-  it("should move right by specified amount", function() {
-    character.moveRight(2);
-    expect(character.position).toEqual([2, 0]);
+  it("should move right", function() {
+    character.moveRight();
+    expect(character.position).toEqual([1, 0]);
   });
 
-  it("should move left by specified amount", function() {
-    character.moveRight(4);
-    character.moveLeft(2);
-    expect(character.position).toEqual([2, 0]);
+  it("should move left", function() {
+    character.moveRight();
+    character.moveRight();
+    character.moveLeft();
+    expect(character.position).toEqual([1, 0]);
   });
 
-  it("should move down by specified amount", function() {
-    character.moveDown(2);
-    expect(character.position).toEqual([0, 2]);
+  it("should move down", function() {
+    character.moveDown();
+    expect(character.position).toEqual([0, 1]);
   });
 
-  it("should move up by specified amount", function() {
-    character.moveDown(4);
-    character.moveUp(2);
-    expect(character.position).toEqual([0, 2]);
+  it("should move up", function() {
+    character.moveDown();
+    character.moveDown();
+    character.moveUp();
+    expect(character.position).toEqual([0, 1]);
   });
 
   xit('should not be able to leave map on the LHS', function (){
