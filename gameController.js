@@ -1,22 +1,16 @@
 (function(exports){
   var map = new Map();
-  var character = new Character();
+  // var character = new Character();
   var shuffle = this.shuffle;
 
-  function GameController(){}
+  function GameController(){
+    this.points = 0;
+  }
 
   GameController.prototype.startGame = function(){
     // shuffle(map.array);
     this.drawMap();
-  };
-
-  GameController.prototype.processInstructions = function(instructionsList){
-    for(var i = 0; i < instructionsList.length; i++){
-      var func = instructionsList[i].match(/[a-zA-Z]/g).join('');
-      var number = parseInt(instructionsList[i].match(/[0-9]+/)[0]);
-      character[func](number);
-      moveCharacter(character.position);
-    }
+    displayPoints(this.points);
   };
 
   GameController.prototype.drawMap = function(){
@@ -34,6 +28,18 @@
           displayEmoji(emoji, emojiTile, emojiClass);
         }
       }
+    }
+  };
+
+  GameController.prototype.collision = function(position){
+    var x = position[1];
+    var y = position[0];
+    var arrValue = map.array[x][y];
+    if(map.emojiList[arrValue-1]){
+      this.points += map.emojiList[arrValue-1].points;
+      map.array[x][y] = 0;
+      updateTile(x, y);
+      displayPoints(this.points);
     }
   };
 

@@ -4,28 +4,28 @@
 <meta charset="UTF-8">
 <title>JavaScript Map</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="./map.js"></script>
 <script src="./character.js"></script>
 <script src="./instructions.js"></script>
 <script src="./helpers.js"></script>
 <script src="./gameController.js"></script>
 
-
-
 <link rel= "stylesheet" type="text/css" href="./style.css">
 </head>
-
 <body>
 <div id="container">
 <div id="character"></div>
 </div>
-<textarea id="typed-text" rows="1" cols="50" type="text"></textarea>
-<button id="addInstructions">Add Instruction</button>
-<textarea readonly id="entered-text" name="entered-text" rows="15" cols="50"></textarea>
-<button id="runInstructions">Run</button>
+<textarea id="typed-text" class="form-control" rows="1" cols="50" type="text"></textarea>
+<button id="addInstructions" type="button" class="btn btn-danger">Add Instruction</button>
+<textarea readonly id="entered-text" class="form-control" name="entered-text" rows="15" cols="50"></textarea>
+<button id="runInstructions" type="button" class="btn btn-danger">Run</button>
 
+<div id="points-score"></div>
 
 <script src="./displayController.js"></script>
 <script src="./app.js"></script>
+
 </body>
 </html>
