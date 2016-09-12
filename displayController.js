@@ -25,6 +25,12 @@ $("#runInstructions").on("click", function() {
   (function theLoop (instructionsList, i) {
     var instruction = instructionsList[i];
     character[instruction]();
+    if (instruction == "moveLeft"){
+      flipLeft();
+    }
+    else if(instruction == "moveRight") {
+      flipRight();
+    }
     i ++;
     setTimeout(function () {
       moveCharacter(character.position);
@@ -43,6 +49,14 @@ $("#runInstructions").on("click", function() {
   }
 
 });
+
+function flipLeft(){
+  document.getElementById('character').setAttribute("class", 'flipped');
+}
+
+function flipRight(){
+  document.getElementById('character').setAttribute("class", '');
+}
 
 function updateTile(x, y){
   var idNumber = "a" + x.toString() + y.toString();
