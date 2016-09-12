@@ -15,5 +15,19 @@
     return this.instructionsArr;
   };
 
+
+  Instructions.prototype.process = function(list) {
+    var processedList = [];
+    list.forEach(function(instruction){
+      var func = instruction.match(/[a-zA-Z]/g).join('');
+      var number = parseInt(instruction.match(/[0-9]+/)[0]);
+      for (var i = 0; i < number; i++){
+        processedList.push(func);
+      }
+    });
+    return processedList;
+  };
+
+
   exports.Instructions = Instructions;
 })(this);

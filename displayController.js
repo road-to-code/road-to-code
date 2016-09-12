@@ -19,39 +19,12 @@ $("#addInstructions").on("click", function() {
   var instructionsArr = instructions.addInstructions(typedText);
 });
 
-// $("#runInstructions").on("click", function() {
-//   var instructionsList = instructions.instructionsArr;
-//   var number = 0;
-//   for(var j = 0; j < instructionsList.length; j++){
-//     var instruction = instructionsList[j];
-//     number = parseInt(instruction.match(/[0-9]+/)[0]);
-//   }
-//   for(var s = 0; s < number; s++){
-//   (function theLoop (instructionsList, i) {
-//     var instruction = instructionsList[i];
-//     var func = instruction.match(/[a-zA-Z]/g).join('');
-//     i = i + 1;
-//     setTimeout(function () {
-//       character[func](1);
-//       console.log(character.position);
-//       moveCharacter(character.position, number, func);
-//       console.log("animate");
-//       gameController.collision(character.position);
-//       if (i < instructionsList.length) {
-//         theLoop(instructionsList, i);  // Call the loop again
-//       }
-//     }, 400);
-//   })(instructionsList, 0);
-//   }
-
 $("#runInstructions").on("click", function() {
-  var instructionsList = instructions.instructionsArr;
+  var instructionsList = instructions.process(instructions.instructionsArr);
 
   (function theLoop (instructionsList, i) {
     var instruction = instructionsList[i];
-    var func = instruction.match(/[a-zA-Z]/g).join('');
-    var number = parseInt(instruction.match(/[0-9]+/)[0]);
-    character[func](number);
+    character[instruction](1);
     i = i + 1;
     setTimeout(function () {
       moveCharacter(character.position);
