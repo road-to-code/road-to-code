@@ -18,7 +18,8 @@
       for(var x=0; x < map.array[y].length; x++){
 
         if(map.array[y][x] === 0){
-          displayEmptyTile();
+          var emptyTile = y.toString() + x.toString();
+          displayEmptyTile(emptyTile);
         }
         else{
           var currentMapValue = map.array[y][x];
