@@ -2,14 +2,14 @@
 
 (function(exports){
   var map = new Map();
-  var shuffle = this.shuffle;
+  // var shuffle = this.shuffle;
 
   function GameController(){
     this.points = 0;
   }
 
   GameController.prototype.startGame = function(){
-    shuffle(map.array);
+    // shuffle(map.array);
     this.drawMap();
     displayPoints(this.points);
   };
