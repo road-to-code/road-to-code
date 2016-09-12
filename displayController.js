@@ -6,8 +6,6 @@ var container = $('#container');
 var tileSize = 50;
 
 function displayPoints(points){
-  console.log("display points called");
-  console.log(gameController.points);
   document.getElementById('points-score').innerHTML = points;
 }
 
@@ -51,11 +49,11 @@ $("#runInstructions").on("click", function() {
 });
 
 function flipLeft(){
-  document.getElementById('character').setAttribute("class", 'flipped');
+  displayChar.setAttribute("class", 'flipped');
 }
 
 function flipRight(){
-  document.getElementById('character').setAttribute("class", '');
+  displayChar.setAttribute("class", '');
 }
 
 function updateTile(x, y){
@@ -65,7 +63,7 @@ function updateTile(x, y){
 
 function drawPath(x, y){
   var idNumber = "a" + x.toString() + y.toString();
-    document.getElementById(idNumber).setAttribute("class", "dirt");
+  document.getElementById(idNumber).setAttribute("class", "dirt");
 }
 
 function displayEmptyTile(emptyTile) {

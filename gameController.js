@@ -2,9 +2,7 @@
 
 (function(exports){
   var map = new Map();
-  // var character = new Character();
   var shuffle = this.shuffle;
-
 
   function GameController(){
     this.points = 0;
@@ -48,7 +46,6 @@
       displayPoints(this.points);
     }
   };
-
 
 exports.GameController = GameController;
   })(this);
