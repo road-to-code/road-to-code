@@ -6,6 +6,7 @@
   }
 
   Instructions.prototype.append = function(typedText) {
+    this.instructionsArr.push(typedText);
     return (this.typed += typedText + "\n");
   };
 

@@ -10,11 +10,9 @@ function displayPoints(points){
 }
 
 $("#addInstructions").on("click", function() {
-  var typedText = $('#typed-text').val();
-  var text = instructions.append(typedText);
-  document.getElementById('typed-text').value = "";
-  $('#entered-text').html(text);
-  var instructionsArr = instructions.addInstructions(typedText);
+  var newInstruction = $('#typed-text').val();
+  var updatedList = instructions.append(newInstruction);
+  updateTextBoxes(updatedList);
 });
 
 $("#runInstructions").on("click", function() {
@@ -74,4 +72,9 @@ function displayEmoji(emoji, emojiTile, emojiClass) {
   // hardcoded 'a' to make the numerical div id accessible
   container.append('<div id=' + "a" + emojiTile +
   ' class="grass emoji' +  " " + emojiClass + '">' + emoji + '</div>');
+}
+
+function updateTextBoxes(updatedList) {
+  document.getElementById('typed-text').value = "";
+  $('#entered-text').html(updatedList);
 }
