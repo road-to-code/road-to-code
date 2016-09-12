@@ -1,5 +1,3 @@
-// var audio = document.getElementById("audio");
-
 (function(exports){
   var map = new Map();
   // var shuffle = this.shuffle;
@@ -34,12 +32,14 @@
   };
 
   GameController.prototype.collision = function(position){
+    var audio = document.getElementById('audio');
+
     var x = position[1];
     var y = position[0];
     var arrValue = map.array[x][y];
     drawPath(x, y);
     if(map.emojiList[arrValue-1]){
-      document.getElementById('audio').play();
+      audio.play();
       this.points += map.emojiList[arrValue-1].points;
       map.array[x][y] = 0;
       updateTile(x, y);
