@@ -90,5 +90,5 @@ function collectEmojiSoundEffect() {
 function updateDisplayAfterCollectingEmoji(x, y) {
   collectEmojiSoundEffect();
   updateTile(x, y);
-  displayPoints(this.points);
+  displayPoints(gameController.points);
 }
