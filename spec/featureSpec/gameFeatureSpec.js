@@ -57,6 +57,6 @@ describe('home page', function() {
       browser.assert.text('#points-score', '240');
     });
   });
-  // these tests are not functioning
+  // the pending tests above are not functioning
 
 });
