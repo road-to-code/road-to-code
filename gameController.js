@@ -35,12 +35,13 @@
     var x = position[1];
     var y = position[0];
     var arrValue = map.array[x][y];
-    this.points += map.emojiList[arrValue-1].points;
-    console.log(this.points);
-    map.array[x][y] = 0;
-    updateTile(x, y);
-    displayPoints(this.points);
-  }
+    if(map.emojiList[arrValue-1]){
+      this.points += map.emojiList[arrValue-1].points;
+      map.array[x][y] = 0;
+      updateTile(x, y);
+      displayPoints(this.points);
+    }
+  };
 
 exports.GameController = GameController;
   })(this);

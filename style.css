@@ -13,6 +13,7 @@ body {
 .grass{
   height: 50px;
   width: 50px;
+  outline: 1px solid rgba(0, 0, 0, 0.35);
   position: relative;
   float: left;
   background-color: #3FA34D;
@@ -39,6 +40,7 @@ body {
 
 .emoji {
   font-size: 30px;
+  text-align: center;
 }
 
 #runInstructions {
