@@ -1,26 +1,24 @@
 (function(exports){
 
   function Character () {
+    this.DEFAULT_MOVE_DISTANCE = 1;
     this.position = [0, 0];
   }
 
-  Character.prototype.moveRight = function(number) {
-    this.position[0] += (number);
+  Character.prototype.moveRight = function() {
+    this.position[0] += this.DEFAULT_MOVE_DISTANCE;
   };
 
-  Character.prototype.moveLeft = function(number) {
-    this.position[0] -= (number);
-    // if(this.position[0] <= 0){
-    //   this.position[0] = 0;
-    // }
+  Character.prototype.moveLeft = function() {
+    this.position[0] -= this.DEFAULT_MOVE_DISTANCE;
   };
 
-  Character.prototype.moveDown = function(number) {
-    this.position[1] += (number);
+  Character.prototype.moveDown = function() {
+    this.position[1] += this.DEFAULT_MOVE_DISTANCE;
   };
 
-  Character.prototype.moveUp = function(number) {
-    this.position[1] -= (number);
+  Character.prototype.moveUp = function() {
+    this.position[1] -= this.DEFAULT_MOVE_DISTANCE;
   };
 
   exports.Character = Character;

@@ -20,24 +20,22 @@ $("#addInstructions").on("click", function() {
 });
 
 $("#runInstructions").on("click", function() {
-  var instructionsList = instructions.process(instructions.instructionsArr);
+  var instructionsList = instructions.process();
 
   (function theLoop (instructionsList, i) {
     var instruction = instructionsList[i];
-    character[instruction](1);
-    i = i + 1;
+    character[instruction]();
+    i ++;
     setTimeout(function () {
       moveCharacter(character.position);
       gameController.collision(character.position);
       if (i < instructionsList.length) {
         theLoop(instructionsList, i);
-          // Call the loop again
       }
     }, 200);
   })(instructionsList, 0);
+
   function moveCharacter(newPos){
-    console.log('this is the new position');
-    console.log(newPos);
     $('#container').find('#character').animate({
       left: newPos[0] * tileSize,
       top: newPos[1] * tileSize
