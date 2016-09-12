@@ -17,8 +17,10 @@ describe('home page', function() {
       this.browser.assert.attribute("#character");
   });
 
-  it('should move on click', function (){
-    this.browser.fire('#container', 'click');
-    this.browser.assert.style('#character', 'left', "10px");
+  it('should flip the character depending on the direction that is called', function(){
+    this.browser.fill('#typed-text', "moveLeft(2)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.pressButton('Run');
+    this.browser.assert.attribute('#character.flipped');
   });
 });
