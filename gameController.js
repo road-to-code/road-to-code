@@ -33,14 +33,15 @@
     }
   };
 
-  GameController.prototype.collision = function(position){
-    var x = position[1];
-    var y = position[0];
-    var arrValue = map.array[x][y];
+  GameController.prototype.checkForCollision = function(characterNewPos){
+    var x = characterNewPos[1];
+    var y = characterNewPos[0];
+    var targetSquare = map.array[x][y];
+
     drawPath(x, y);
-    if(map.emojiList[arrValue-1]){
+    if(map.emojiList[targetSquare-1]){
       document.getElementById('audio').play();
-      this.points += map.emojiList[arrValue-1].points;
+      this.points += map.emojiList[targetSquare-1].points;
       map.array[x][y] = 0;
       updateTile(x, y);
       displayPoints(this.points);

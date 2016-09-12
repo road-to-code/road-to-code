@@ -1,25 +1,18 @@
 (function(exports){
 
   function Instructions () {
-    this.instructionsArr = [];
+    this.list = [];
     this.typed = "";
   }
 
   Instructions.prototype.append = function(typedText) {
-    this.instructionsArr.push(typedText);
+    this.list.push(typedText);
     return (this.typed += typedText + "\n");
   };
 
-  Instructions.prototype.addInstructions = function(typedText) {
-    this.instructionsArr = this.instructionsArr || [];
-    this.instructionsArr.push(typedText);
-    return this.instructionsArr;
-  };
-
-
-  Instructions.prototype.process = function() {
+  Instructions.prototype.splitIntoSingleMoves = function() {
     var processedList = [];
-    this.instructionsArr.forEach(function(instruction){
+    this.list.forEach(function(instruction){
       var func = instruction.match(/[a-zA-Z]/g).join('');
       var number = parseInt(instruction.match(/[0-9]+/)[0]);
       for (var i = 0; i < number; i++){
