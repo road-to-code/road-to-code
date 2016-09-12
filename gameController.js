@@ -3,40 +3,15 @@
   // var character = new Character();
   var shuffle = this.shuffle;
 
-  function GameController(){}
+  function GameController(){
+    this.points = 0;
+  }
 
   GameController.prototype.startGame = function(){
     // shuffle(map.array);
     this.drawMap();
+    displayPoints(this.points);
   };
-
-  // GameController.prototype.processInstructions = function(instructionsList){
-  //
-  //   	function sendInstructions(instructionsList, callback) {//defining sendInstructions
-  //       for (var i = 0; i < instructionsList.length; i++){
-  //       var func = instructionsList[i].match(/[a-zA-Z]/g).join('');
-  //       var number = parseInt(instructionsList[i].match(/[0-9]+/)[0]);
-  //       character[func](number);
-  //     }
-  //     	var movedCharacter = moveCharacter(this.position);
-  //     	callback(movedCharacter);
-  //     	}
-  //
-  //   	sendInstructions(instructionsList, function(movedCharacter){
-  //
-  //   	});
-  //
-  // };
-
-
-  // GameController.prototype.processInstructions = function(instructionsList){
-    // for(var i = 0; i < instructionsList.length; i++){
-    //   var func = instructionsList[i].match(/[a-zA-Z]/g).join('');
-    //   var number = parseInt(instructionsList[i].match(/[0-9]+/)[0]);
-    //   character[func](number);
-    //   moveCharacter(character.position);
-  //   }
-  // };
 
   GameController.prototype.drawMap = function(){
     for(var y=0; y < map.array.length; y++){
@@ -55,6 +30,17 @@
       }
     }
   };
+
+  GameController.prototype.collision = function(position){
+    var x = position[1];
+    var y = position[0];
+    var arrValue = map.array[x][y];
+    this.points += map.emojiList[arrValue-1].points;
+    console.log(this.points);
+    map.array[x][y] = 0;
+    updateTile(x, y);
+    displayPoints(this.points);
+  }
 
 exports.GameController = GameController;
   })(this);

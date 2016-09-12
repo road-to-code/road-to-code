@@ -22,7 +22,7 @@ body {
   width: 50px;
   position: relative;
   float: left;
-  background-color: tan;
+  background-color: #3FA34D;
 }
 
 #character {
@@ -64,4 +64,10 @@ body {
   text-align: center;
   margin-top: -20px;
   color: #3D405B;
+}
+
+#points-score {
+  position: absolute;
+  font-size: 30px;
+  margin-top: 10px;
 }
