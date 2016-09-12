@@ -51,11 +51,11 @@ function updateTile(x, y){
 
 function drawPath(x, y){
   var idNumber = "a" + x.toString() + y.toString();
-  document.getElementById(idNumber).setAttribute("class", "dirt");
+    document.getElementById(idNumber).setAttribute("class", "dirt");
 }
 
-function displayEmptyTile() {
-  container.append('<div class="grass"></div>');
+function displayEmptyTile(emptyTile) {
+  container.append('<div id=' + "a" + emptyTile + ' class="grass"></div>');
 }
 
 function displayEmoji(emoji, emojiTile, emojiClass) {
