@@ -16,9 +16,9 @@
   };
 
 
-  Instructions.prototype.process = function(list) {
+  Instructions.prototype.process = function() {
     var processedList = [];
-    list.forEach(function(instruction){
+    this.instructionsArr.forEach(function(instruction){
       var func = instruction.match(/[a-zA-Z]/g).join('');
       var number = parseInt(instruction.match(/[0-9]+/)[0]);
       for (var i = 0; i < number; i++){
