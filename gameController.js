@@ -9,7 +9,7 @@
   }
 
   GameController.prototype.startGame = function(){
-    // shuffle(map.array);
+    shuffle(map.array);
     this.drawMap();
     displayPoints(this.points);
   };
