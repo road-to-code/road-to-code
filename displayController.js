@@ -21,7 +21,7 @@ $("#runInstructions").on("click", function() {
   (function runInstructions (instructionsList, i) {
     var instruction = instructionsList[i];
     character[instruction]();
-    flipCharacter();
+    flipCharacter(instruction);
     i ++;
     setTimeout(function () {
       moveCharacter(character.position);
@@ -81,4 +81,14 @@ function flipLeft(){
 
 function flipRight(){
   displayChar.setAttribute("class", '');
+}
+
+function collectEmojiSoundEffect() {
+  document.getElementById('audio').play();
+}
+
+function updateDisplayAfterCollectingEmoji(x, y) {
+  collectEmojiSoundEffect();
+  updateTile(x, y);
+  displayPoints(this.points);
 }
