@@ -1,7 +1,10 @@
+// var audio = document.getElementById("audio");
+
 (function(exports){
   var map = new Map();
   // var character = new Character();
   var shuffle = this.shuffle;
+
 
   function GameController(){
     this.points = 0;
@@ -38,12 +41,14 @@
     var arrValue = map.array[x][y];
     drawPath(x, y);
     if(map.emojiList[arrValue-1]){
+      document.getElementById('audio').play();
       this.points += map.emojiList[arrValue-1].points;
       map.array[x][y] = 0;
       updateTile(x, y);
       displayPoints(this.points);
     }
   };
+
 
 exports.GameController = GameController;
   })(this);
