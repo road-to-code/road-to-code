@@ -6,6 +6,7 @@ describe ("instructions", function() {
     expect(instructions.typed).toEqual("moveUp\n");
   });
 
+<<<<<<< HEAD
   it("should add instructions to the instructions array", function() {
     instructions.addInstructions("moveUp");
     expect(instructions.instructionsArr).toContain("moveUp");
@@ -22,5 +23,13 @@ describe ("instructions", function() {
 //   it('should parse instructions and return a number', function(){
 //
 //   });
+=======
+  //taken out as method has moved, the above test needs refactoring
+
+  // it("should add instructions to the instructions array", function() {
+  //   instructions.addInstructions("moveUp");
+  //   expect(instructions.instructionsArr).toContain("moveUp");
+  // });
+>>>>>>> a32bad1d048ae892d3c3a76aea930ca427768a59
 
 });

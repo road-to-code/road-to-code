@@ -11,27 +11,24 @@ function displayPoints(points){
 $(window).resize(function(){location.reload();});
 
 $("#addInstructions").on("click", function() {
-  var typedText = $('#typed-text').val();
-  var text = instructions.append(typedText);
-  document.getElementById('typed-text').value = "";
-  $('#entered-text').html(text);
-  var instructionsArr = instructions.addInstructions(typedText);
+  var newInstruction = $('#typed-text').val();
+  var updatedList = instructions.append(newInstruction);
+  updateTextBoxes(updatedList);
 });
 
 $("#runInstructions").on("click", function() {
-  var instructionsList = instructions.process();
+  var instructionsList = instructions.splitIntoSingleMoves();
 
-  (function theLoop (instructionsList, i) {
+  (function runInstructions (instructionsList, i) {
     var instruction = instructionsList[i];
     character[instruction]();
-    if (instruction == "moveLeft"){flipLeft();}
-    else if(instruction == "moveRight") {flipRight();}
+    flipCharacter(instruction);
     i ++;
     setTimeout(function () {
       moveCharacter(character.position);
-      gameController.collision(character.position);
+      gameController.checkForCollision(character.position);
       if (i < instructionsList.length) {
-        theLoop(instructionsList, i);
+        runInstructions(instructionsList, i);
       }
     }, 300);
   })(instructionsList, 0);
@@ -46,14 +43,6 @@ $("#runInstructions").on("click", function() {
   }
 
 });
-
-function flipLeft(){
-  displayChar.setAttribute("class", 'flipped');
-}
-
-function flipRight(){
-  displayChar.setAttribute("class", '');
-}
 
 function updateTile(x, y){
   var idNumber = "a" + x.toString() + y.toString();
@@ -73,4 +62,36 @@ function displayEmoji(emoji, emojiTile, emojiClass) {
   // hardcoded 'a' to make the numerical div id accessible
   container.append('<div id=' + "a" + emojiTile +
   ' class="grass emoji' +  " " + emojiClass + '">' + emoji + '</div>');
+}
+
+function updateTextBoxes(updatedList) {
+  document.getElementById('typed-text').value = "";
+  $('#entered-text').html(updatedList);
+}
+
+function flipCharacter(instruction) {
+  if (instruction == "moveLeft"){
+    flipLeft();
+  }
+  else if(instruction == "moveRight") {
+    flipRight();
+  }
+}
+
+function flipLeft(){
+  displayChar.setAttribute("class", 'flipped');
+}
+
+function flipRight(){
+  displayChar.setAttribute("class", '');
+}
+
+function collectEmojiSoundEffect() {
+  document.getElementById('audio').play();
+}
+
+function updateDisplayAfterCollectingEmoji(x, y) {
+  collectEmojiSoundEffect();
+  updateTile(x, y);
+  displayPoints(gameController.points);
 }
