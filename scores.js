@@ -5,13 +5,14 @@
   }
 
 
-  Scores.prototype.save = function(score){
+  Scores.prototype.save = function(name, score, level){
     var httprequest = new XMLHttpRequest();
+    var jsonName = JSON.stringify(name);
     var jsonScore = JSON.stringify(score);
-    httprequest.open("POST", "http://localhost:9292/scores?name=luke&level=1&score=" + jsonScore);
+    var jsonLevel = JSON.stringify(level);
+    httprequest.open("POST", "http://localhost:9292/scores?name=" + jsonName + "&score=" + jsonScore + "&level=" + jsonLevel);
     httprequest.send(jsonScore);
   };
-
 
 
   Scores.prototype.retrieve = function() {

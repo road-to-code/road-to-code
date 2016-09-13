@@ -12,6 +12,13 @@
     displayPoints(this.points);
   };
 
+  GameController.prototype.endGame = function () {
+    setTimeout(function() {
+      displayGameOver();
+    }, 2000);
+  };
+
+
   GameController.prototype.drawMap = function(){
     for(var y=0; y < map.array.length; y++){
       for(var x=0; x < map.array[y].length; x++){

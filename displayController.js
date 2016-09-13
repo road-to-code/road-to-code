@@ -4,11 +4,20 @@ var gameController = new GameController();
 var displayChar = document.getElementById('character');
 var container = $('#container');
 var scores = new Scores();
-
+var modal = $('#modal');
 
 function displayPoints(points){
   document.getElementById('points-score').innerHTML = points;
 }
+
+function displayGameOver() {
+    document.getElementById('player-score').innerHTML = gameController.points;
+    modal.css("display", "block");
+
+
+}
+
+
 
 scores.retrieve();
 
@@ -17,9 +26,8 @@ function displayLeaderboard(){
   document.getElementById('leaderboard').innerHTML = scores.list.join(', ');
 }
 
+// scores.save(100);
 
-scores.save(100);
-function logScores (score) {console.log(score.toString());}
 
 
 $(window).resize(function(){location.reload();});
@@ -29,6 +37,13 @@ $("#addInstructions").on("click", function() {
   var updatedList = instructions.append(newInstruction);
   updateTextBoxes(updatedList);
 });
+
+$("#submit-score").on("click", function() {
+  console.log('function called');
+  var name = $('#enter-name').val();
+  scores.save(name, gameController.points, 1);
+});
+
 
 $("#runInstructions").on("click", function() {
   var instructionsList = instructions.splitIntoSingleMoves();
@@ -43,6 +58,9 @@ $("#runInstructions").on("click", function() {
       gameController.checkForCollision(character.position);
       if (i < instructionsList.length) {
         runInstructions(instructionsList, i);
+      }
+      else {
+        gameController.endGame();
       }
     }, 300);
   })(instructionsList, 0);
