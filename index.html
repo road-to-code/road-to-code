@@ -9,6 +9,7 @@
 <script src="./map.js"></script>
 <script src="./character.js"></script>
 <script src="./instructions.js"></script>
+<script src="./chooseCharacterController.js"></script>
 <script src="./helpers.js"></script>
 <script src="./timer.js"></script>
 <script src="./gameController.js"></script>
@@ -19,6 +20,21 @@
 <link rel= "stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
+  <div id="boxes">
+    <div id="dialog" class="window">
+      <h1 id="choose-char">Choose your character:<h1>
+      <img id="suse-thumb" class="character-pics" src="assets/suse.jpg">
+      <img id="mike-thumb" class="character-pics" src="assets/mike.jpeg">
+      <img id="luke-thumb" class="character-pics" src="assets/luke.jpeg">
+      <img id="dan-thumb" class="character-pics" src="assets/dan.jpeg"><br>
+      <button class="btn-primary" id="suse-button">Suse</button>
+      <button class="btn-success" id="mike-button">Mike</button>
+      <button class="btn-info" id="luke-button">Luke</button>
+      <button class="btn-warning" id="dan-button">Dan</button>
+    </div>
+    <div id="mask"></div>
+  </div>
+
 <div id="header">
   <h1 class="road-to-code">RoadToCode<h1>
   <div id="timer">.</div>
@@ -42,6 +58,11 @@
   <textarea readonly id="entered-text" class="form-control" name="entered-text" rows="10" cols="50"></textarea>
   <button id="runInstructions" type="button" class="btn btn-danger">Run</button>
   <div id="points-score">
+    <div class='demo-2'
+     data-start='1000'
+     data-end='0'>
+    </div>
+
 </div>
 <script src="./displayController.js"></script>
 <script src="./app.js"></script>

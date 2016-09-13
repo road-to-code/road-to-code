@@ -18,19 +18,7 @@ $("#addInstructions").on("click", function() {
   updateTextBoxes(updatedList);
 });
 
-function displayTimer(){
-  var tenSeconds = 10,
-  display = document.querySelector('#timer');
-  timer.startTimer(tenSeconds, display);
-}
-
-function endTimer(){
-  console.log("endTimer called");
-  $('#timer').remove();
-}
-
 $("#runInstructions").on("click", function() {
-  displayTimer();
   var instructionsList = instructions.splitIntoSingleMoves();
   (function runInstructions (instructionsList, i) {
     var instruction = instructionsList[i];

@@ -10,6 +10,7 @@
     // shuffle(map.array);
     this.drawMap();
     displayPoints(this.points);
+    showCharacters();
   };
 
   GameController.prototype.drawMap = function(){
