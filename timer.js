@@ -1,30 +1,33 @@
-(function(exports){
-  function Timer() {
-  }
+  var Timer = (function(){
 
-  Timer.prototype.startTimer = function(duration, display){
-    var timer = duration, seconds, milliseconds;
-    setInterval(function () {
-        seconds = parseInt(timer % 60, 10);
-        // milliseconds = parseInt((timer % 60) * 10, 10);
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-        // milliseconds = milliseconds < 10 ? "0" + milliseconds : milliseconds;
-        display.textContent = seconds;
-        // + ":" + milliseconds;
+  var seconds;
+  var endTime;
+  var globalTimer;
 
-        if (--timer < 0) {
-            timer = duration;
-        }
+return {
 
-  }, 1000);
-  };
+  startTimer: function(){
+    var start = new Date();
+    $("#timer").addClass('timerStarted');
+    globalTimer = setInterval(function() {
+      seconds = ((new Date() - start) / parseFloat(1000)).toFixed(2);
+      $('#timer').html('<i class="fa fa-clock-o" aria-hidden="true"></i>' + seconds);
+      console.log(seconds);
 
-  setTimeout(function(){
-    endTimer();
-  }, 15000);
+    }, 10);
+  
+  },
 
-  exports.Timer = Timer;
-})(this);
+  endTimer: function(){
+    clearInterval(globalTimer);
+    $('#timer').remove();
+    endTime = seconds;
+  },
+
+};
+
+})();
+
 
 // var timer = duration, minutes, seconds;
 // setInterval(function () {

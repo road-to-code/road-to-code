@@ -1,6 +1,5 @@
 var instructions = new Instructions();
 var character = new Character();
-var timer = new Timer();
 var gameController = new GameController();
 var displayChar = document.getElementById('character');
 var container = $('#container');
@@ -19,9 +18,8 @@ $("#addInstructions").on("click", function() {
 });
 
 function displayTimer(){
-  var tenSeconds = 10,
   display = document.querySelector('#timer');
-  timer.startTimer(tenSeconds, display);
+  Timer.startTimer();
 }
 
 function endTimer(){
@@ -30,7 +28,7 @@ function endTimer(){
 }
 
 $("#runInstructions").on("click", function() {
-  displayTimer();
+  Timer.startTimer()
   var instructionsList = instructions.splitIntoSingleMoves();
   (function runInstructions (instructionsList, i) {
     var instruction = instructionsList[i];

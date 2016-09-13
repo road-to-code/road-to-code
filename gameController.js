@@ -47,6 +47,11 @@
       map.array[x][y] = 0;
       updateDisplayAfterCollectingEmoji(x, y);
     }
+
+    if(x === 9 && y === 9){
+      Timer.endTimer();
+      endGame(); //whatever luke and dan have called it
+    }
   };
 
 exports.GameController = GameController;
