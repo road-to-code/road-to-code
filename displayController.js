@@ -35,7 +35,6 @@ $("#runInstructions").on("click", function() {
 
   function moveCharacter(newPos){
     var tileSize = $('#a11').width();
-    console.log(tileSize);
       $('#container').find('#character').animate({
       left: newPos[0] * tileSize,
       top: newPos[1] * tileSize
@@ -87,7 +86,12 @@ function flipRight(){
 }
 
 function collectEmojiSoundEffect() {
-  document.getElementById('audio').play();
+  try {
+    document.getElementById('audio').play();
+  }
+  catch(err) {
+    document.getElementById("audio").innerHTML = err.message;
+  }
 }
 
 function updateDisplayAfterCollectingEmoji(x, y) {

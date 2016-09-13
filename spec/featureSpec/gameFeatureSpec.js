@@ -25,7 +25,9 @@ describe('home page', function() {
     this.browser.fill('#typed-text', "moveRight(2)");
     this.browser.pressButton('Add Instruction');
     this.browser.pressButton('Run');
-    this.browser.assert.style('#character', 'left', "100px");
+    this.browser.wait().then( function() {
+      this.browser.assert.style('#character', 'left', "100px");
+    });
   });
 
   xit('should move the character 2 spaces down', function(){
@@ -49,11 +51,12 @@ describe('home page', function() {
     this.browser.assert.style('#character', 'top', "100px");
   });
 
-  xit('should increase the score as more emojis are picked up', function(){
+  it('should increase the score as more emojis are picked up', function(){
     var browser = this.browser;
     this.browser.fill('#typed-text', "moveRight(5)");
     this.browser.pressButton('Add Instruction');
-    this.browser.pressButton('Run', function () {
+    this.browser.pressButton('Run');
+    this.browser.wait().then( function() {
       browser.assert.text('#points-score', '240');
     });
 
