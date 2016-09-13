@@ -89,8 +89,17 @@ function collectEmojiSoundEffect(handleAudio) {
   document.getElementById('audio').play();
 }
 
+function collectEmojiSoundEffect() {
+  try {
+    document.getElementById('audio').play();
+  }
+  catch(err) {
+    document.getElementById("audio").innerHTML = err.message;
+  }
+}
+
 function updateDisplayAfterCollectingEmoji(x, y) {
-  // collectEmojiSoundEffect();
+  collectEmojiSoundEffect();
   updateTile(x, y);
   displayPoints(gameController.points);
 }

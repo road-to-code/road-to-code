@@ -23,6 +23,7 @@ describe('home page', function() {
     this.browser.pressButton('Run');
     this.browser.wait().then( function() {
       this.browser.assert.style('#character', 'width', "100px");
+      this.browser.assert.style('#character', 'left', "100px");
     });
   });
 
