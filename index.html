@@ -11,6 +11,8 @@
 <script src="./instructions.js"></script>
 <script src="./helpers.js"></script>
 <script src="./gameController.js"></script>
+<script src="./scores.js"></script>
+
 <audio style="visibility: hidden" controls="controls" id="audio">
   <source src="assets/swipe_sound.mp3" type="audio/mp3" />
 </audio>
@@ -39,9 +41,9 @@
   <button id="addInstructions" type="button" class="btn btn-danger">Add Instruction</button>
   <textarea readonly id="entered-text" class="form-control" name="entered-text" rows="10" cols="50"></textarea>
   <button id="runInstructions" type="button" class="btn btn-danger">Run</button>
-  <div id="points-score">
-
-</div>
+  <div id="points-score"></div>
+  <div id="leaderboard"></div>
+  
 <script src="./displayController.js"></script>
 <script src="./app.js"></script>
 

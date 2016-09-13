@@ -3,10 +3,24 @@ var character = new Character();
 var gameController = new GameController();
 var displayChar = document.getElementById('character');
 var container = $('#container');
+var scores = new Scores();
+
 
 function displayPoints(points){
   document.getElementById('points-score').innerHTML = points;
 }
+
+scores.retrieve();
+
+function displayLeaderboard(){
+  var scoreList = scores.list;
+  document.getElementById('leaderboard').innerHTML = scores.list.join(', ');
+}
+
+
+scores.save(100);
+function logScores (score) {console.log(score.toString());}
+
 
 $(window).resize(function(){location.reload();});
 
