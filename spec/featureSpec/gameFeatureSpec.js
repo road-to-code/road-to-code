@@ -17,15 +17,13 @@ describe('home page', function() {
     this.browser.assert.element('#runInstructions');
   });
 
-  it('should display the user score', function(){
-    this.browser.assert.text('#points-score', '0');
-  });
-
-  xit('should move the character 2 spaces to the right', function(){
+  it('should move the character 2 tiles to the right', function(){
     this.browser.fill('#typed-text', "moveRight(2)");
     this.browser.pressButton('Add Instruction');
     this.browser.pressButton('Run');
-    this.browser.assert.style('#character', 'left', "100px");
+    this.browser.wait().then( function() {
+      this.browser.assert.style('#character', 'width', "100px");
+    });
   });
 
   xit('should move the character 2 spaces down', function(){
@@ -45,19 +43,26 @@ describe('home page', function() {
     this.browser.fill('#typed-text', "moveLeft(2)");
     this.browser.pressButton('Add Instruction');
     this.browser.pressButton('Run');
-    this.browser.assert.style('#character', 'left', "100px");
-    this.browser.assert.style('#character', 'top', "100px");
+    this.browser.wait().then( function() {
+      this.browser.assert.style('#character', 'left', "100px");
+      this.browser.assert.style('#character', 'top', "100px");
+    });
   });
 
-  xit('should increase the score as more emojis are picked up', function(){
+  it('should increase the score as more emojis are picked up', function(){
     var browser = this.browser;
     this.browser.fill('#typed-text', "moveRight(5)");
     this.browser.pressButton('Add Instruction');
-    this.browser.pressButton('Run', function () {
+    this.browser.pressButton('Run');
+    this.browser.wait().then( function() {
       browser.assert.text('#points-score', '240');
     });
+  });
 
   });
-  // these tests are not functioning
-
-});
+  // it('should turn the path behind a darker green', function(){
+  //   this.browser.fill('#typed-text', "moveRight(4)");
+  //   this.browser.pressButton('Add Instruction');
+  //   this.browser.pressButton('Run');
+  //   this.browser.assert.text('#a04', 'dirt');
+  // });

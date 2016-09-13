@@ -35,7 +35,6 @@ $("#runInstructions").on("click", function() {
 
   function moveCharacter(newPos){
     var tileSize = $('#a11').width();
-    console.log(tileSize);
       $('#container').find('#character').animate({
       left: newPos[0] * tileSize,
       top: newPos[1] * tileSize
@@ -86,12 +85,12 @@ function flipRight(){
   displayChar.setAttribute("class", '');
 }
 
-function collectEmojiSoundEffect() {
+function collectEmojiSoundEffect(handleAudio) {
   document.getElementById('audio').play();
 }
 
 function updateDisplayAfterCollectingEmoji(x, y) {
-  collectEmojiSoundEffect();
+  // collectEmojiSoundEffect();
   updateTile(x, y);
   displayPoints(gameController.points);
 }
