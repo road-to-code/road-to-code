@@ -28,7 +28,7 @@ function endTimer(){
 }
 
 $("#runInstructions").on("click", function() {
-  Timer.startTimer()
+  Timer.startTimer();
   var instructionsList = instructions.splitIntoSingleMoves();
   (function runInstructions (instructionsList, i) {
     var instruction = instructionsList[i];
@@ -100,8 +100,21 @@ function flipRight(){
   displayChar.setAttribute("class", '');
 }
 
-function collectEmojiSoundEffect(handleAudio) {
-  document.getElementById('audio').play();
+// function collectEmojiSoundEffect(handleAudio) {
+//   document.getElementById('audio').play();
+// }
+
+// function endGameSoundEffect(handleAudio){
+//   document.getElementById('end-game-audio').play();
+// }
+
+function endGameSoundEffect() {
+  try {
+    document.getElementById('end-game-audio').play();
+  }
+  catch(err) {
+    document.getElementById("end-game-audio").innerHTML = err.message;
+  }
 }
 
 function collectEmojiSoundEffect() {

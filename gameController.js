@@ -51,7 +51,8 @@
     if(x === 9 && y === 9){
       Timer.endTimer();
       console.log('Game over!');
-      endGame(); //whatever luke and dan have called it
+      endGameSoundEffect();
+      // endGame(); whatever luke and dan have called it
     }
   };
 
