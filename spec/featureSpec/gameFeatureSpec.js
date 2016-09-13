@@ -56,6 +56,7 @@ describe('home page', function() {
     this.browser.pressButton('Run', function () {
       browser.assert.text('#points-score', '240');
     });
+
   });
   // the pending tests above are not functioning
 

@@ -23,4 +23,5 @@ describe('home page', function() {
     this.browser.pressButton('Run');
     this.browser.assert.attribute('#character.flipped');
   });
+  
 });

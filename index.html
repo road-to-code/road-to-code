@@ -18,26 +18,30 @@
 <link rel= "stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
+<div id="header">
+  <h1 class="road-to-code">RoadToCode<h1>
+</div>
+<div>
 <div id="container">
 <div id="character"></div>
 </div>
-<h1 class="road-to-code">Road to Code<h1>
-<h3>Catch emojis by programming your commands below. For example:</h3>
-<code>
-  moveRight(3);<br>
-  moveDown(6);<br>
-  moveLeft(1);<br>
-  moveUp(4);<br>
-  </code>
-<h4>Reach the finish line before the time runs out and get 100 bonus points. Be careful with your capital letters!</h4>
+<div id=instructions>
+  <h3>Catch emojis by programming your commands below. For example:</h3>
+  <code>
+    moveRight(3);<br>
+    moveDown(6);<br>
+    moveLeft(1);<br>
+    moveUp(4);<br>
+    </code>
+  <h4>Reach the finish line before the time runs out and get 100 bonus points. Be careful with your capital letters!</h4>
 
-<textarea id="typed-text" class="form-control" rows="1" cols="50" type="text"></textarea>
-<button id="addInstructions" type="button" class="btn btn-danger">Add Instruction</button>
-<textarea readonly id="entered-text" class="form-control" name="entered-text" rows="15" cols="50"></textarea>
-<button id="runInstructions" type="button" class="btn btn-danger">Run</button>
+  <textarea id="typed-text" class="form-control" rows="1" cols="50" type="text"></textarea>
+  <button id="addInstructions" type="button" class="btn btn-danger">Add Instruction</button>
+  <textarea readonly id="entered-text" class="form-control" name="entered-text" rows="10" cols="50"></textarea>
+  <button id="runInstructions" type="button" class="btn btn-danger">Run</button>
+  <div id="points-score">
 
-<div id="points-score"></div>
-
+</div>
 <script src="./displayController.js"></script>
 <script src="./app.js"></script>
 
