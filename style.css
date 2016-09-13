@@ -3,25 +3,25 @@ body {
 }
 
 #container{
-  width: 500px;
-  height: 500px;
+  width: 50vw;
+  height: 50vw;
   position: relative;
   outline: 1px solid black;
   float: right;
 }
 
 .grass{
-  height: 50px;
-  width: 50px;
+  height: 5vw;
+  width: 5vw;
   outline: 1px solid rgba(0, 0, 0, 0.35);
   position: relative;
   float: left;
   background-color: #3FA34D;
 }
 .dirt{
-  height: 50px;
-  width: 50px;
-  outline: 1px solid rgba(0, 0, 0, 0.35);
+  height: 5vw;
+  width: 5vw;
+  outline: 1px solid rgba(0, 0, 0, 0.25);
   position: relative;
   float: left;
   background-color: #3c763d;
@@ -29,8 +29,8 @@ body {
 
 #character {
     position: absolute;
-    height: 50px;
-    width: 50px;
+    height: 4.8vw;
+    width: 4.8vw;
     background-image: url("assets/pink-bird.png");
     left: 0;
     z-index: 1;
@@ -40,7 +40,7 @@ body {
 }
 
 .emoji {
-  font-size: 30px;
+  font-size: 45px;
   text-align: center;
 }
 
@@ -53,20 +53,20 @@ body {
 }
 
 .form-control{
-  width: 30%;
+  width: 95%;
 }
 
 #entered-text {
   background-color: #F1FAEE;
 }
 
-#page-title {
+.road-to-code {
   font-family: helvetica;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bolder;
-  text-align: center;
-  margin-top: -20px;
-  color: #3D405B;
+  margin-top: -5%;
+  padding-bottom: 2%;
+  color: #540D6E;
 }
 
 #points-score {
@@ -82,4 +82,14 @@ body {
     -o-transform: scale(-1, 1);
     -khtml-transform: scale(-1, 1);
     -ms-transform: scale(-1, 1);
+}
+
+#instructions{
+  width: 35vw;
+  height: 50vw;
+  position: relative;
+  background-color: #C9DDFF;
+  padding: 3%;
+  border-radius: 20px;
+  background: #C9DDFF;
 }

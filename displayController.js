@@ -3,11 +3,12 @@ var character = new Character();
 var gameController = new GameController();
 var displayChar = document.getElementById('character');
 var container = $('#container');
-var tileSize = 50;
 
 function displayPoints(points){
   document.getElementById('points-score').innerHTML = points;
 }
+
+$(window).resize(function(){location.reload();});
 
 $("#addInstructions").on("click", function() {
   var newInstruction = $('#typed-text').val();
@@ -33,7 +34,9 @@ $("#runInstructions").on("click", function() {
   })(instructionsList, 0);
 
   function moveCharacter(newPos){
-    $('#container').find('#character').animate({
+    var tileSize = $('#a11').width();
+    console.log(tileSize);
+      $('#container').find('#character').animate({
       left: newPos[0] * tileSize,
       top: newPos[1] * tileSize
     }, 200);

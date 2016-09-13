@@ -22,6 +22,5 @@
     return processedList;
   };
 
-
   exports.Instructions = Instructions;
 })(this);
