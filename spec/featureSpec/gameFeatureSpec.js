@@ -17,24 +17,33 @@ describe('home page', function() {
     this.browser.assert.element('#runInstructions');
   });
 
-  it('should move the character 2 tiles to the right', function(){
-    this.browser.fill('#typed-text', "moveRight(2)");
-    this.browser.pressButton('Add Instruction');
-    this.browser.pressButton('Run');
-    this.browser.wait().then( function() {
-      this.browser.assert.style('#character', 'width', "100px");
-      this.browser.assert.style('#character', 'left', "100px");
+  describe('character moves', function(){
+
+    beforeEach(function(done) {
+      this.browser.fill('#typed-text', "moveRight(2)");
+      this.browser.pressButton('Add Instruction');
+      this.browser.pressButton('Run', done);
     });
+
+    it('should move the character 2 tiles to the right', function(){
+      var browser = this.browser;
+      browser.assert.hasClass("#character", "piggy");
+    });
+
   });
 
   xit('should move the character 2 spaces down', function(){
+    var browser = this.browser;
     this.browser.fill('#typed-text', "moveDown(2)");
     this.browser.pressButton('Add Instruction');
     this.browser.pressButton('Run');
-    this.browser.assert.style('#character', 'top', "100px");
+    this.browser.wait().then( function() {
+        // browser.assert.style('#character', 'top', "100px");
+    });
   });
 
-  xit('should respond to multiple instructions', function(){
+  it('should respond to multiple instructions', function(){
+    var browser = this.browser;
     this.browser.fill('#typed-text', "moveRight(4)");
     this.browser.pressButton('Add Instruction');
     this.browser.fill('#typed-text', "moveDown(4)");
@@ -45,8 +54,9 @@ describe('home page', function() {
     this.browser.pressButton('Add Instruction');
     this.browser.pressButton('Run');
     this.browser.wait().then( function() {
-      this.browser.assert.style('#character', 'left', "100px");
-      this.browser.assert.style('#character', 'top', "100px");
+      browser.assert.text('#points-score', '310');
+      // this.browser.assert.style('#character', 'left', "100px");
+      // this.browser.assert.style('#character', 'top', "100px");
     });
   });
 
