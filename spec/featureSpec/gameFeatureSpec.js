@@ -17,32 +17,30 @@ describe('home page', function() {
     this.browser.assert.element('#runInstructions');
   });
 
-  describe('character moves', function(){
 
-    beforeEach(function(done) {
-      this.browser.fill('#typed-text', "moveRight(2)");
-      this.browser.pressButton('Add Instruction');
-      this.browser.pressButton('Run', done);
-    });
-
-    it('should move the character 2 tiles to the right', function(){
-      var browser = this.browser;
-      browser.assert.hasClass("#character", "piggy");
-    });
-
+  it('should remove emojis on collision', function(){
+    var browser = this.browser;
+    this.browser.fill('#typed-text', "moveRight(2)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.pressButton('Run');
+      this.browser.wait().then( function() {
+        browser.assert.text("#a01", "");
+        browser.assert.text("#a02", "");
+      });
   });
 
   xit('should move the character 2 spaces down', function(){
     var browser = this.browser;
-    this.browser.fill('#typed-text', "moveDown(2)");
+    this.browser.fill('#typed-text', "moveDown(9)");
     this.browser.pressButton('Add Instruction');
     this.browser.pressButton('Run');
     this.browser.wait().then( function() {
-        // browser.assert.style('#character', 'top', "100px");
+      browser.assert.style('#character.style', "left");
+      console.log(browser.body.innerHTML);
     });
   });
 
-  it('should respond to multiple instructions', function(){
+  xit('should respond to multiple instructions', function(){
     var browser = this.browser;
     this.browser.fill('#typed-text', "moveRight(4)");
     this.browser.pressButton('Add Instruction');
@@ -55,6 +53,8 @@ describe('home page', function() {
     this.browser.pressButton('Run');
     this.browser.wait().then( function() {
       browser.assert.text('#points-score', '310');
+      console.log(browser.body.innerHTML);
+
       // this.browser.assert.style('#character', 'left', "100px");
       // this.browser.assert.style('#character', 'top', "100px");
     });
