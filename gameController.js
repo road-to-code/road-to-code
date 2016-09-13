@@ -20,6 +20,10 @@
           var emptyTile = y.toString() + x.toString();
           displayEmptyTile(emptyTile);
         }
+        else if(map.array[y][x] === 11){
+          var gameTile = y.toString() + x.toString();
+          displayGameFunctionTile(gameTile);
+        }
         else{
           var currentMapValue = map.array[y][x];
           var emojiClass = map.emojiList[currentMapValue-1].class;

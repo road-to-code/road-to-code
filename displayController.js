@@ -48,6 +48,10 @@ function updateTile(x, y){
   document.getElementById(idNumber).innerHTML = "";
 }
 
+function displayGameFunctionTile(gameTile){
+  container.append('<div id=' + "a" + gameTile + ' class="start-end-tile"></div>');
+}
+
 function drawPath(x, y){
   var idNumber = "a" + x.toString() + y.toString();
   document.getElementById(idNumber).setAttribute("class", "dirt");
@@ -83,6 +87,10 @@ function flipLeft(){
 
 function flipRight(){
   displayChar.setAttribute("class", '');
+}
+
+function collectEmojiSoundEffect(handleAudio) {
+  document.getElementById('audio').play();
 }
 
 function collectEmojiSoundEffect() {

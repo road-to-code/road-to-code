@@ -3,44 +3,53 @@ body {
 }
 
 #container{
-  width: 50vw;
-  height: 50vw;
+  width: 500px;
+  height: 500px;
   position: relative;
   outline: 1px solid black;
   float: right;
 }
 
 .grass{
-  height: 5vw;
-  width: 5vw;
+  height: 50px;
+  width: 50px;
   outline: 1px solid rgba(0, 0, 0, 0.35);
   position: relative;
   float: left;
   background-color: #3FA34D;
 }
 .dirt{
-  height: 5vw;
-  width: 5vw;
+  height: 50px;
+  width: 50px;
   outline: 1px solid rgba(0, 0, 0, 0.25);
   position: relative;
   float: left;
   background-color: #3c763d;
 }
 
+.start-end-tile{
+  height: 50px;
+  width: 50px;
+  outline: 1px solid rgba(0, 0, 0, 0.35);
+  position: relative;
+  float: left;
+  background-color: #ffac2f;
+}
+
 #character {
     position: absolute;
-    height: 4.8vw;
-    width: 4.8vw;
+    height: 50px;
+    width: 50px;
     background-image: url("assets/pink-bird.png");
-    left: 0;
     z-index: 1;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: inherit;
 }
 
+
 .emoji {
-  font-size: 45px;
+  font-size: 30px;
   text-align: center;
 }
 
