@@ -55,12 +55,6 @@ function flipRight(){
   displayChar.setAttribute("class", '');
 }
 
-function sparkle(x,y){
-  console.log("sparkle called");
-  var idNumber = "a" + x.toString() + y.toString();
-  $(idNumber).sparkle();
-}
-
 function updateTile(x, y){
   var idNumber = "a" + x.toString() + y.toString();
   document.getElementById(idNumber).innerHTML = "";
