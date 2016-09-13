@@ -44,6 +44,7 @@
       map.array[x][y] = 0;
       updateTile(x, y);
       displayPoints(this.points);
+      sparkle(x,y);
     }
   };
 

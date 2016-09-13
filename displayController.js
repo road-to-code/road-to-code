@@ -8,6 +8,8 @@ function displayPoints(points){
   document.getElementById('points-score').innerHTML = points;
 }
 
+$(window).resize(function(){location.reload();});
+
 $("#addInstructions").on("click", function() {
   var typedText = $('#typed-text').val();
   var text = instructions.append(typedText);
@@ -37,7 +39,7 @@ $("#runInstructions").on("click", function() {
   function moveCharacter(newPos){
     var tileSize = $('#a11').width();
     console.log(tileSize);
-        $('#container').find('#character').animate({
+      $('#container').find('#character').animate({
       left: newPos[0] * tileSize,
       top: newPos[1] * tileSize
     }, 200);
@@ -51,6 +53,12 @@ function flipLeft(){
 
 function flipRight(){
   displayChar.setAttribute("class", '');
+}
+
+function sparkle(x,y){
+  console.log("sparkle called");
+  var idNumber = "a" + x.toString() + y.toString();
+  $(idNumber).sparkle();
 }
 
 function updateTile(x, y){

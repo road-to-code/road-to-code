@@ -43,14 +43,6 @@ describe('home page', function() {
     this.browser.pressButton('Run');
     this.browser.assert.style('#character', 'left', "100px");
     this.browser.assert.style('#character', 'top', "100px");
-
   });
-
-  // it('should turn the path behind a darker green', function(){
-  //   this.browser.fill('#typed-text', "moveRight(4)");
-  //   this.browser.pressButton('Add Instruction');
-  //   this.browser.pressButton('Run');
-  //   this.browser.assert.text('#a04', 'dirt');
-  // });
 
 });
