@@ -10,6 +10,7 @@
 <script src="./character.js"></script>
 <script src="./instructions.js"></script>
 <script src="./helpers.js"></script>
+<script src="./timer.js"></script>
 <script src="./gameController.js"></script>
 <audio style="visibility: hidden" controls="controls" id="audio">
   <source src="assets/swipe_sound.mp3" type="audio/mp3" />
@@ -20,6 +21,7 @@
 <body>
 <div id="header">
   <h1 class="road-to-code">RoadToCode<h1>
+  <div id="timer">.</div>
 </div>
 <div>
 <div id="container">
@@ -40,7 +42,6 @@
   <textarea readonly id="entered-text" class="form-control" name="entered-text" rows="10" cols="50"></textarea>
   <button id="runInstructions" type="button" class="btn btn-danger">Run</button>
   <div id="points-score">
-
 </div>
 <script src="./displayController.js"></script>
 <script src="./app.js"></script>

@@ -102,3 +102,9 @@ body {
   border-radius: 20px;
   background: #C9DDFF;
 }
+
+#timer{
+  float: right;
+  margin-top: -80px;
+  display: block;
+}

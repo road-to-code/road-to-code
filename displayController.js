@@ -1,8 +1,10 @@
 var instructions = new Instructions();
 var character = new Character();
+var timer = new Timer();
 var gameController = new GameController();
 var displayChar = document.getElementById('character');
 var container = $('#container');
+var timerDisplay = document.getElementById('timer');
 
 function displayPoints(points){
   document.getElementById('points-score').innerHTML = points;
@@ -16,9 +18,20 @@ $("#addInstructions").on("click", function() {
   updateTextBoxes(updatedList);
 });
 
-$("#runInstructions").on("click", function() {
-  var instructionsList = instructions.splitIntoSingleMoves();
+function displayTimer(){
+  var tenSeconds = 10,
+  display = document.querySelector('#timer');
+  timer.startTimer(tenSeconds, display);
+}
 
+function endTimer(){
+  console.log("endTimer called");
+  $('#timer').remove();
+}
+
+$("#runInstructions").on("click", function() {
+  displayTimer();
+  var instructionsList = instructions.splitIntoSingleMoves();
   (function runInstructions (instructionsList, i) {
     var instruction = instructionsList[i];
     character[instruction]();
