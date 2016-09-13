@@ -1,5 +1,3 @@
-// var audio = document.getElementById("audio");
-
 (function(exports){
   var map = new Map();
   // var shuffle = this.shuffle;
