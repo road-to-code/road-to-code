@@ -129,3 +129,9 @@ body {
 #player-score {
   font-size: 50px;
 }
+
+#timer{
+  float: right;
+  margin-top: -80px;
+  display: block;
+}

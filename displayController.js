@@ -5,6 +5,8 @@ var displayChar = document.getElementById('character');
 var container = $('#container');
 var scores = new Scores();
 var modal = $('#modal');
+var timerDisplay = document.getElementById('timer');
+
 
 function displayPoints(points){
   document.getElementById('points-score').innerHTML = points;
@@ -45,9 +47,20 @@ $("#submit-score").on("click", function() {
 });
 
 
-$("#runInstructions").on("click", function() {
-  var instructionsList = instructions.splitIntoSingleMoves();
+function displayTimer(){
+  display = document.querySelector('#timer');
+  Timer.startTimer();
+}
 
+function endTimer(){
+  console.log("endTimer called");
+  $('#timer').remove();
+}
+
+
+$("#runInstructions").on("click", function() {
+  Timer.startTimer();
+  var instructionsList = instructions.splitIntoSingleMoves();
   (function runInstructions (instructionsList, i) {
     var instruction = instructionsList[i];
     character[instruction]();
@@ -121,8 +134,14 @@ function flipRight(){
   displayChar.setAttribute("class", '');
 }
 
-function collectEmojiSoundEffect(handleAudio) {
-  document.getElementById('audio').play();
+
+function endGameSoundEffect() {
+  try {
+    document.getElementById('end-game-audio').play();
+  }
+  catch(err) {
+    document.getElementById("end-game-audio").innerHTML = err.message;
+  }
 }
 
 function collectEmojiSoundEffect() {
