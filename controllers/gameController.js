@@ -2,8 +2,7 @@
   var map = new Map();
   var shuffle = this.shuffle;
   var startEndTiles = [11,0];
-  var timer = new Timer();
-  
+
   function GameController(){
     this.points = 0;
     this.gameOver = false;
@@ -16,6 +15,14 @@
     this.drawMap();
     displayPoints(this.points);
     showCharacters();
+  };
+
+  GameController.prototype.startTimer = function(){
+    $("#timer").counter({
+      onComplete: function() {
+        gameController.gameOver = true;
+      }
+    });
   };
 
   GameController.prototype.shuffle = function(){
