@@ -2,8 +2,11 @@
   var map = new Map();
   var shuffle = this.shuffle;
 
+  // var shuffle = this.shuffle;
+  var timer = new Timer();
   function GameController(){
     this.points = 0;
+    this.gameOver = false;
   }
 
   GameController.prototype.startGame = function(){
@@ -23,10 +26,9 @@
   };
 
   GameController.prototype.endGame = function () {
-    endGameSoundEffect();
-    setTimeout(function() {
-      displayGameOver();
-    }, 2000);
+    this.gameOver = true;
+    updateDisplayGameOver();
+
   };
 
 
@@ -77,8 +79,7 @@
     }
 
     if(x === 9 && y === 9){
-      console.log('Game over!');
-      this.endGame();
+      this.gameOver = true;
     }
   };
 

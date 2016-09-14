@@ -14,10 +14,10 @@ class ScoreServer < Sinatra::Base
     return scores.to_json unless scores == nil
   end
 
-post '/scores' do
-  puts params
-  Score.create(name: params[:name], level: params[:level], score: params[:score])
-end
+  post '/scores' do
+    puts params
+    Score.create(name: params[:name], level: params[:level], score: params[:score])
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

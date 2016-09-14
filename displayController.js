@@ -5,8 +5,9 @@ var displayChar = document.getElementById('character');
 var container = $('#container');
 var scores = new Scores();
 var modal = $('#modal');
-var timerDisplay = document.getElementById('timer');
+var timerDisplay = $('#timer');
 var timer = new Timer();
+
 
 function displayPoints(points){
   document.getElementById('points-score').innerHTML = points;
@@ -24,9 +25,23 @@ function displayLeaderboard(){
   document.getElementById('leaderboard').innerHTML = scores.list.join(', ');
 }
 
-// scores.save(100);
+function updateDisplayGameOver () {
+  endGameSoundEffect();
+  hideTimer();
+  setTimeout(function() {
+    displayGameOver();
+  }, 2000);
+}
+
 
 $(window).resize(function(){location.reload();});
+
+function hideTimer () {
+  console.log('hideTimer called');
+  console.log(document.getElementById('timer'));
+  timerDisplay.css("display", "none");
+}
+
 
 $("#submit-colour").on("click", function() {
   var colourCommand = $('#enter-colour').val();
@@ -55,18 +70,6 @@ $("#submit-score").on("click", function() {
   scores.save(name, gameController.points, 1);
 });
 
-
-// function displayTimer(){
-//   display = document.querySelector('#timer');
-//   Timer.startTimer();
-// }
-
-
-function endGame(){
-  gameController.endGame();
-}
-
-
 $("#runInstructions").on("click", function() {
   timer.startTimer();
 
@@ -79,7 +82,7 @@ $("#runInstructions").on("click", function() {
     setTimeout(function () {
       moveCharacter(character.position);
       gameController.checkForCollision(character.position);
-      if (i < instructionsList.length) {
+      if (i < instructionsList.length && gameController.gameOver === false) {
         runInstructions(instructionsList, i);
       }
       else {
