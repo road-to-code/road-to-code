@@ -28,14 +28,17 @@ function displayLeaderboard(){
 function updateDisplayGameOver () {
   endGameSoundEffect();
   hideTimer();
+  displayPlayAgain();
   setTimeout(function() {
     displayGameOver();
   }, 2000);
 }
 
+function displayPlayAgain(){
+  $('#play-again').css("display", "block");
+}
+
 function hideTimer () {
-  console.log('hideTimer called');
-  console.log(document.getElementById('timer'));
   timerDisplay.css("display", "none");
 }
 
