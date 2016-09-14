@@ -3,14 +3,13 @@
 
   Timer.prototype.startTimer = function(){
     $("#timer").counter({
-      duration: 20000,
-      countFrom: 20,
+      duration: 10000,
+      countFrom: 10,
       countTo: 0,
       runOnce: true,
-      easing: "easeOutCubic",
       onStart: function() {},
       onComplete: function() {
-        endGame();
+        gameController.gameOver = true;
       },
       numberFormatter:
         function(number) {

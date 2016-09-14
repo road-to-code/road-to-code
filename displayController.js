@@ -15,11 +15,7 @@ function displayPoints(points){
 function displayGameOver() {
     document.getElementById('player-score').innerHTML = gameController.points;
     modal.css("display", "block");
-
-
 }
-
-
 
 scores.retrieve();
 
@@ -27,8 +23,6 @@ function displayLeaderboard(){
   var scoreList = scores.list;
   document.getElementById('leaderboard').innerHTML = scores.list.join(', ');
 }
-
-// scores.save(100);
 
 
 
@@ -47,18 +41,6 @@ $("#submit-score").on("click", function() {
   scores.save(name, gameController.points, 1);
 });
 
-
-// function displayTimer(){
-//   display = document.querySelector('#timer');
-//   Timer.startTimer();
-// }
-
-
-function endGame(){
-  gameController.endGame();
-}
-
-
 $("#runInstructions").on("click", function() {
   timer.startTimer();
 
@@ -71,7 +53,7 @@ $("#runInstructions").on("click", function() {
     setTimeout(function () {
       moveCharacter(character.position);
       gameController.checkForCollision(character.position);
-      if (i < instructionsList.length) {
+      if (i < instructionsList.length && gameController.gameOver === false) {
         runInstructions(instructionsList, i);
       }
       else {

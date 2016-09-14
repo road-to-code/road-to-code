@@ -4,6 +4,7 @@
 
   function GameController(){
     this.points = 0;
+    this.gameOver = false;
   }
 
   GameController.prototype.startGame = function(){
@@ -14,6 +15,7 @@
   };
 
   GameController.prototype.endGame = function () {
+    this.gameOver = true;
     endGameSoundEffect();
     setTimeout(function() {
       displayGameOver();
@@ -58,8 +60,7 @@
     }
 
     if(x === 9 && y === 9){
-      console.log('Game over!');
-      this.endGame();
+      this.gameOver = true;
     }
   };
 
