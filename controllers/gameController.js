@@ -36,26 +36,34 @@
 
   GameController.prototype.drawMap = function(){
     for(var y=0; y < map.array.length; y++){
-      for(var x=0; x < map.array[y].length; x++){
-
-        if(map.array[y][x] === 0){
-          var emptyTile = y.toString() + x.toString();
-          displayEmptyTile(emptyTile);
-        }
-        else if(map.array[y][x] === 11){
-          var gameTile = y.toString() + x.toString();
-          displayGameFunctionTile(gameTile);
-        }
-        else{
-          var currentMapValue = map.array[y][x];
-          var emojiClass = map.emojiList[currentMapValue-1].class;
-          var emoji = map.emojiList[currentMapValue-1][currentMapValue];
-          var emojiTile = y.toString() + x.toString();
-          displayEmoji(emoji, emojiTile, emojiClass);
-        }
-      }
+      this.drawRows(y);
     }
   };
+
+  GameController.prototype.drawRows = function(y){
+    for(var x=0; x < map.array[y].length; x++){
+      this.drawCells(x, y);
+    }
+  };
+
+  GameController.prototype.drawCells = function(x, y){
+    if(map.array[y][x] === 0){
+      var emptyTile = y.toString() + x.toString();
+      displayEmptyTile(emptyTile);
+    }
+    else if(map.array[y][x] === 11){
+      var gameTile = y.toString() + x.toString();
+      displayGameFunctionTile(gameTile);
+    }
+    else{
+      var currentMapValue = map.array[y][x];
+      var emojiClass = map.emojiList[currentMapValue-1].class;
+      var emoji = map.emojiList[currentMapValue-1][currentMapValue];
+      var emojiTile = y.toString() + x.toString();
+      displayEmoji(emoji, emojiTile, emojiClass);
+    }
+  };
+
 
   GameController.prototype.setStartEndTiles = function(){
     map.array[0][0] = startEndTiles[0];
