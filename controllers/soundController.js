@@ -27,7 +27,12 @@ function collectEmojiSoundEffect() {
 }
 
 function poopSoundEffect(){
-  console.log("poop sound");
+  try {
+    document.getElementById('squelch-audio').play();
+  }
+  catch(err) {
+    document.getElementById("squelch-audio").innerHTML = err.message;
+  }
 }
 
 function devilSoundEffect(){
