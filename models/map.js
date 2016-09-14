@@ -1,4 +1,5 @@
 (function(exports){
+  var tilesToClear = [[0,0],[9,9],[2,7],[2,4],[2,6],[4,1]];
 
    function Map(){
     this.array = [
@@ -15,38 +16,18 @@
     ];
 
     this.emojiList = [
-                  { 1: "👑",
-                    "points": 100,
-                    "class": "crown"},
-                  { 2: "💍",
-                    "points": 90,
-                    "class": "diamond"},
-                  { 3: "💛",
-                    "points": 80,
-                    "class": "heart"},
-                  { 4: "💰",
-                    "points": 70,
-                    "class": "money"},
-                  { 5: "🍕",
-                    "points": 60,
-                    "class": "pizza"},
-                  { 6: "🍩",
-                    "points": 50,
-                    "class": "doughnut"},
-                  { 7: "✨",
-                    "points": 40,
-                    "class": "sparkles"},
-                  { 8: "👼",
-                    "points": 30,
-                    "class": "angel"},
-                  { 9: "💩",
-                    "points": -100,
-                    "class": "excrement"},
-                  { 10: "👺",
-                    "points": -100,
-                    "class": "mask"},
-    ];
-  }
+                      { 1: "👑", "points": 100, "class": "crown"},
+                      { 2: "💍", "points": 90, "class": "diamond"},
+                      { 3: "💛", "points": 80, "class": "heart"},
+                      { 4: "💰", "points": 70, "class": "money"},
+                      { 5: "🍕", "points": 60, "class": "pizza"},
+                      { 6: "🍩", "points": 50, "class": "doughnut"},
+                      { 7: "✨", "points": 40, "class": "sparkles"},
+                      { 8: "👼", "points": 30, "class": "angel"},
+                      { 9: "💩", "points": -100, "class": "excrement"},
+                      { 10: "👺", "points": -100, "class": "mask"},
+                      ];
+    }
 
   Map.prototype.size = function(){
     var dimensions = [this.array[0].length, this.array.length];
@@ -75,12 +56,10 @@
   };
 
   Map.prototype.clearTiles = function(){
-    this.array[0][0] = 0;
-    this.array[9][9] = 0;
-    this.array[2][7] = 0;
-    this.array[2][4] = 0;
-    this.array[2][6] = 0;
-    this.array[4][1] = 0;
+    for(var i = 0; i < tilesToClear.length; i++){
+      var currentTile = tilesToClear[i];
+      this.array[[currentTile[0]]][[currentTile[1]]] = 0;
+    }
   };
 
   exports.Map = Map;

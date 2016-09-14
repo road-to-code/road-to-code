@@ -40,9 +40,6 @@
     }
   };
 
-<<<<<<< HEAD
-
-=======
   GameController.prototype.drawRows = function(y){
     for(var x=0; x < map.array[y].length; x++){
       this.drawCells(x, y);
@@ -66,8 +63,6 @@
       displayEmoji(emoji, emojiTile, emojiClass);
     }
   };
->>>>>>> 217401952ae95175ba8493cecb00ad0ceb726a35
-
 
   GameController.prototype.setStartEndTiles = function(){
     map.array[0][0] = startEndTiles[0];
@@ -85,6 +80,21 @@
       this.points += map.emojiList[targetSquare-1].points;
       map.array[x][y] = 0;
       updateDisplayAfterCollectingEmoji(x, y);
+    }
+
+    if(x === 2 && y === 4){
+      poopSoundEffect();
+    }
+    else if(x === 2 && y === 6){
+      poopSoundEffect();
+    }
+    else if(x === 4 && y === 1){
+      poopSoundEffect();
+    }
+
+    if(x === 2 && y === 7){
+      devilSoundEffect();
+      this.gameOver = true;
     }
 
     if(x === 9 && y === 9){
