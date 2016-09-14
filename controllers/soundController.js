@@ -1,30 +1,12 @@
 function endGameSoundEffect() {
   if(gameController.win === true){
-    try {
-      document.getElementById('win-game-audio').play();
-    }
-    catch(err) {
-      document.getElementById("win-game-audio").innerHTML = err.message;
-    }
+    playSoundEffect('win-game-audio');
   }
-  else{
-    try {
-      document.getElementById('lose-game-audio').play();
-    }
-    catch(err) {
-      document.getElementById("lose-game-audio").innerHTML = err.message;
-    }
+  else {
+    playSoundEffect('lose-game-audio');
   }
 }
 
-function collectEmojiSoundEffect() {
-  try {
-    document.getElementById('audio').play();
-  }
-  catch(err) {
-    document.getElementById("audio").innerHTML = err.message;
-  }
-}
 
 function poopSoundEffect(){
   try {
@@ -41,5 +23,15 @@ function devilSoundEffect(){
   }
   catch(err) {
     document.getElementById("evil-laugh-audio").innerHTML = err.message;
+  }
+}
+
+
+function playSoundEffect(element) {
+  try {
+    document.getElementById(element).play();
+  }
+  catch(err) {
+    document.getElementById(element).innerHTML = err.message;
   }
 }

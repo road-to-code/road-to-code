@@ -5,7 +5,7 @@ function displayEmoji(emoji, emojiTile, emojiClass) {
 }
 
 function updateDisplayAfterCollectingEmoji(x, y) {
-  collectEmojiSoundEffect();
+  playSoundEffect('audio');
   updateTile(x, y);
   displayPoints(gameController.points);
 }
