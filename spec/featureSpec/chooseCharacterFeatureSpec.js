@@ -18,16 +18,19 @@ describe('home page', function() {
   });
 
   it('should display a choose character box with four character images', function(){
-    this.browser.assert.attribute('.window', "Suse");
-    this.browser.assert.attribute('.window', "Mike");
-    this.browser.assert.attribute('.window', "Luke");
-    this.browser.assert.attribute('.window', "Dan");
+    this.browser.assert.element("#suse-thumb");
+    this.browser.assert.element("#mike-thumb");
+    this.browser.assert.element("#luke-thumb");
+    this.browser.assert.element("#dan-thumb");
+    this.browser.assert.element("#suse-button");
+    this.browser.assert.element("#mike-button");
+    this.browser.assert.element("#luke-button");
+    this.browser.assert.element("#dan-button");
   });
 
   it('should choose suse as a character', function(){
-    console.log(this.browser.body.innerHTML);
     this.browser.pressButton('#suse-button');
-    this.browser.assert.element('#character'.suse);
+    this.browser.assert.attribute("#character.suse");
   });
 
 });

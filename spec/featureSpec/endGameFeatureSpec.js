@@ -26,21 +26,24 @@ describe('home page', function() {
       this.browser.assert.element("#timer");
     });
 
-    it('should show 10 secs after run button hit', function(){
-      var browser = this.browser;
-      this.browser.fill('#typed-text', "moveRight(2)");
-      this.browser.pressButton('Add Instruction');
-      this.browser.pressButton('Run');
-      this.browser.attribute('#timer'.start);
+    it('should not display before run button hit', function(){
+      this.browser.assert.style("#timer", 'display', "");
     });
 
-    xit('should stop after 10 seconds', function(){
+    it('should hide the timer when game has finished', function(){
       var browser = this.browser;
-      this.browser.fill('#typed-text', "moveRight(2)");
+      this.browser.fill('#typed-text', "moveRight(5)");
+      this.browser.pressButton('Add Instruction');
+      this.browser.fill('#typed-text', "moveDown(5)");
+      this.browser.pressButton('Add Instruction');
+      this.browser.fill('#typed-text', "moveLeft(4)");
       this.browser.pressButton('Add Instruction');
       this.browser.pressButton('Run');
-      this.browser.attribute('#timer'.end);
+      this.browser.wait().then( function() {
+        browser.assert.style("#timer", 'display', "none");
+      });
     });
+
   });
 
 });

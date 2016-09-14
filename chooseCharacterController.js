@@ -1,4 +1,5 @@
 var displayChar = document.getElementById('character');
+var character = $('character');
 function showCharacters(){
 
 var id = '#dialog';
@@ -37,16 +38,15 @@ function chooseCharacter(name, e){
   $('.window').hide();
   if (name === "suse"){
   $('#character').css('backgroundImage', 'url("assets/white-bird.png")');
-  displayChar.setAttribute("class", 'suse');
-  }
+  displayChar.setAttribute("class", 'suse');}
   if (name === "mike"){
-  $('#character').css('backgroundImage', 'url("assets/pink-bird.png")');}
-  displayChar.setAttribute("class", 'mike');
+  $('#character').css('backgroundImage', 'url("assets/pink-bird.png")');
+  displayChar.setAttribute("class", 'mike');}
   if (name === "luke"){
-  $('#character').css('backgroundImage', 'url("assets/blue-bird.png")');}
-  displayChar.setAttribute("class", 'luke');
+  $('#character').css('backgroundImage', 'url("assets/blue-bird.png")');
+  displayChar.setAttribute("class", 'luke');}
   if (name === "dan"){
-  $('#character').css('backgroundImage', 'url("assets/green-bird.png")');}
-  displayChar.setAttribute("class", 'dan');
+  $('#character').css('backgroundImage', 'url("assets/green-bird.png")');
+  displayChar.setAttribute("class", 'dan');}
 
 }

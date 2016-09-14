@@ -22,6 +22,6 @@ describe('home page', function() {
    var browser = this.browser;
    this.browser.fill('#enter-shuffle', "shuffle(emojis)");
    this.browser.pressButton('Shuffle');
-   this.browser.assert.text("#a92", "");
+   this.browser.assert.text("#a49", "");
   });
 });
