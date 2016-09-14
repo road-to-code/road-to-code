@@ -2,9 +2,8 @@
   var map = new Map();
   var shuffle = this.shuffle;
   var startEndTiles = [11,0];
-
-  // var shuffle = this.shuffle;
   var timer = new Timer();
+  
   function GameController(){
     this.points = 0;
     this.gameOver = false;
