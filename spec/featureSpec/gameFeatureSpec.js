@@ -35,8 +35,7 @@ describe('home page', function() {
     this.browser.pressButton('Add Instruction');
     this.browser.pressButton('Run');
     this.browser.wait().then( function() {
-      browser.assert.style('#character.style', "left");
-      console.log(browser.body.innerHTML);
+    browser.assert.style('#character.style', "left");
     });
   });
 
