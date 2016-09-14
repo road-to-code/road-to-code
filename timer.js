@@ -1,25 +1,24 @@
-  var Timer = (function(){
+  (function(exports){
+    function Timer() {}
 
-  var seconds;
-  var endTime;
-  var globalTimer;
+  Timer.prototype.startTimer = function(){
+    $("#timer").counter({
+      duration: 20000,
+      countFrom: 20,
+      countTo: 0,
+      runOnce: true,
+      easing: "easeOutCubic",
+      onStart: function() {},
+      onComplete: function() {
+        endGame();
+      },
+      numberFormatter:
+        function(number) {
+          return number.toFixed(2) + " seconds";
+        }
+    });
+  };
 
-return {
 
-  startTimer: function(){
-    var start = new Date();
-    $("#timer").addClass('timerStarted');
-    globalTimer = setInterval(function() {
-      seconds = ((new Date() - start) / parseFloat(1000)).toFixed(2);
-      $('#timer').html('<i class="fa fa-clock-o" aria-hidden="true"></i>' + seconds);
-    }, 10);
-  },
-
-  endTimer: function(){
-    clearInterval(globalTimer);
-    $('#timer').remove();
-    endTime = seconds;
-  },
-};
-
-})();
+  exports.Timer = Timer;
+})(this);

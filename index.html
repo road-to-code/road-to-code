@@ -4,11 +4,16 @@
 <head>
 <meta charset="UTF-8">
 <title>JavaScript Map</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="assets/counter.min.js" type="text/javascript"></script>
+<script src="assets/counter.js" type="text/javascript"></script>
+<script src="assets/jquery.easing.js" type="text/javascript"></script>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="./map.js"></script>
 <script src="./character.js"></script>
 <script src="./instructions.js"></script>
+<script src="./chooseCharacterController.js"></script>
 <script src="./helpers.js"></script>
 <script src="./timer.js"></script>
 <script src="./gameController.js"></script>
@@ -25,9 +30,24 @@
 <link rel= "stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
+  <div id="boxes">
+    <div id="dialog" class="window">
+      <h1 id="choose-char">Choose your character:<h1>
+      <img id="suse-thumb" class="character-pics" src="assets/white-bird.png">
+      <img id="mike-thumb" class="character-pics" src="assets/pink-bird.png">
+      <img id="luke-thumb" class="character-pics" src="assets/blue-bird.png">
+      <img id="dan-thumb" class="character-pics" src="assets/green-bird.png"><br>
+      <button class="btn-primary" id="suse-button">Suse</button>
+      <button class="btn-warning" id="mike-button">Mike</button>
+      <button class="btn-info" id="luke-button">Luke</button>
+      <button class="btn-success" id="dan-button">Dan</button>
+    </div>
+    <div id="mask"></div>
+  </div>
+
 <div id="header">
   <h1 class="road-to-code">RoadToCode<h1>
-  <div id="timer">.</div>
+  <div id="timer"></div>
 </div>
 
 
@@ -51,6 +71,7 @@
   <button id="addInstructions" type="button" class="btn btn-danger">Add Instruction</button>
   <textarea readonly id="entered-text" class="form-control" name="entered-text" rows="10" cols="50"></textarea>
   <button id="runInstructions" type="button" class="btn btn-danger">Run</button>
+
 </div>
 
 <div id="points-score"></div>

@@ -10,9 +10,11 @@
     // shuffle(map.array);
     this.drawMap();
     displayPoints(this.points);
+    showCharacters();
   };
 
   GameController.prototype.endGame = function () {
+    endGameSoundEffect();
     setTimeout(function() {
       displayGameOver();
     }, 2000);
@@ -56,10 +58,8 @@
     }
 
     if(x === 9 && y === 9){
-      Timer.endTimer();
       console.log('Game over!');
-      endGameSoundEffect();
-      // endGame(); whatever luke and dan have called it
+      this.endGame();
     }
   };
 

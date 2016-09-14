@@ -6,7 +6,7 @@ var container = $('#container');
 var scores = new Scores();
 var modal = $('#modal');
 var timerDisplay = document.getElementById('timer');
-
+var timer = new Timer();
 
 function displayPoints(points){
   document.getElementById('points-score').innerHTML = points;
@@ -40,6 +40,7 @@ $("#addInstructions").on("click", function() {
   updateTextBoxes(updatedList);
 });
 
+
 $("#submit-score").on("click", function() {
   console.log('function called');
   var name = $('#enter-name').val();
@@ -47,19 +48,20 @@ $("#submit-score").on("click", function() {
 });
 
 
-function displayTimer(){
-  display = document.querySelector('#timer');
-  Timer.startTimer();
-}
+// function displayTimer(){
+//   display = document.querySelector('#timer');
+//   Timer.startTimer();
+// }
 
-function endTimer(){
-  console.log("endTimer called");
-  $('#timer').remove();
+
+function endGame(){
+  gameController.endGame();
 }
 
 
 $("#runInstructions").on("click", function() {
-  Timer.startTimer();
+  timer.startTimer();
+
   var instructionsList = instructions.splitIntoSingleMoves();
   (function runInstructions (instructionsList, i) {
     var instruction = instructionsList[i];
