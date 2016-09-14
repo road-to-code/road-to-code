@@ -68,6 +68,10 @@ body {
   background-color: #F1FAEE;
 }
 
+#play-again{
+  display: none;
+}
+
 .road-to-code {
   font-family: helvetica;
   font-size: 60px;

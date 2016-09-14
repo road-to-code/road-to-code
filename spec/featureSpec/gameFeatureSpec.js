@@ -29,11 +29,36 @@ describe('home page', function() {
       });
   });
 
+  it('should display play again button on gameover', function(){
+    this.browser.assert.style('#play-again', "display", "");
+  });
+
+  it("should display play again button on gameover", function(){
+    var browser = this.browser;
+    this.browser.fill('#typed-text', "moveRight(2)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.pressButton('Run');
+      this.browser.wait().then( function() {
+        browser.assert.style('#play-again', "display", "block");
+      });
+  });
+  
+  it('should increase the score as more emojis are picked up', function(){
+    var browser = this.browser;
+    this.browser.fill('#typed-text', "moveRight(5)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.pressButton('Run');
+    this.browser.wait().then( function() {
+      browser.assert.text('#points-score', '240');
+    });
+  });
+
   xit('should move the character 2 spaces down', function(){
     var browser = this.browser;
     this.browser.fill('#typed-text', "moveDown(9)");
     this.browser.pressButton('Add Instruction');
     this.browser.pressButton('Run');
+    console.log(browser.body.innerHTML);
     this.browser.wait().then( function() {
     browser.assert.style('#character.style', "left");
     });
@@ -58,18 +83,7 @@ describe('home page', function() {
       // this.browser.assert.style('#character', 'top', "100px");
     });
   });
-
-  it('should increase the score as more emojis are picked up', function(){
-    var browser = this.browser;
-    this.browser.fill('#typed-text', "moveRight(5)");
-    this.browser.pressButton('Add Instruction');
-    this.browser.pressButton('Run');
-    this.browser.wait().then( function() {
-      browser.assert.text('#points-score', '240');
-    });
-  });
-
-  });
+});
   // it('should turn the path behind a darker green', function(){
   //   this.browser.fill('#typed-text', "moveRight(4)");
   //   this.browser.pressButton('Add Instruction');
