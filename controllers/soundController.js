@@ -36,5 +36,10 @@ function poopSoundEffect(){
 }
 
 function devilSoundEffect(){
-  console.log("devil sound");
+  try {
+    document.getElementById('evil-laugh-audio').play();
+  }
+  catch(err) {
+    document.getElementById("evil-laugh-audio").innerHTML = err.message;
+  }
 }

@@ -68,7 +68,13 @@
       updateDisplayAfterCollectingEmoji(x, y);
     }
 
-    if(x === 2 && y === 4 || x === 2 && y === 6 || x === 4 && y === 1){
+    if(x === 2 && y === 4){
+      poopSoundEffect();
+    }
+    else if(x === 2 && y === 6){
+      poopSoundEffect();
+    }
+    else if(x === 4 && y === 1){
       poopSoundEffect();
     }
 

@@ -38,6 +38,18 @@ describe('home page', function() {
     });
   });
 
+  it('should end the game when it steps on the devil', function(){
+    var browser = this.browser;
+    this.browser.fill('#typed-text', "moveRight(7)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.fill('#typed-text', "moveDown(2)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.pressButton('Run');
+    this.browser.wait().then( function() {
+      browser.assert.style('#modal-loss', 'display', "block");
+    });
+  });
+
   xit('should turn the path behind a darker green', function(){
     var browser = this.browser;
     this.browser.fill('#typed-text', "moveRight(4)");
