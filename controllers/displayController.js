@@ -132,9 +132,7 @@ function drawPath(x, y){
   document.getElementById(idNumber).setAttribute("class", "dirt");
 }
 
-function displayEmptyTile(emptyTile) {
-  container.append('<div id=' + "a" + emptyTile + ' class="grass"></div>');
-}
+
 
 function displayEmoji(emoji, emojiTile, emojiClass) {
   // hardcoded 'a' to make the numerical div id accessible
