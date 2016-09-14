@@ -9,3 +9,10 @@ function displayLeaderboard(arrayOfScores){
   // });
   // document.getElementById('leaderboard').innerHTML = arrayOfScores.join(', ');
 }
+
+function prepareLeaderboard (scoresData){
+  var sortedScores = scoresData.sort(function(a, b) {
+    return parseInt(b.score) - parseInt(a.score);
+  });
+  displayLeaderboard(sortedScores);
+}

@@ -27,7 +27,12 @@
 <audio style="visibility: hidden" controls="controls" id="lose-game-audio">
   <source src="assets/sad_trombone.mp3" type="audio/mp3" />
 </audio>
-
+<audio style="visibility: hidden" controls="controls" id="squish-audio">
+  <source src="assets/squish.mp3" type="audio/mp3" />
+</audio>
+<audio style="visibility: hidden" controls="controls" id="evil-laugh-audio">
+  <source src="assets/evil_laugh.mp3" type="audio/mp3" />
+</audio>
 <link rel= "stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
@@ -69,7 +74,6 @@
   <button id="addInstructions" type="button" class="btn btn-danger">Add Instruction</button>
   <textarea readonly id="entered-text" class="form-control" name="entered-text" rows="10" cols="50"></textarea>
   <button id="runInstructions" type="button" class="btn btn-danger">Run</button>
-  <button id="play-again" type="button" onclick="window.location.reload();" class="btn btn-danger">Play Again</button>
 
   <div id="shuffle-emojis-box">
     <h3>Want to mix up the emojis?</h3>
@@ -101,12 +105,14 @@
     <h2>Enter your name to save your score!</h2>
     <textarea id="enter-name" class="form-control" rows="1" cols="50" type="text"></textarea>
     <button id="submit-score" type="button" class="btn btn-danger">Submit</button>
+    <button id="play-again" type="button" onclick="window.location.reload();" class="btn btn-danger">Play Again</button>
   </div>
 </div>
 
 <div id="modal-loss">
   <div id="score-form" class="modal-content">
     <h2>You lose!<h2>
+    <button id="play-again" type="button" onclick="window.location.reload();" class="btn btn-danger">Play Again</button>
   </div>
 </div>
 <script src="./controllers/leaderBoardController.js"></script>
