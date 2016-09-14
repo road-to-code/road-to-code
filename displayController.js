@@ -18,7 +18,12 @@ $("#addInstructions").on("click", function() {
   updateTextBoxes(updatedList);
 });
 
+function endGame(){
+  window.alert("Game Over");
+}
+
 $("#runInstructions").on("click", function() {
+  timer.startTimer();
   var instructionsList = instructions.splitIntoSingleMoves();
   (function runInstructions (instructionsList, i) {
     var instruction = instructionsList[i];
