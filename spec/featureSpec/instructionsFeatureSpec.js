@@ -31,5 +31,13 @@ describe('home page', function() {
     this.browser.assert.text("#entered-text", "moveRight");
   });
 
+  it('should not add an empty instruction', function(){
+    var browser = this.browser;
+    this.browser.fill('#typed-text', "");
+    this.browser.pressButton('Add Instruction');
+    this.browser.wait().then( function() {
+      browser.assert.text('div.alert', 'You must enter an instruction');
+    });
+  });
 
 });
