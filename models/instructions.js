@@ -3,6 +3,9 @@
   function Instructions () {
     this.list = [];
     this.typed = "";
+    this.function = "";
+    this.number = 0;
+    this.processedList = [];
   }
 
   Instructions.prototype.append = function(typedText) {
@@ -11,15 +14,24 @@
   };
 
   Instructions.prototype.splitIntoSingleMoves = function() {
-    var processedList = [];
+    var self = this;
     this.list.forEach(function(instruction){
-      var func = instruction.match(/[a-zA-Z]/g).join('');
-      var number = parseInt(instruction.match(/[0-9]+/)[0]);
-      for (var i = 0; i < number; i++){
-        processedList.push(func);
-      }
+      self.parseInstruction(instruction);
+      self.storeFunction();
     });
-    return processedList;
+    return this.processedList;
+  };
+
+  Instructions.prototype.parseInstruction = function (instruction) {
+    this.function = instruction.match(/[a-zA-Z]/g).join('');
+    this.number = parseInt(instruction.match(/[0-9]+/)[0]);
+  };
+
+  Instructions.prototype.storeFunction = function(){
+    var self = this;
+    for (var i = 0; i < this.number; i++){
+      self.processedList.push(self.function);
+    }
   };
 
   exports.Instructions = Instructions;
