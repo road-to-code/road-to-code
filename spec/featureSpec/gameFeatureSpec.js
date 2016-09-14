@@ -27,8 +27,7 @@ describe('home page', function() {
         browser.assert.text("#a02", "");
       });
   });
-
-  it('should increase the score as more emojis are picked up', function(){
+    
   describe('home page', function() {
     it('should display play again button on gameover', function(){
       this.browser.assert.style('#play-again', "display", "");
