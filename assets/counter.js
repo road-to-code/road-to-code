@@ -22,7 +22,6 @@ https://github.com/tombruijn/counter.js/LICENSE
       countTo: void 0,
       runOnce: false,
       placeholder: void 0,
-      easing: "easeOutQuad",
       onStart: function() {},
       onComplete: function() {},
       numberFormatter: function(number) {
@@ -79,7 +78,6 @@ https://github.com/tombruijn/counter.js/LICENSE
           count: this.options.countTo
         }, {
           duration: this.options.duration,
-          easing: this.options.easing,
           step: function() {
             return self.setNumber(this.count);
           },
