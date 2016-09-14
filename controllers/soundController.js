@@ -1,10 +1,5 @@
 function endGameSoundEffect() {
-  if(gameController.win === true){
-    playSoundEffect('win-game-audio');
-  }
-  else {
-    playSoundEffect('lose-game-audio');
-  }
+  playSoundEffect((gameController.win === true) ? ('win-game-audio') : ('lose-game-audio'));
 }
 
 function playSoundEffect(element) {
