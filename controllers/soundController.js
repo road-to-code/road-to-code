@@ -25,3 +25,11 @@ function collectEmojiSoundEffect() {
     document.getElementById("audio").innerHTML = err.message;
   }
 }
+
+function poopSoundEffect(){
+  console.log("poop sound");
+}
+
+function devilSoundEffect(){
+  console.log("devil sound");
+}

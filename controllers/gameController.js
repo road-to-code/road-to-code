@@ -56,9 +56,6 @@
     }
   };
 
-
-
-
   GameController.prototype.checkForCollision = function(characterNewPos){
     var x = characterNewPos[1];
     var y = characterNewPos[0];
@@ -69,6 +66,15 @@
       this.points += map.emojiList[targetSquare-1].points;
       map.array[x][y] = 0;
       updateDisplayAfterCollectingEmoji(x, y);
+    }
+
+    if(x === 2 && y === 4 || x === 2 && y === 6 || x === 4 && y === 1){
+      poopSoundEffect();
+    }
+
+    if(x === 2 && y === 7){
+      devilSoundEffect();
+      this.gameOver = true;
     }
 
     if(x === 9 && y === 9){
