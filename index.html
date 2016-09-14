@@ -75,27 +75,34 @@
     <code>shuffle(emojis)</code>
     <textarea id="enter-shuffle" rows="1" cols="50"></textarea>
     <button id="submit-shuffle" type="button" class="btn btn-danger">Shuffle</button>
-  <div>
+  </div>
   <div id="set-background-colour-box">
     <h3>Bored of the Background Colour?</h3>
     <p>Change the colour by entering the following command and the colour of your choice:</p>
     <code>changeBackgroundColour(red)</code>
     <textarea id="enter-colour" rows="1" cols="50"></textarea>
     <button id="submit-colour" type="button" class="btn btn-danger">Submit</button>
-  <div>
+  </div>
 </div>
 
 <div id="points-score"></div>
 
 <div id="leaderboard"></div>
 
-<div id="modal">
+<div id="modal-win">
   <div id="score-form" class="modal-content">
     <div id="player-score"></div>
     <h2>Enter your name to save your score!</h2>
     <textarea id="enter-name" class="form-control" rows="1" cols="50" type="text"></textarea>
     <button id="submit-score" type="button" class="btn btn-danger">Submit</button>
   </div>
+</div>
+
+<div id="modal-loss">
+  <div id="score-form" class="modal-content">
+    <h2>You lose!<h2>
+  </div>
+</div>
 
 <script src="./displayController.js"></script>
 <script src="./app.js"></script>

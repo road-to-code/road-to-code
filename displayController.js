@@ -4,7 +4,8 @@ var gameController = new GameController();
 var displayChar = document.getElementById('character');
 var container = $('#container');
 var scores = new Scores();
-var modal = $('#modal');
+var modalWin = $('#modal-win');
+var modalLoss = $('#modal-loss');
 var timerDisplay = $('#timer');
 var timer = new Timer();
 
@@ -15,7 +16,14 @@ function displayPoints(points){
 
 function displayGameOver() {
   document.getElementById('player-score').innerHTML = gameController.points;
-  modal.css("display", "block");
+  if(gameController.win === true){
+    console.log("game win");
+    modalWin.css("display", "block");
+  }
+  else{
+    console.log("game loss");
+    modalLoss.css("display", "block");
+  }
 }
 
 scores.retrieve();
@@ -89,6 +97,7 @@ $("#runInstructions").on("click", function() {
       }
       else {
         gameController.endGame();
+        gameController.loss = true;
       }
     }, 300);
   })(instructionsList, 0);
