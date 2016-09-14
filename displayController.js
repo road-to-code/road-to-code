@@ -2,9 +2,11 @@ var instructions = new Instructions();
 var character = new Character();
 var gameController = new GameController();
 var displayChar = document.getElementById('character');
+var leaderboard = $('leaderboard-list');
 var container = $('#container');
 var scores = new Scores();
-var modal = $('#modal');
+var modalWin = $('#modal-win');
+var modalLoss = $('#modal-loss');
 var timerDisplay = $('#timer');
 var timer = new Timer();
 
@@ -15,24 +17,41 @@ function displayPoints(points){
 
 function displayGameOver() {
   document.getElementById('player-score').innerHTML = gameController.points;
-  modal.css("display", "block");
+  if(gameController.win === true){
+    console.log("game win");
+    modalWin.css("display", "block");
+  }
+  else{
+    console.log("game loss");
+    modalLoss.css("display", "block");
+  }
 }
 
 scores.retrieve();
 
-function displayLeaderboard(){
-  var scoreList = scores.list;
-  document.getElementById('leaderboard').innerHTML = scores.list.join(', ');
+function displayLeaderboard(arrayOfScores){
+  for(var i = 0; i < arrayOfScores.length; i++){
+    leaderboardList.append('<li>' + arrayOfScores[i].name + '</li>');
+  }
+  // arrayOfScores.forEach(function(item) {
+  //   console.log(item.name, item.score, item.level);
+  //   leaderboard.append('<li>' + item.name + '</li>');
+  // });
+  // document.getElementById('leaderboard').innerHTML = arrayOfScores.join(', ');
 }
 
 function updateDisplayGameOver () {
   endGameSoundEffect();
   hideTimer();
+  displayPlayAgain();
   setTimeout(function() {
     displayGameOver();
   }, 2000);
 }
 
+function displayPlayAgain(){
+  $('#play-again').css("display", "block");
+}
 
 $(window).resize(function(){location.reload();});
 
@@ -84,6 +103,7 @@ $("#runInstructions").on("click", function() {
       }
       else {
         gameController.endGame();
+        gameController.loss = true;
       }
     }, 300);
   })(instructionsList, 0);

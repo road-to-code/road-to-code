@@ -7,6 +7,8 @@
   function GameController(){
     this.points = 0;
     this.gameOver = false;
+    this.win = '';
+    this.loss = '';
   }
 
   GameController.prototype.startGame = function(){
@@ -28,7 +30,6 @@
   GameController.prototype.endGame = function () {
     this.gameOver = true;
     updateDisplayGameOver();
-
   };
 
 
@@ -80,6 +81,7 @@
 
     if(x === 9 && y === 9){
       this.gameOver = true;
+      this.win = true;
     }
   };
 

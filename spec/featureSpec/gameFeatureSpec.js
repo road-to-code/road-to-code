@@ -29,6 +29,23 @@ describe('home page', function() {
   });
 
   it('should increase the score as more emojis are picked up', function(){
+  describe('home page', function() {
+    it('should display play again button on gameover', function(){
+      this.browser.assert.style('#play-again', "display", "");
+    });
+
+    it("should display play again button on gameover", function(){
+      var browser = this.browser;
+      this.browser.fill('#typed-text', "moveRight(2)");
+      this.browser.pressButton('Add Instruction');
+      this.browser.pressButton('Run');
+        this.browser.wait().then( function() {
+          browser.assert.style('#play-again', "display", "block");
+        });
+    });
+  });
+
+  it('should increase the score as more emojis are picked up', function(){
     var browser = this.browser;
     this.browser.fill('#typed-text', "moveRight(5)");
     this.browser.pressButton('Add Instruction');

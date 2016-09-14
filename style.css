@@ -68,6 +68,10 @@ body {
   background-color: #F1FAEE;
 }
 
+#play-again{
+  display: none;
+}
+
 .road-to-code {
   font-family: helvetica;
   font-size: 60px;
@@ -102,7 +106,20 @@ body {
   background: #C9DDFF;
 }
 
-#modal {
+#modal-win {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 350px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#modal-loss {
   display: none;
   position: fixed;
   z-index: 1;
