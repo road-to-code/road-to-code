@@ -1,9 +1,19 @@
 function endGameSoundEffect() {
-  try {
-    document.getElementById('end-game-audio').play();
+  if(gameController.win === true){
+    try {
+      document.getElementById('win-game-audio').play();
+    }
+    catch(err) {
+      document.getElementById("win-game-audio").innerHTML = err.message;
+    }
   }
-  catch(err) {
-    document.getElementById("end-game-audio").innerHTML = err.message;
+  else{
+    try {
+      document.getElementById('lose-game-audio').play();
+    }
+    catch(err) {
+      document.getElementById("lose-game-audio").innerHTML = err.message;
+    }
   }
 }
 
