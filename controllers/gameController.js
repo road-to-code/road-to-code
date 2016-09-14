@@ -3,7 +3,7 @@
   var shuffle = this.shuffle;
   var startEndTiles = [11,0];
   var timer = new Timer();
-  
+
   function GameController(){
     this.points = 0;
     this.gameOver = false;
@@ -82,17 +82,17 @@
     }
 
     if(x === 2 && y === 4){
-      poopSoundEffect();
+      playSoundEffect('squished-audio');
     }
     else if(x === 2 && y === 6){
-      poopSoundEffect();
+      playSoundEffect('squished-audio');
     }
     else if(x === 4 && y === 1){
-      poopSoundEffect();
+      playSoundEffect('squished-audio');
     }
 
     if(x === 2 && y === 7){
-      devilSoundEffect();
+      playSoundEffect('evil-laugh-audio');
       this.gameOver = true;
     }
 
