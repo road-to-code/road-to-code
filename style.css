@@ -40,7 +40,6 @@ body {
     position: absolute;
     height: 4.8vw;
     width: 4.8vw;
-    /*background-image: url("assets/pink-bird.png");*/
     z-index: 1;
     background-size: contain;
     background-repeat: no-repeat;
