@@ -21,13 +21,26 @@
   httprequest.onreadystatechange = function() {
     if (httprequest.readyState == 4 && httprequest.status == 200) {
     // scores.list.push(JSON.parse(httprequest.responseText));
-    scores.list.push(JSON.stringify(httprequest.responseText));
-    displayLeaderboard(scores.list);
+    parsed = JSON.parse(httprequest.responseText);
+    scores.sortByPoints(httprequest.responseText);
+    scores.list.push(JSON.parse(httprequest.responseText));
+    // displayLeaderboard(scores.list);
     }
   };
     httprequest.open("GET", "http://localhost:9292/scores");
     httprequest.send();
     return this.list;
+};
+
+Scores.prototype.sortByPoints = function(json) {
+  formattedScores = JSON.parse(json);
+  sorted = formattedScores.sort(function(a, b) {
+    return parseInt(b.score) - parseInt(a.score);
+  });
+  displayLeaderboard(sorted);
+  // sorted.forEach(function(item) {
+  //   console.log(item);
+  // });
 };
 
   exports.Scores = Scores;
