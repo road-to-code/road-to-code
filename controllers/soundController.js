@@ -28,10 +28,10 @@ function collectEmojiSoundEffect() {
 
 function poopSoundEffect(){
   try {
-    document.getElementById('squelch-audio').play();
+    document.getElementById('squished-audio').play();
   }
   catch(err) {
-    document.getElementById("squelch-audio").innerHTML = err.message;
+    document.getElementById("squished-audio").innerHTML = err.message;
   }
 }
 

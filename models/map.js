@@ -1,4 +1,5 @@
 (function(exports){
+  var tilesToClear = [[0,0],[9,9],[2,7],[2,4],[2,6],[4,1]];
 
    function Map(){
     this.array = [
