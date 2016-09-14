@@ -131,9 +131,9 @@ body {
 }
 
 #timer{
+  display: block;
   float: right;
   margin-top: -80px;
-  display: block;
 }
 
 #boxes .window {

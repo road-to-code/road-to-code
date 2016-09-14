@@ -18,6 +18,5 @@
     });
   };
 
-
   exports.Timer = Timer;
 })(this);

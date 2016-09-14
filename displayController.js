@@ -5,8 +5,9 @@ var displayChar = document.getElementById('character');
 var container = $('#container');
 var scores = new Scores();
 var modal = $('#modal');
-var timerDisplay = document.getElementById('timer');
+var timerDisplay = $('#timer');
 var timer = new Timer();
+
 
 function displayPoints(points){
   document.getElementById('points-score').innerHTML = points;
@@ -24,6 +25,19 @@ function displayLeaderboard(){
   document.getElementById('leaderboard').innerHTML = scores.list.join(', ');
 }
 
+function updateDisplayGameOver () {
+  endGameSoundEffect();
+  hideTimer();
+  setTimeout(function() {
+    displayGameOver();
+  }, 2000);
+}
+
+function hideTimer () {
+  console.log('hideTimer called');
+  console.log(document.getElementById('timer'));
+  timerDisplay.css("display", "none");
+}
 
 
 $(window).resize(function(){location.reload();});

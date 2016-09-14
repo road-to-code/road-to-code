@@ -1,6 +1,8 @@
 (function(exports){
   var map = new Map();
   // var shuffle = this.shuffle;
+  var timer = new Timer();
+
 
   function GameController(){
     this.points = 0;
@@ -16,10 +18,8 @@
 
   GameController.prototype.endGame = function () {
     this.gameOver = true;
-    endGameSoundEffect();
-    setTimeout(function() {
-      displayGameOver();
-    }, 2000);
+    updateDisplayGameOver();
+
   };
 
 
