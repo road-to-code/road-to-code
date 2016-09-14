@@ -13,6 +13,7 @@ $("#submit-shuffle").on("click", function() {
 });
 
 $("#addInstructions").on("click", function() {
+  validateInstructions();
   var newInstruction = $('#typed-text').val();
   var updatedList = instructions.append(newInstruction);
   updateTextBoxes(updatedList);
@@ -21,4 +22,19 @@ $("#addInstructions").on("click", function() {
 function updateTextBoxes(updatedList) {
   document.getElementById('typed-text').value = "";
   $('#entered-text').html(updatedList);
+}
+
+function validateInstructions() {
+    var text = $('#typed-text').val();
+    if (text === null || text === "") {
+      displayValidationError();
+        return false;
+    }
+}
+
+function displayValidationError(){
+  $('div.alert').css("display", "block");
+  setTimeout(function(){
+    $('div.alert').css("display", "none");
+  }, 3000);
 }
