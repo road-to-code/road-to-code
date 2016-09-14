@@ -60,8 +60,7 @@ describe('home page', function() {
     this.browser.pressButton('Run');
     console.log(browser.body.innerHTML);
     this.browser.wait().then( function() {
-      browser.assert.style('#character.style', "left");
-      console.log(browser.body.innerHTML);
+    browser.assert.style('#character.style', "left");
     });
   });
 

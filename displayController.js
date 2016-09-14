@@ -14,8 +14,8 @@ function displayPoints(points){
 }
 
 function displayGameOver() {
-    document.getElementById('player-score').innerHTML = gameController.points;
-    modal.css("display", "block");
+  document.getElementById('player-score').innerHTML = gameController.points;
+  modal.css("display", "block");
 }
 
 scores.retrieve();
@@ -38,12 +38,26 @@ function displayPlayAgain(){
   $('#play-again').css("display", "block");
 }
 
+$(window).resize(function(){location.reload();});
+
 function hideTimer () {
   timerDisplay.css("display", "none");
 }
 
 
-$(window).resize(function(){location.reload();});
+$("#submit-colour").on("click", function() {
+  var colourCommand = $('#enter-colour').val();
+  var colour = colourCommand.slice(23, -1);
+  $('.grass').css('backgroundColor', colour);
+});
+
+$("#submit-shuffle").on("click", function() {
+  var shuffle = $('#enter-shuffle').val();
+  if (shuffle === "shuffle(emojis)"){
+    console.log("shuffle entered");
+    gameController.shuffle();
+  }
+});
 
 $("#addInstructions").on("click", function() {
   var newInstruction = $('#typed-text').val();

@@ -1,19 +1,28 @@
 (function(exports){
   var map = new Map();
+  var shuffle = this.shuffle;
+
   // var shuffle = this.shuffle;
   var timer = new Timer();
-
-
   function GameController(){
     this.points = 0;
     this.gameOver = false;
   }
 
   GameController.prototype.startGame = function(){
-    // shuffle(map.array);
+    this.setStartEndTiles();
     this.drawMap();
     displayPoints(this.points);
     showCharacters();
+  };
+
+  GameController.prototype.shuffle = function(){
+    this.clearStartEndTiles();
+    shuffle(map.array);
+    $(".grass").remove();
+    $(".start-end-tile").remove();
+    this.setStartEndTiles();
+    this.drawMap();
   };
 
   GameController.prototype.endGame = function () {
@@ -44,6 +53,16 @@
         }
       }
     }
+  };
+
+  GameController.prototype.setStartEndTiles = function(){
+    map.array[0][0] = 11;
+    map.array[9][9] = 11;
+  };
+
+  GameController.prototype.clearStartEndTiles = function(){
+    map.array[0][0] = 0;
+    map.array[9][9] = 0;
   };
 
 
