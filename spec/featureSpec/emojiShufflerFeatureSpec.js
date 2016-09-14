@@ -18,10 +18,10 @@ describe('home page', function() {
   this.browser.assert.element('#submit-shuffle');
  });
 
- it('should change the background colour when submit clicked', function(){
+ it('should shuffle the emojis when shuffle clicked', function(){
    var browser = this.browser;
-   this.browser.fill('#enter-colour', "shuffle(emojis)");
+   this.browser.fill('#enter-shuffle', "shuffle(emojis)");
    this.browser.pressButton('Shuffle');
-
- });
- }
+   this.browser.assert.text("#a92", "");
+  });
+});

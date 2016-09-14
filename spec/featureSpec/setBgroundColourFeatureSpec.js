@@ -14,7 +14,7 @@ describe('home page', function() {
  });
 
  it('should have input elements', function(){
-  this.browser.assert.element('#enter-color');
+  this.browser.assert.element('#enter-colour');
   this.browser.assert.element('#submit-colour');
  });
 
@@ -22,7 +22,7 @@ describe('home page', function() {
    var browser = this.browser;
    this.browser.fill('#enter-colour', "changeBackgroundColour(blue)");
    this.browser.pressButton('Submit');
-   browser.assert.style('#a90.style', "background-color");
+   browser.assert.style('#a90', "background-color", 'blue');
  });
 
  });
