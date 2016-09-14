@@ -44,4 +44,14 @@ describe('modal', function() {
     });
  });
 
+ it('should have a play again button', function(){
+   var browser = this.browser;
+   this.browser.fill('#typed-text', "moveRight(2)");
+   this.browser.pressButton('Add Instruction');
+   this.browser.pressButton('Run');
+     this.browser.wait().then( function() {
+       browser.assert.elements("#play-again", 2);
+     });
+ });
+
 });

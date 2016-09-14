@@ -1,12 +1,10 @@
 function updateDisplayGameOver () {
   endGameSoundEffect();
   hideTimer();
-  displayPlayAgain();
   setTimeout(function() {
     displayGameOver();
   }, 2000);
 }
-
 
 $("#submit-score").on("click", function() {
   console.log('function called');
@@ -14,14 +12,9 @@ $("#submit-score").on("click", function() {
   scores.save(name, gameController.points, 1);
 });
 
-function displayPlayAgain(){
-  $('#play-again').css("display", "block");
-}
-
 function hideTimer () {
   timerDisplay.css("display", "none");
 }
-
 
 function displayGameOver() {
   document.getElementById('player-score').innerHTML = gameController.points;
