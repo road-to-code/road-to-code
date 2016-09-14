@@ -37,8 +37,6 @@ function updateDisplayGameOver () {
 $(window).resize(function(){location.reload();});
 
 function hideTimer () {
-  console.log('hideTimer called');
-  console.log(document.getElementById('timer'));
   timerDisplay.css("display", "none");
 }
 
@@ -52,7 +50,6 @@ $("#submit-colour").on("click", function() {
 $("#submit-shuffle").on("click", function() {
   var shuffle = $('#enter-shuffle').val();
   if (shuffle === "shuffle(emojis)"){
-    console.log("shuffle entered");
     gameController.shuffle();
   }
 });
