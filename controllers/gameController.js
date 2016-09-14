@@ -71,7 +71,7 @@
     var x = characterNewPos[1];
     var y = characterNewPos[0];
     var targetSquare = map.array[x][y];
-    drawPath(x, y);
+    drawCharacterTrail(x, y);
 
     if(map.emojiList[targetSquare-1]){
       this.points += map.emojiList[targetSquare-1].points;
