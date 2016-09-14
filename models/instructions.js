@@ -22,7 +22,7 @@
   Instructions.prototype.parseInstruction = function (instruction) {
     var move = instruction.match(/[a-zA-Z]/g).join('');
     var number = parseInt(instruction.match(/[0-9]+/)[0]);
-    storeFunction(move, number);
+    this.storeFunction(move, number);
   };
 
   Instructions.prototype.storeFunction = function(move, number){
