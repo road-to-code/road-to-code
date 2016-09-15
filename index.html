@@ -52,9 +52,15 @@
   <h1 class="road-to-code">RoadToCode<h1>
   <div id="timer"></div>
   <button id="leaderboard-button" class="btn btn-danger">Show leaderboard</button>
+  <button id="play-again" type="button" onclick="window.location.reload();" class="btn btn-danger">Play Again</button>
 </div>
 
-<div id="leaderboard-modal"></div>
+<div id="leaderboard-modal">
+  <button id="close-leaderboard-button" class="btn btn-danger">Close</button>
+  <button id="play-again" type="button" onclick="window.location.reload();" class="btn btn-danger">Play Again</button>
+  <h1 id="high-scores-text">High Scores</h1>
+  <ol id="leaderboard-list"></ol>
+</div>
 
 <div id="container">
   <div id="character" class="piggy"></div>
@@ -97,16 +103,13 @@
 
 <div id="points-score"></div>
 
-<div id="leaderboard">
-  <ol id="leaderboard-list"></ol>
-</div>
-
 <div id="modal-win">
   <div id="score-form" class="modal-content">
     <div id="player-score"></div>
-    <h2>Enter your name to save your score!</h2>
+    <h2 id="enter-name-instructions">Enter your name to save your score!</h2>
     <textarea id="enter-name" class="form-control" rows="1" cols="50" type="text"></textarea>
     <button id="submit-score" type="button" class="btn btn-danger">Submit</button>
+    <button id="show-leaderboard-button" class="btn btn-danger">Leaderboard</button>
     <button id="play-again" type="button" onclick="window.location.reload();" class="btn btn-danger">Play Again</button>
   </div>
 </div>

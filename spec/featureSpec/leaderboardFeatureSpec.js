@@ -28,7 +28,69 @@ describe('home page', function() {
     this.browser.wait().then( function() {
      browser.assert.style("#leaderboard-modal", "display", "block");
     });
+  });
 
+  it('leaderboard closes when close button clicked', function(){
+    var browser = this.browser;
+    this.browser.pressButton('Show leaderboard');
+    browser.pressButton('Close');
+    this.browser.wait().then( function() {
+     browser.assert.style("#leaderboard-modal", "display", "none");
+    });
+  });
+
+  it('leaderboard should show player names and scores', function(){
+    var browser = this.browser;
+    this.browser.pressButton('Show leaderboard');
+    this.browser.wait().then( function() {
+      browser.assert.text("#high-scores-text", "High Scores");
+      browser.assert.text("#leaderboard-modal", "suse");
+      browser.assert.text("#leaderboard-modal", "330");
+    });
+  });
+
+  it('should show a leaderboard button after save score', function(){
+    var browser = this.browser;
+    this.browser.fill('#typed-text', "moveRight(9)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.fill('#typed-text', "moveDown(9)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.pressButton('Run');
+     this.browser.wait().then( function() {
+       var broswer = this.browser;
+       browser.wait().then( function(){
+         browser.assert.style("#modal-win", "display", "block");
+         browser.fill('#enter-name', "suse");
+         browser.pressButton('Submit');
+         browser.wait().then( function() {
+           var broswer = this.browser;
+           browser.assert.element("#show-leaderboard-button");
+         });
+       });
+     });
+  });
+
+  it('should display the leaderboard after submitting score', function(){
+    var browser = this.browser;
+    this.browser.fill('#typed-text', "moveRight(9)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.fill('#typed-text', "moveDown(9)");
+    this.browser.pressButton('Add Instruction');
+    this.browser.pressButton('Run');
+     this.browser.wait().then( function() {
+       var broswer = this.browser;
+       browser.wait().then( function(){
+         browser.assert.style("#modal-win", "display", "block");
+         browser.fill('#enter-name', "suse");
+         browser.pressButton('Submit');
+         browser.wait().then( function() {
+           var broswer = this.browser;
+           browser.assert.element("#show-leaderboard-button");
+           browser.pressButton('Leaderboard');
+           browser.assert.style("#leaderboard-modal", "display", "block");
+         });
+       });
+     });
   });
 
 });

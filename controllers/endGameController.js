@@ -7,9 +7,9 @@ function updateDisplayGameOver () {
 }
 
 $("#submit-score").on("click", function() {
-  console.log('function called');
   var name = $('#enter-name').val();
   scores.save(name, gameController.points, 1);
+  displayModalLeaderboardButton();
 });
 
 function hideTimer () {

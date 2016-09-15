@@ -28,7 +28,7 @@ describe('modal', function() {
      });
  });
 
- it('should display modal-win if game lost', function(){
+ it('should display modal-win if game win', function(){
    var browser = this.browser;
    this.browser.fill('#typed-text', "moveRight(9)");
    this.browser.pressButton('Add Instruction');

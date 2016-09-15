@@ -19,3 +19,22 @@ function prepareLeaderboard (scoresData){
 $("#leaderboard-button").on("click", function() {
   $('#leaderboard-modal').css("display", "block");
 });
+
+$("#close-leaderboard-button").on("click", function() {
+  $('#leaderboard-modal').css("display", "none");
+});
+
+function displayModalLeaderboardButton(){
+  $('#player-score').css("display", "none");
+  $('#enter-name-instructions').css("display", "none");
+  $('#enter-name').css("display", "none");
+  $('#submit-score').css("display", "none");
+  $('#show-leaderboard-button').css("display", "block");
+}
+
+$("#show-leaderboard-button").on("click", function() {
+  $(window).resize(function(){location.reload();});
+  $('.window').css("display", "none");
+  $('#modal-win').css("display", "none");
+  $('#leaderboard-modal').css("display", "block");
+});
