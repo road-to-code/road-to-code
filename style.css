@@ -232,3 +232,7 @@ body {
   margin-top: 3%;
   margin-left: 15%;
 }
+
+#leaderboard-modal{
+  display: none;
+}

@@ -6,7 +6,6 @@
 
   Scores.prototype.save = function(name, score, level){
     var request = new XMLHttpRequest();
-    name = JSON.stringify(name);
     score = JSON.stringify(score);
     level = JSON.stringify(level);
     request.open("POST", this.scoreServerUrl + "?name=" + name +

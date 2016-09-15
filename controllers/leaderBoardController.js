@@ -1,13 +1,12 @@
-
 function displayLeaderboard(arrayOfScores){
-  // for(var i = 0; i < arrayOfScores.length; i++){
-  //   leaderboardList.append('<li>' + arrayOfScores[i].name + '</li>');
-  // }
-  // arrayOfScores.forEach(function(item) {
-  //   console.log(item.name, item.score, item.level);
-  //   leaderboard.append('<li>' + item.name + '</li>');
-  // });
-  // document.getElementById('leaderboard').innerHTML = arrayOfScores.join(', ');
+  for(var i = 0; i < arrayOfScores.length; i++){
+    var listItem = '<l>';
+    listItem += arrayOfScores[i].name + ": ";
+    console.log(arrayOfScores[i].name);
+    listItem += arrayOfScores[i].score;
+    listItem += '</l><br>';
+    $('#leaderboard-list').append(listItem);
+  }
 }
 
 function prepareLeaderboard (scoresData){
@@ -16,3 +15,7 @@ function prepareLeaderboard (scoresData){
   });
   displayLeaderboard(sortedScores);
 }
+
+$("#leaderboard-button").on("click", function() {
+  $('#leaderboard-modal').css("display", "block");
+});
