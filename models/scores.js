@@ -4,11 +4,15 @@
     this.scoreServerUrl = "http://localhost:9292/scores";
   }
 
-  Scores.prototype.save = function(name, score, level){
-    var request = new XMLHttpRequest();
+  Scores.prototype.convertParams = function(name, score, level){
     name = JSON.stringify(name);
     score = JSON.stringify(score);
     level = JSON.stringify(level);
+    this.save(name, score, level);
+  };
+
+  Scores.prototype.save = function(name, score, level){
+    var request = new XMLHttpRequest();
     request.open("POST", this.scoreServerUrl + "?name=" + name +
     "&score=" + score + "&level=" + level);
     request.send();
