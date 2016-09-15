@@ -32,11 +32,11 @@ describe('home page', function() {
 
     it('should hide the timer when game has finished', function(){
       var browser = this.browser;
-      this.browser.fill('#typed-text', "moveRight(5)");
+      this.browser.fill('#typed-text', "moveRight(5);");
       this.browser.pressButton('Add Instruction');
-      this.browser.fill('#typed-text', "moveDown(5)");
+      this.browser.fill('#typed-text', "moveDown(5);");
       this.browser.pressButton('Add Instruction');
-      this.browser.fill('#typed-text', "moveLeft(4)");
+      this.browser.fill('#typed-text', "moveLeft(4);");
       this.browser.pressButton('Add Instruction');
       this.browser.pressButton('Run');
       this.browser.wait().then( function() {

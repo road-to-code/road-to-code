@@ -20,7 +20,7 @@ describe('home page', function() {
 
  it('should change the background colour when submit clicked', function(){
    var browser = this.browser;
-   this.browser.fill('#enter-colour', "changeBackgroundColour(blue)");
+   this.browser.fill('#enter-colour', "changeBackgroundColour(blue);");
    this.browser.pressButton('Submit');
    browser.assert.style('#a90', "background-color", 'blue');
  });
