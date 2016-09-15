@@ -76,12 +76,14 @@ body {
   margin-top: -5%;
   padding-bottom: 2%;
   color: #d9534f;
+  float: left
 }
 
 #points-score {
   position: absolute;
+  margin-left: 70px;
+  margin-top: 20px;
   font-size: 30px;
-  margin-top: 10px;
 }
 
 .flipped {
@@ -101,6 +103,17 @@ body {
   padding: 3%;
   border-radius: 20px;
   background: #93d9e8;
+}
+
+.modal-content {
+  background-color: #EFF7F6;
+  margin: auto;
+  max-width: 300px;
+  max-height: 300px;
+  padding: 20px;
+  border: 5px solid #d9534f;
+  border-radius: 20px;
+  text-align: center;
 }
 
 #modal-win {
@@ -145,16 +158,6 @@ body {
   padding: 5%;
 }
 
-.modal-content {
-  background-color: red;
-  margin: auto;
-  max-width: 300px;
-  max-height: 300px;
-
-  padding: 20px;
-  outline: 1px solid black;
-}
-
 #player-score {
   font-size: 50px;
 }
@@ -163,6 +166,8 @@ body {
   display: block;
   float: right;
   margin-top: -80px;
+  margin-right: 2.5%;
+  font-size: 35px;
 }
 
 #boxes .window {
@@ -184,6 +189,7 @@ body {
   background-color: #EFF7F6;
   font-family: 'Segoe UI Light', sans-serif;
   font-size: 15pt;
+  border: 7px solid #d9534f;
 }
 #popupfoot {
   font-size: 16pt;
@@ -256,4 +262,17 @@ body {
 
 #leaderboard-list{
   font-size: 16px;
+}
+
+#leaderboard-background {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 350px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }

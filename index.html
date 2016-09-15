@@ -49,18 +49,18 @@
   </div>
 
 <div id="header">
-  <h1 class="road-to-code">RoadToCode<h1>
-  <div id="timer"></div>
+  <h1 class="road-to-code">RoadToCode</h1>
   <button id="leaderboard-button" class="btn btn-danger">Show leaderboard</button>
   <button id="play-again" type="button" onclick="window.location.reload();" class="btn btn-danger">Play Again</button>
+  <div id="timer"></div>
 </div>
 
-<div id="leaderboard-modal">
-  <button id="close-leaderboard-button" class="btn btn-danger">Close</button>
-  <button id="play-again" type="button" onclick="window.location.reload();" class="btn btn-danger">Play Again</button>
-  <h1 id="high-scores-text">High Scores</h1>
-  <ol id="leaderboard-list"></ol>
-</div>
+  <div id="leaderboard-modal">
+    <button id="close-leaderboard-button" class="btn btn-danger">Close</button>
+    <button id="play-again" type="button" onclick="window.location.reload();" class="btn btn-danger">Play Again</button>
+    <h1 id="high-scores-text">High Scores</h1>
+    <ol id="leaderboard-list"></ol>
+  </div>
 
 <div id="container">
   <div id="character" class="piggy"></div>
@@ -74,9 +74,9 @@
     moveLeft(1);<br>
     moveUp(4);<br>
     </code>
-  <h4>Reach the finish line to save your score. Be careful with your capital letters!</h4>
+  <h4>Reach the finish line in 10 seconds to save your score. Be careful with your capital letters!</h4>
   <div class="alert">
-    <h2>Try adding an instruction as shown in the example</h2>
+    <h2>Nice try! Make sure you type commands as shown in the example.</h2>
     <button id="dismiss" type="button" class="btn btn-danger">OK!</button>
   </div>
   <textarea id="typed-text" class="form-control" rows="1" cols="50" type="text"></textarea>
@@ -99,11 +99,9 @@
     <textarea id="enter-colour" rows="1" cols="50"></textarea>
     <button id="submit-colour" type="button" class="btn btn-danger">Submit</button>
   </div>
-
-</div>
-
 <div id="points-score"></div>
 
+</div>
 <div id="modal-win">
   <div id="score-form" class="modal-content">
     <div id="player-score"></div>
