@@ -31,12 +31,11 @@ function displayModalLeaderboardButton(){
   $('#enter-name').css("display", "none");
   $('#submit-score').css("display", "none");
 
-  scores.retrieve();
   $('#show-leaderboard-button').css("display", "block");
 }
 
 $("#show-leaderboard-button").on("click", function() {
-
+  scores.retrieve();
   $('#modal-win').css("display", "none");
   $('#leaderboard-modal').css("display", "block");
 });

@@ -49,25 +49,25 @@ describe('home page', function() {
   });
 
   it('should display the leaderboard after submitting score', function(){
-    var browser = this.browser;
-    this.browser.fill('#typed-text', "moveRight(9);");
-    this.browser.pressButton('Add Instruction');
-    this.browser.fill('#typed-text', "moveDown(9);");
-    this.browser.pressButton('Add Instruction');
-    this.browser.pressButton('Run');
-     this.browser.wait().then( function() {
-       var broswer = this.browser;
-       browser.wait().then( function(){
-         browser.fill('#enter-name', "suse");
-         browser.pressButton('Submit');
-         browser.wait().then( function() {
-           var broswer = this.browser;
-           browser.assert.element("#show-leaderboard-button");
-           browser.pressButton('Leaderboard');
-           browser.assert.style("#leaderboard-modal", "display", "block");
-         });
-       });
-     });
-  });
+     var browser = this.browser;
+     this.browser.fill('#typed-text', "moveRight(9);");
+     this.browser.pressButton('Add Instruction');
+     this.browser.fill('#typed-text', "moveDown(9);");
+     this.browser.pressButton('Add Instruction');
+     this.browser.pressButton('Run');
+      this.browser.wait().then( function() {
+        var broswer = this.browser;
+        browser.wait().then( function(){
+          browser.fill('#enter-name', "Margiela");
+          browser.pressButton('Submit');
+          browser.wait().then( function() {
+            var broswer = this.browser;
+            browser.assert.element("#show-leaderboard-button");
+            browser.pressButton('Leaderboard');
+            browser.assert.style("#leaderboard-modal", "display", "block");
+          });
+        });
+      });
+   });
 
 });

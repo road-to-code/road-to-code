@@ -19,7 +19,7 @@ describe('home page', function() {
 
   it('should remove emojis on collision', function(){
     var browser = this.browser;
-    this.browser.fill('#typed-text', "moveRight(2)");
+    this.browser.fill('#typed-text', "moveRight(2);");
     this.browser.pressButton('Add Instruction');
     this.browser.pressButton('Run');
       this.browser.wait().then( function() {
@@ -30,7 +30,7 @@ describe('home page', function() {
 
   it('should increase the score as more emojis are picked up', function(){
     var browser = this.browser;
-    this.browser.fill('#typed-text', "moveRight(5)");
+    this.browser.fill('#typed-text', "moveRight(5);");
     this.browser.pressButton('Add Instruction');
     this.browser.pressButton('Run');
     this.browser.wait().then( function() {
@@ -40,9 +40,9 @@ describe('home page', function() {
 
   it('should end the game when it steps on the devil', function(){
     var browser = this.browser;
-    this.browser.fill('#typed-text', "moveRight(7)");
+    this.browser.fill('#typed-text', "moveRight(7);");
     this.browser.pressButton('Add Instruction');
-    this.browser.fill('#typed-text', "moveDown(2)");
+    this.browser.fill('#typed-text', "moveDown(2);");
     this.browser.pressButton('Add Instruction');
     this.browser.pressButton('Run');
     this.browser.wait().then( function() {
@@ -50,11 +50,14 @@ describe('home page', function() {
     });
   });
 
-  xit('should turn the path behind a darker green', function(){
+  it('should turn the path behind a darker green', function(){
     var browser = this.browser;
-    this.browser.fill('#typed-text', "moveRight(4)");
+    this.browser.fill('#typed-text', "moveRight(4);");
     this.browser.pressButton('Add Instruction');
     this.browser.pressButton('Run');
-    this.browser.assert.attribute('#a04', 'dirt');
+    this.browser.wait().then( function() {
+      browser.assert.hasClass('#a04', 'dirt');
+    });
   });
+
 });
