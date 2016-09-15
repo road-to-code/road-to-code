@@ -3,7 +3,6 @@ function displayLeaderboard(arrayOfScores){
   for(var i = 0; i < arrayOfScores.length; i++){
     var listItem = '<l>';
     listItem += arrayOfScores[i].name + ": ";
-    console.log(arrayOfScores[i].name);
     listItem += arrayOfScores[i].score;
     listItem += '</l><br>';
     $('#leaderboard-list').append(listItem);

@@ -24,4 +24,5 @@ describe('home page', function() {
    this.browser.assert.attribute('#character.flipped');
  });
 
+
 });
