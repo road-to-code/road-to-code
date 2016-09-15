@@ -13,16 +13,16 @@ describe('home page', function() {
     this.browser.visit('/', done);
   });
 
-  it('should have a button to display the leaderboard', function(){
+  xit('should have a button to display the leaderboard', function(){
     this.browser.assert.element("#leaderboard-button");
   });
 
-  it('should not display unless show leaderboard clicked', function(){
+  xit('should not display unless show leaderboard clicked', function(){
     var browser = this.browser;
     this.browser.assert.style("#leaderboard-modal", "display", "");
   });
 
-  it('leaderboard displays when show leaderboard button clicked', function(){
+  xit('leaderboard displays when show leaderboard button clicked', function(){
     var browser = this.browser;
     this.browser.pressButton('Show leaderboard');
     this.browser.wait().then( function() {
@@ -30,7 +30,7 @@ describe('home page', function() {
     });
   });
 
-  it('leaderboard closes when close button clicked', function(){
+  xit('leaderboard closes when close button clicked', function(){
     var browser = this.browser;
     this.browser.pressButton('Show leaderboard');
     browser.pressButton('Close');
@@ -39,7 +39,7 @@ describe('home page', function() {
     });
   });
 
-  it('leaderboard should show player names and scores', function(){
+  xit('leaderboard should show player names and scores', function(){
     var browser = this.browser;
     this.browser.pressButton('Show leaderboard');
     this.browser.wait().then( function() {
@@ -49,7 +49,7 @@ describe('home page', function() {
     });
   });
 
-  it('should show a leaderboard button after save score', function(){
+  xit('should show a leaderboard button after save score', function(){
     var browser = this.browser;
     this.browser.fill('#typed-text', "moveRight(9)");
     this.browser.pressButton('Add Instruction');
@@ -71,26 +71,29 @@ describe('home page', function() {
   });
 
   it('should display the leaderboard after submitting score', function(){
-    var browser = this.browser;
-    this.browser.fill('#typed-text', "moveRight(9)");
-    this.browser.pressButton('Add Instruction');
-    this.browser.fill('#typed-text', "moveDown(9)");
-    this.browser.pressButton('Add Instruction');
-    this.browser.pressButton('Run');
-     this.browser.wait().then( function() {
-       var broswer = this.browser;
-       browser.wait().then( function(){
-         browser.assert.style("#modal-win", "display", "block");
-         browser.fill('#enter-name', "suse");
-         browser.pressButton('Submit');
-         browser.wait().then( function() {
-           var broswer = this.browser;
-           browser.assert.element("#show-leaderboard-button");
-           browser.pressButton('Leaderboard');
-           browser.assert.style("#leaderboard-modal", "display", "block");
-         });
-       });
-     });
-  });
+     var browser = this.browser;
+     this.browser.fill('#typed-text', "moveRight(9);");
+     this.browser.pressButton('Add Instruction');
+     this.browser.fill('#typed-text', "moveDown(9);");
+     this.browser.pressButton('Add Instruction');
+     this.browser.pressButton('Run');
+      this.browser.wait().then( function() {
+        var broswer = this.browser;
+        browser.wait().then( function(){
+          browser.fill('#enter-name', "Margiela");
+          browser.pressButton('Submit');
+          browser.wait().then( function() {
+            var broswer = this.browser;
+            browser.assert.element("#show-leaderboard-button");
+            browser.pressButton('Leaderboard');
+            browser.assert.style("#leaderboard-modal", "display", "block");
+            browser.wait().then( function() {
+              var broswer = this.browser;
+              browser.assert.text('#leaderboard-list', "Margiela");
+            });
+          });
+        });
+      });
+   });
 
 });

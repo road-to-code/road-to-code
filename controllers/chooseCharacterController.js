@@ -10,19 +10,19 @@ function showCharacters(){
   $(id).css('left', winW/2-$(id).width()/2);
   $(id).fadeIn(2000);
 
-  $('.window #suse-button').click(function (e) {
+  $('.window #suse-thumb').click(function (e) {
   chooseCharacter("suse", e);
   });
 
-  $('.window #mike-button').click(function (e) {
+  $('.window #mike-thumb').click(function (e) {
   chooseCharacter("mike", e);
   });
 
-  $('.window #luke-button').click(function (e) {
+  $('.window #luke-thumb').click(function (e) {
   chooseCharacter("luke", e);
   });
 
-  $('.window #dan-button').click(function (e) {
+  $('.window #dan-thumb').click(function (e) {
   chooseCharacter("dan", e);
   });
 

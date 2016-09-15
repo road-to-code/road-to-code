@@ -22,14 +22,10 @@ describe('home page', function() {
     this.browser.assert.element("#mike-thumb");
     this.browser.assert.element("#luke-thumb");
     this.browser.assert.element("#dan-thumb");
-    this.browser.assert.element("#suse-button");
-    this.browser.assert.element("#mike-button");
-    this.browser.assert.element("#luke-button");
-    this.browser.assert.element("#dan-button");
   });
 
   it('should choose suse as a character', function(){
-    this.browser.pressButton('#suse-button');
+    this.browser.pressButton('#suse-thumb');
     this.browser.assert.attribute("#character.suse");
   });
 
