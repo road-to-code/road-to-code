@@ -25,7 +25,8 @@ $("#runInstructions").on("click", function() {
     i ++;
     setTimeout(function () {
       moveCharacter(character.position);
-      gameController.checkForCollision(character.position);
+      gameController.checkBoundary(character.position);
+      // gameController.checkForCollision(character.position);
       if (i < instructionsList.length && gameController.gameOver === false) {
         runInstructions(instructionsList, i);
       }
