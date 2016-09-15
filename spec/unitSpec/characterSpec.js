@@ -32,26 +32,4 @@ describe ("character", function() {
     expect(character.position).toEqual([0, 1]);
   });
 
-  xit('should not be able to leave map on the LHS', function (){
-    character.moveRight(1);
-    character.moveLeft(2);
-    expect(character.position).toEqual([0, 0]);
-  });
-
-  xit('should not be able to leave map on the RHS', function (){
-    character.moveRight(11);
-    expect(character.position).toEqual([100, 0]);
-  });
-
-  xit('should not be able to leave top of map', function (){
-    character.moveDown(1);
-    character.moveUp(2);
-    expect(character.position).toEqual([0, 0]);
-  });
-
-  xit('should not be able to leave bottom of map', function (){
-    character.moveDown(11);
-    expect(character.position).toEqual([0, 100]);
-  });
-
 });
