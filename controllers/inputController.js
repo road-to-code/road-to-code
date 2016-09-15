@@ -13,10 +13,14 @@ $("#submit-shuffle").on("click", function() {
 });
 
 $("#addInstructions").on("click", function() {
-  validateInstructions();
-  var newInstruction = $('#typed-text').val();
-  var updatedList = instructions.append(newInstruction);
-  updateTextBoxes(updatedList);
+  if (validateAddInstructions()){
+    var newInstruction = $('#typed-text').val();
+    var updatedList = instructions.append(newInstruction);
+    updateTextBoxes(updatedList);
+  }
+  else{
+    displayValidationError();
+  }
 });
 
 function updateTextBoxes(updatedList) {
@@ -24,17 +28,37 @@ function updateTextBoxes(updatedList) {
   $('#entered-text').html(updatedList);
 }
 
-function validateInstructions() {
+function validateAddInstructions() {
     var text = $('#typed-text').val();
     if (text === null || text === "") {
-      displayValidationError();
         return false;
+    }
+    var instructDirect = text.match(/[a-zA-Z]/g).join('');
+    var openBracket = text.slice(-3,-2);
+    var closeBracket = text.slice(-1);
+    var number = text.slice(-2,-1);
+    var directions = ["moveRight", "moveLeft", "moveDown", "moveUp"];
+    if(!directions.includes(instructDirect)){
+      return false;
+    }
+    else if (!number.match(/^\d+$/)){
+      return false;
+    }
+    else if(openBracket != "("){
+      return false;
+    }
+    else if(closeBracket != ")"){
+      return false;
+    }
+    else{
+      return true;
     }
 }
 
 function displayValidationError(){
   $('div.alert').css("display", "block");
-  setTimeout(function(){
-    $('div.alert').css("display", "none");
-  }, 3000);
+  $("#dismiss").click(function(){
+    $("div.alert").hide();
+  });
+
 }

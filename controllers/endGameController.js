@@ -8,7 +8,7 @@ function updateDisplayGameOver () {
 
 $("#submit-score").on("click", function() {
   var name = $('#enter-name').val();
-  scores.save(name, gameController.points, 1);
+  scores.convertParams(name, gameController.points, 1);
   displayModalLeaderboardButton();
 });
 

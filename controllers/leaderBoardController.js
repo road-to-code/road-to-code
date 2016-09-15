@@ -1,4 +1,5 @@
 function displayLeaderboard(arrayOfScores){
+  $('#leaderboard-list').empty();
   for(var i = 0; i < arrayOfScores.length; i++){
     var listItem = '<l>';
     listItem += arrayOfScores[i].name + ": ";
@@ -29,12 +30,13 @@ function displayModalLeaderboardButton(){
   $('#enter-name-instructions').css("display", "none");
   $('#enter-name').css("display", "none");
   $('#submit-score').css("display", "none");
+
+  scores.retrieve();
   $('#show-leaderboard-button').css("display", "block");
 }
 
 $("#show-leaderboard-button").on("click", function() {
-  $(window).resize(function(){location.reload();});
-  $('.window').css("display", "none");
+
   $('#modal-win').css("display", "none");
   $('#leaderboard-modal').css("display", "block");
 });
