@@ -1,7 +1,6 @@
 var instructions = new Instructions();
 var character = new Character();
 var gameController = new GameController();
-var timer = new Timer();
 var scores = new Scores();
 var displayChar = document.getElementById('character');
 var leaderboard = $('leaderboard-list');
@@ -16,10 +15,8 @@ function displayPoints(points){
 
 scores.retrieve();
 
-
 $("#runInstructions").on("click", function() {
-  timer.startTimer();
-
+  gameController.startTimer();
   var instructionsList = instructions.splitIntoSingleMoves();
   (function runInstructions (instructionsList, i) {
     var instruction = instructionsList[i];

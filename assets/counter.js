@@ -8,8 +8,6 @@ Copyright (c) 2014 Tom de Bruijn
 Counter.js is licensed under the MIT license.
 https://github.com/tombruijn/counter.js/LICENSE
 */
-
-
 (function() {
 
   (function($) {
@@ -17,15 +15,15 @@ https://github.com/tombruijn/counter.js/LICENSE
     pluginName = "counter";
     defaults = {
       autoStart: true,
-      duration: 1500,
-      countFrom: void 0,
-      countTo: void 0,
-      runOnce: false,
+      duration: 10000,
+      countFrom: 10,
+      countTo: 0,
+      runOnce: true,
       placeholder: void 0,
       onStart: function() {},
       onComplete: function() {},
       numberFormatter: function(number) {
-        return Math.round(number);
+        return number.toFixed(2) + " seconds";
       }
     };
     Counter = (function() {
