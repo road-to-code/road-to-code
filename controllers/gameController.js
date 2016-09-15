@@ -89,17 +89,17 @@
     }
 
     if(x === 2 && y === 4){
-      poopSoundEffect();
+      playSoundEffect('squished-audio');
     }
     else if(x === 2 && y === 6){
-      poopSoundEffect();
+      playSoundEffect('squished-audio');
     }
     else if(x === 4 && y === 1){
-      poopSoundEffect();
+      playSoundEffect('squished-audio');
     }
 
     if(x === 2 && y === 7){
-      devilSoundEffect();
+      playSoundEffect('evil-laugh-audio');
       this.gameOver = true;
     }
 
