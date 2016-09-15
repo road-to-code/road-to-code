@@ -19,7 +19,7 @@ describe('modal', function() {
 
  it('should display modal-loss if game lost', function(){
    var browser = this.browser;
-   this.browser.fill('#typed-text', "moveRight(2)");
+   this.browser.fill('#typed-text', "moveRight(2);");
    this.browser.pressButton('Add Instruction');
    this.browser.pressButton('Run');
      this.browser.wait().then( function() {
@@ -30,9 +30,9 @@ describe('modal', function() {
 
  it('should display modal-win if game win', function(){
    var browser = this.browser;
-   this.browser.fill('#typed-text', "moveRight(9)");
+   this.browser.fill('#typed-text', "moveRight(9);");
    this.browser.pressButton('Add Instruction');
-   this.browser.fill('#typed-text', "moveDown(9)");
+   this.browser.fill('#typed-text', "moveDown(9);");
    this.browser.pressButton('Add Instruction');
    this.browser.pressButton('Run');
     this.browser.wait().then( function() {
@@ -50,7 +50,7 @@ describe('modal', function() {
    this.browser.pressButton('Add Instruction');
    this.browser.pressButton('Run');
      this.browser.wait().then( function() {
-       browser.assert.elements("#play-again", 2);
+       browser.assert.elements("#play-again", 4);
      });
  });
 
