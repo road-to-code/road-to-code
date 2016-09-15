@@ -109,5 +109,18 @@
     }
   };
 
+  GameController.prototype.checkBoundary = function(characterNewPos){
+    var x = characterNewPos[1];
+    var y = characterNewPos[0];
+    // var targetSquare = map.array[x][y];
+    if ((x < 0 || x > 9) || (y < 0 || y > 9)) {
+      gameController.endGame();
+      gameController.loss = true;
+    } else {
+      gameController.checkForCollision(characterNewPos);
+    };
+
+  };
+
 exports.GameController = GameController;
   })(this);
