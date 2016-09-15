@@ -2,7 +2,7 @@
 $("#submit-colour").on("click", function() {
   if (validateColourInstructions()){
     var colourCommand = $('#enter-colour').val();
-    var colour = colourCommand.slice(23, -1);
+    var colour = colourCommand.slice(23, -2);
     $('.grass').css('backgroundColor', colour);
   }
   else {
@@ -12,7 +12,7 @@ $("#submit-colour").on("click", function() {
 
 $("#submit-shuffle").on("click", function() {
   var shuffle = $('#enter-shuffle').val();
-  if (shuffle === "shuffle(emojis)"){
+  if (shuffle === "shuffle(emojis);"){
     gameController.shuffle();
   }
   else {
@@ -37,15 +37,28 @@ function updateTextBoxes(updatedList) {
 }
 
 function validateColourInstructions(){
-  var colourCommand = $('#enter-colour').val();
-  if (colourCommand === null || colourCommand === "") {
+  if (colourCommand === null || colourCommand === "" || colourCommand === "\n") {
     return false;
+  }
+  var colourCommand = $('#enter-colour').val();
+  var instructCommand = colourCommand.split('(')[0];
+  var closeBracket = colourCommand.slice(-2,-1);
+  var semicolon = colourCommand.slice(-1);
+  if (instructCommand != "changeBackgroundColour"){
+    return false;
+  }
+  else if(closeBracket != ")"){
+    return false;
+  }
+  else if(semicolon != ";");
+  else {
+    return true;
   }
 }
 
 function validateAddInstructions() {
     var text = $('#typed-text').val();
-    if (text === null || text === "") {
+    if (text === null || text === "" || text === "\n") {
         return false;
     }
     var instructDirect = text.match(/[a-zA-Z]/g).join('');

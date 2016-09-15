@@ -123,12 +123,58 @@ describe('home page', function() {
     });
   });
 
-  it('should not add an empty instruction to changeBackgroundColour', function(){
+  it('should not add an empty colour instruction to changeBackgroundColour', function(){
     var browser = this.browser;
     this.browser.fill('#enter-colour', "");
     this.browser.pressButton('Submit');
     this.browser.wait().then( function() {
       browser.assert.style('div.alert', 'display', 'block');
+    });
+  });
+
+  it('should not add a colour instruction that does not begin with changeBackgroundColour', function(){
+    var browser = this.browser;
+    this.browser.fill('#enter-colour', "changeBackgroundBlue");
+    this.browser.pressButton('Submit');
+    this.browser.wait().then( function() {
+      browser.assert.style('div.alert', 'display', 'block');
+    });
+  });
+
+  it('should not add a colour instruction that does not contain a bracket', function(){
+    var browser = this.browser;
+    this.browser.fill('#enter-colour', "changeBackgroundColourblue);");
+    this.browser.pressButton('Submit');
+    this.browser.wait().then( function() {
+      browser.assert.style('div.alert', 'display', 'block');
+    });
+  });
+
+  it('should not add a colour instruction that does not contain a close bracket', function(){
+    var browser = this.browser;
+    this.browser.fill('#enter-colour', "changeBackgroundColour(blue");
+    this.browser.pressButton('Submit');
+    this.browser.wait().then( function() {
+      browser.assert.style('div.alert', 'display', 'block');
+    });
+  });
+
+  it('should not add a colour instruction that does not end with a semicolon', function(){
+    var browser = this.browser;
+    this.browser.fill('#enter-colour', "changeBackgroundColour(blue)");
+    this.browser.pressButton('Submit');
+    this.browser.wait().then( function() {
+      browser.assert.style('div.alert', 'display', 'block');
+    });
+  });
+
+  it('should add a colour instruction that is formatted properly', function(){
+    var browser = this.browser;
+    this.browser.fill('#enter-colour', "changeBackgroundColour(blue);");
+    this.browser.pressButton('Submit');
+    this.browser.wait().then( function() {
+      browser.assert.style('div.alert', 'display', '');
+      browser.assert.style('#a96', 'background-color', 'blue');
     });
   });
 
