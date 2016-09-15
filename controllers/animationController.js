@@ -25,6 +25,8 @@ function moveCharacter(newPos){
 }
 
 function drawCharacterTrail(x, y){
-  var idNumber = "a" + x.toString() + y.toString();
-  document.getElementById(idNumber).setAttribute("class", "dirt");
-}
+  setTimeout(function() {
+    var idNumber = "a" + x.toString() + y.toString();
+    document.getElementById(idNumber).setAttribute("class", "dirt");
+  }, 250);
+};
