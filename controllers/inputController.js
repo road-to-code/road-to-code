@@ -37,7 +37,7 @@ function updateTextBoxes(updatedList) {
 }
 
 function validateColourInstructions(){
-  if (colourCommand === null || colourCommand === "") {
+  if (colourCommand === null || colourCommand === "" || colourCommand === "\n") {
     return false;
   }
   var colourCommand = $('#enter-colour').val();
@@ -58,7 +58,7 @@ function validateColourInstructions(){
 
 function validateAddInstructions() {
     var text = $('#typed-text').val();
-    if (text === null || text === "") {
+    if (text === null || text === "" || text === "\n") {
         return false;
     }
     var instructDirect = text.match(/[a-zA-Z]/g).join('');
