@@ -1,14 +1,22 @@
 
 $("#submit-colour").on("click", function() {
-  var colourCommand = $('#enter-colour').val();
-  var colour = colourCommand.slice(23, -1);
-  $('.grass').css('backgroundColor', colour);
+  if (validateColourInstructions()){
+    var colourCommand = $('#enter-colour').val();
+    var colour = colourCommand.slice(23, -1);
+    $('.grass').css('backgroundColor', colour);
+  }
+  else {
+    displayValidationError();
+  }
 });
 
 $("#submit-shuffle").on("click", function() {
   var shuffle = $('#enter-shuffle').val();
   if (shuffle === "shuffle(emojis)"){
     gameController.shuffle();
+  }
+  else {
+    displayValidationError();
   }
 });
 
@@ -28,15 +36,23 @@ function updateTextBoxes(updatedList) {
   $('#entered-text').html(updatedList);
 }
 
+function validateColourInstructions(){
+  var colourCommand = $('#enter-colour').val();
+  if (colourCommand === null || colourCommand === "") {
+    return false;
+  }
+}
+
 function validateAddInstructions() {
     var text = $('#typed-text').val();
     if (text === null || text === "") {
         return false;
     }
     var instructDirect = text.match(/[a-zA-Z]/g).join('');
-    var openBracket = text.slice(-3,-2);
-    var closeBracket = text.slice(-1);
-    var number = text.slice(-2,-1);
+    var openBracket = text.slice(-4,-3);
+    var closeBracket = text.slice(-2, -1);
+    var number = text.slice(-3,-2);
+    var semicolon = text.slice(-1);
     var directions = ["moveRight", "moveLeft", "moveDown", "moveUp"];
     if(!directions.includes(instructDirect)){
       return false;
@@ -48,6 +64,9 @@ function validateAddInstructions() {
       return false;
     }
     else if(closeBracket != ")"){
+      return false;
+    }
+    else if(semicolon != ";"){
       return false;
     }
     else{
