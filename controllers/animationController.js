@@ -1,3 +1,4 @@
+const TILE_SIZE = 100;
 
 function flipCharacter(instruction) {
   if (instruction == "moveLeft"){
@@ -17,10 +18,11 @@ function flipRight(){
 }
 
 function moveCharacter(newPos){
-  var tileSize = $('#a11').width();
+
+
     $('#container').find('#character').animate({
-    left: newPos[0] * tileSize,
-    top: newPos[1] * tileSize
+    left: newPos[0] * TILE_SIZE,
+    top: newPos[1] * TILE_SIZE
   }, 200);
 }
 

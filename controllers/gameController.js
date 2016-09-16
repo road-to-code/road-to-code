@@ -18,7 +18,7 @@
   };
 
   GameController.prototype.startTimer = function(){
-    $("#timer").css("display", "block");
+    $("#timer").css("display", "inline-block");
     $("#timer").counter({
       onComplete: function() {
         gameController.gameOver = true;
