@@ -17,11 +17,14 @@ function prepareLeaderboard (scoresData){
 }
 
 $("#leaderboard-button").on("click", function() {
+  $('#leaderboard-background').css("display", "block");
   $('#leaderboard-modal').css("display", "block");
+;
 });
 
 $("#close-leaderboard-button").on("click", function() {
-  $('#leaderboard-modal').css("display", "none");
+  $('#leaderboard-background').css("display", "none");
+  $('#leaderboard-background').css("display", "none");
 });
 
 function displayModalLeaderboardButton(){
