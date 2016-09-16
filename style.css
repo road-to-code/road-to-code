@@ -133,8 +133,8 @@ p {
 .modal-content {
   background-color: #EFF7F6;
   margin: auto;
-  max-width: 300px;
-  max-height: 300px;
+  width: 300px;
+  height: 350px;
   padding: 20px;
   border: 5px solid #d9534f;
   border-radius: 20px;
@@ -200,12 +200,19 @@ p {
   border-radius: 15px;
   text-align: center;
 }
+
+#high-scores-text{
+  margin-top: 30px;
+  margin-bottom:30px;
+  font-weight: lighter;
+}
+
 #boxes #dialog {
-  width: 80%;
-  height: 45%;
-  padding: 10px;
+  width: 1700px;
+  height: 500px;
+  padding: 35px 10px 15px 10px;
   background-color: #EFF7F6;
-  font-family: 'Segoe UI Light', sans-serif;
+  font-weight: bold;
   font-size: 15pt;
   border: 7px solid #d9534f;
 }
@@ -288,7 +295,7 @@ p {
   border-radius: 15px;
   border: 7px solid #d9534f;
   background-color: #EFF7F6;
-  padding: 5%;
+  padding-top: 40px;
 }
 
 #show-leaderboard-button{
@@ -297,6 +304,10 @@ p {
 
 #leaderboard-list{
   font-size: 16px;
+}
+
+#play-again-modal{
+  margin-top: 10px;
 }
 
 #leaderboard-background {
@@ -371,6 +382,9 @@ p {
 #show-leaderboard-button{
   margin: auto;
   margin-top: 2%;
+}
+#submit-score{
+  margin-top: 10px;
 }
 
 #enter-shuffle{
