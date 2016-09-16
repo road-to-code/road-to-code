@@ -2,6 +2,24 @@ body {
   margin: 5%;
 }
 
+h1 {
+  font-family: helvetica;
+  font-weight: lighter;
+}
+
+h2 {
+  font-family: helvetica;
+  font-weight: lighter;
+}
+
+h3 {
+  margin-top: -1%
+  font-family: helvetica;
+}
+
+p {
+  font-family: helvetica;
+}
 
 #container{
   width: 50vw;
@@ -45,12 +63,14 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: inherit;
+    top: 1%;
 }
 
 
 .emoji {
   font-size: 45px;
   text-align: center;
+  line-height: 200%;
 }
 
 #runInstructions {
@@ -63,6 +83,7 @@ body {
 
 .form-control{
   width: 95%;
+  margin: 1% 0% 1% 0%;
 }
 
 #entered-text {
@@ -79,13 +100,6 @@ body {
   float: left
 }
 
-#points-score {
-  position: absolute;
-  margin-left: 70px;
-  margin-top: 20px;
-  font-size: 30px;
-}
-
 .flipped {
     transform: scale(-1, 1);
     -moz-transform: scale(-1, 1);
@@ -99,7 +113,7 @@ body {
   width: 35vw;
   position: relative;
   background-color: #93d9e8;
-  padding: 3%;
+  padding: 2% 3% 3% 3%;
   border-radius: 20px;
   background: #93d9e8;
 }
@@ -162,18 +176,6 @@ body {
   font-size: 50px;
 }
 
-#timer{
-  display: none;
-  float: right;
-  margin-top: -4%;
-  margin-right: 1.5%;
-  font-size: 35px;
-  border: 3px solid #d9534f;
-  border-radius: 15px;
-  padding: 1%;
-
-}
-
 #boxes .window {
   position: absolute;
   left: 0;
@@ -188,7 +190,7 @@ body {
 }
 #boxes #dialog {
   width: 80%;
-  height: 40%;
+  height: 45%;
   padding: 10px;
   background-color: #EFF7F6;
   font-family: 'Segoe UI Light', sans-serif;
@@ -206,25 +208,28 @@ body {
 #suse-thumb{
   width: 18%;
   left: 18%;
+  margin-top: -10%;
   margin-left: 1px;
 }
 
 #mike-thumb{
   width: 18%;
   left: 18%;
+  margin-top: 40px;
   margin-left: 40px;
 }
 
 #luke-thumb{
   width: 18%;
   left: 18%;
+  margin-left: 2%;
   margin-right: 40px;
 }
 
 #dan-thumb{
   width: 18%;
   left: 18%;
-  margin-right: 1px;
+  margin: 1% 1% 0% -1%
 }
 
 #suse-button{
@@ -264,7 +269,7 @@ body {
   margin: auto;
   margin-left:5%;
   width: 80vw;
-  height: 80vw;
+  height: 50vw;
   z-index: 9999;
   margin-top: -5%;
   border-radius: 15px;
@@ -295,28 +300,74 @@ body {
 }
 
 #leaderboard-button{
-  padding: 10px 18px;
-  margin-top: -95px;
-  margin-left: 30%;
+  padding: 16px 18px;
+  margin-top: -78px;
+  margin-left: 2%;
   margin-bottom: 30px;
   position: absolute;
   font-size: 14px;
   text-align: center;
-  border-radius: 4px;
+  border-radius: 12px;
 }
 #play-again-header{
-  padding: 10px 18px;
-  margin-top: -95px;
-  margin-left: 50%;
+  padding: 16px 18px;
+  margin-top: -78px;
+  margin-left: 12%;
   margin-bottom: 30px;
   position: absolute;
   font-size: 14px;
   text-align: center;
-  border-radius: 4px;
+  border-radius: 12px;
 }
+
+#points-score {
+  position: absolute;
+  margin: -4% 0% 0% 40%;
+  font-size: 28px;
+  border-radius: 10px;
+  border: 7px solid #d9534f;
+  background-color: #d9534f;
+  padding: 0% 4%;
+  color: white
+}
+
+#timer{
+  display: none;
+  float: right;
+  margin-top: -4%;
+  margin-right: 0.8%;
+  font-size: 24px;
+  border: 3px solid #d9534f;
+  border-radius: 10px;
+  background-color: #d9534f;
+  padding: 0.4% 4%;
+  color: white;
+}
+
 #play-agian-modal{
-  margin: 5%;
+  margin: auto;
+  padding: 5%;
+  margin-top: 8%;
 }
 #show-leaderboard-button{
-  margin: 5%;
+  margin: auto;
+  margin-top: 2%;
+}
+
+#enter-shuffle{
+  width: 80%;
+  float: left;
+}
+
+#submit-shuffle{
+  margin: 1% 0% 0% 3%;
+}
+
+#enter-colour{
+  width: 80%;
+  float: left;
+}
+
+#submit-colour{
+  margin: 1% 0% 0% 2%;
 }

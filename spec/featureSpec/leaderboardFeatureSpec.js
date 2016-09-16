@@ -24,7 +24,7 @@ describe('home page', function() {
 
   xit('leaderboard displays when show leaderboard button clicked', function(){
     var browser = this.browser;
-    this.browser.pressButton('Show leaderboard');
+    this.browser.pressButton('#leaderboard-button');
     this.browser.wait().then( function() {
      browser.assert.style("#leaderboard-modal", "display", "block");
     });
@@ -32,7 +32,7 @@ describe('home page', function() {
 
   xit('leaderboard closes when close button clicked', function(){
     var browser = this.browser;
-    this.browser.pressButton('Show leaderboard');
+    this.browser.pressButton('#leaderboard-button');
     browser.pressButton('Close');
     this.browser.wait().then( function() {
      browser.assert.style("#leaderboard-modal", "display", "none");
@@ -41,7 +41,7 @@ describe('home page', function() {
 
   xit('leaderboard should show player names and scores', function(){
     var browser = this.browser;
-    this.browser.pressButton('Show leaderboard');
+    this.browser.pressButton('#leaderboard-button');
     this.browser.wait().then( function() {
       browser.assert.text("#high-scores-text", "High Scores");
       browser.assert.text("#leaderboard-modal", "suse");
@@ -85,7 +85,7 @@ describe('home page', function() {
           browser.wait().then( function() {
             var broswer = this.browser;
             browser.assert.element("#show-leaderboard-button");
-            browser.pressButton('Leaderboard');
+            browser.pressButton('#show-leaderboard-button');
             browser.assert.style("#leaderboard-modal", "display", "block");
             browser.wait().then( function() {
               var broswer = this.browser;
