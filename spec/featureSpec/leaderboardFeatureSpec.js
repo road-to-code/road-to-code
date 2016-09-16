@@ -47,7 +47,7 @@ describe('home page', function() {
       browser.assert.element("#leaderboard-list");
     });
   });
-
+  
   it('should display the leaderboard after submitting score', function(){
      var browser = this.browser;
      this.browser.fill('#typed-text', "moveRight(9);");

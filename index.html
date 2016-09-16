@@ -36,37 +36,37 @@
   <div id="boxes">
     <div id="dialog" class="window">
       <h1 id="choose-char">Choose your character:<h1>
-      <img id="suse-thumb" class="character-pics" src="assets/white-bird.png">
-      <img id="mike-thumb" class="character-pics" src="assets/pink-bird.png">
-      <img id="luke-thumb" class="character-pics" src="assets/blue-bird.png">
-      <img id="dan-thumb" class="character-pics" src="assets/green-bird.png"><br>
-      <button class="btn-primary" id="suse-button">Suse</button>
-      <button class="btn-warning" id="mike-button">Mike</button>
-      <button class="btn-info" id="luke-button">Luke</button>
-      <button class="btn-success" id="dan-button">Dan</button>
+      <input id="suse-thumb" class="character-pics" type="image" src="assets/white-bird.png">
+      <input id="mike-thumb" class="character-pics" type="image" src="assets/pink-bird.png">
+      <input id="luke-thumb" class="character-pics" type="image" src="assets/blue-bird.png">
+      <input id="dan-thumb" class="character-pics" type="image" src="assets/green-bird.png">
     </div>
     <div id="mask"></div>
   </div>
-
 <div id="header">
   <h1 class="road-to-code">RoadToCode</h1>
-  <button id="leaderboard-button" class="btn btn-danger">Show leaderboard</button>
-  <button id="play-again" type="button" onclick="window.location.reload();" class="btn btn-danger">Play Again</button>
+</div>
+<div id="outer">
+  <button id="leaderboard-button" class="btn btn-danger">Leaderboard</button>
+  <div id="points-score"></div>
+  <button id="play-again-header" type="button" onclick="window.location.reload();" class="btn btn-danger">Play Again</button>
+
   <div id="timer"></div>
 </div>
-
   <div id="leaderboard-modal">
     <button id="close-leaderboard-button" class="btn btn-danger">Close</button>
     <button id="play-again" type="button" onclick="window.location.reload();" class="btn btn-danger">Play Again</button>
     <h1 id="high-scores-text">High Scores</h1>
     <ol id="leaderboard-list"></ol>
   </div>
+<div id="container-border">
 
 <div id="container">
   <div id="character" class="piggy"></div>
 </div>
+</div>
 
-<div id=instructions>
+<div id="instructions">
   <h3>Catch emojis by programming your commands below. For example:</h3>
   <code>
     moveRight(3);<br>
@@ -74,7 +74,7 @@
     moveLeft(1);<br>
     moveUp(4);<br>
     </code>
-  <h4>Reach the finish line in 10 seconds to save your score. Be careful with your capital letters!</h4>
+  <p>Reach the finish line in 10 seconds to save your score. Be careful with your capital letters!<p/>
   <div class="alert">
     <h2>Nice try! Make sure you type commands as shown in the example.</h2>
     <button id="dismiss" type="button" class="btn btn-danger">OK!</button>
@@ -87,21 +87,24 @@
   <div id="shuffle-emojis-box">
     <h3>Want to mix up the emojis?</h3>
     <p>Shuffle the emojis by entering the following command:</p>
-    <code>shuffle(emojis);</code>
-    <textarea id="enter-shuffle" rows="1" cols="50"></textarea>
-    <button id="submit-shuffle" type="button" class="btn btn-danger">Shuffle</button>
+    <code>shuffle(emojis);</code><br>
+    <div>
+      <textarea id="enter-shuffle" class="form-control" rows="1" cols="30"></textarea>
+      <button id="submit-shuffle" type="button" class="btn btn-danger">Shuffle</button>
+    </div>
   </div>
 
   <div id="set-background-colour-box">
     <h3>Bored of the Background Colour?</h3>
     <p>Change the colour by entering the following command and the colour of your choice:</p>
-    <code>changeBackgroundColour(red);</code>
-    <textarea id="enter-colour" rows="1" cols="50"></textarea>
-    <button id="submit-colour" type="button" class="btn btn-danger">Submit</button>
+    <code>changeBackgroundColour(red);</code><br>
+    <div>
+      <textarea id="enter-colour" class="form-control" rows="1" cols="30"></textarea>
+      <button id="submit-colour" type="button" class="btn btn-danger">Submit</button>
+    </div>
   </div>
-<div id="points-score"></div>
-
 </div>
+
 <div id="modal-win">
   <div id="score-form" class="modal-content">
     <div id="player-score"></div>
@@ -109,7 +112,7 @@
     <textarea id="enter-name" class="form-control" rows="1" cols="50" type="text"></textarea>
     <button id="submit-score" type="button" class="btn btn-danger">Submit</button>
     <button id="show-leaderboard-button" class="btn btn-danger">Leaderboard</button>
-    <button id="play-again" type="button" onclick="window.location.reload();" class="btn btn-danger">Play Again</button>
+    <button id="play-again-modal" type="button" onclick="window.location.reload();" class="btn btn-danger">Play Again</button>
   </div>
 </div>
 

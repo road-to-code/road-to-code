@@ -2,26 +2,56 @@ body {
   margin: 5%;
 }
 
+h1 {
+  font-family: helvetica;
+  font-weight: lighter;
+}
+
+h2 {
+  font-family: helvetica;
+  font-weight: lighter;
+}
+
+h3 {
+  margin-top: -1%
+  font-family: helvetica;
+}
+
+p {
+  font-family: helvetica;
+}
 
 #container{
-  width: 50vw;
-  height: 50vw;
+  width: 1000px;
+  height: 1000px;
   position: relative;
   outline: 1px solid black;
   float: right;
 }
 
+#container-border{
+  width: 1000px;
+  height: 1000px;
+  margin-left: 920px;
+  opacity: .;
+  position: absolute;
+  z-index: 2;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #eeeeee5c;
+  float: right;
+}
 .grass{
-  height: 5vw;
-  width: 5vw;
+  height: 100px;
+  width: 100px;
   outline: 1px solid rgba(0, 0, 0, 0.35);
   position: relative;
   float: left;
   background-color: #3FA34D;
 }
 .dirt{
-  height: 5vw;
-  width: 5vw;
+  height: 100px;
+  width: 100px;
   outline: 1px solid rgba(0, 0, 0, 0.25);
   position: relative;
   float: left;
@@ -29,8 +59,8 @@ body {
 }
 
 .start-end-tile{
-  height: 5vw;
-  width: 5vw;
+  height: 100px;
+  width: 100px;
   outline: 1px solid rgba(0, 0, 0, 0.35);
   position: relative;
   float: left;
@@ -39,30 +69,33 @@ body {
 
 #character {
     position: absolute;
-    height: 4.8vw;
-    width: 4.8vw;
+    height: 100px;
+    width: 100px;
     z-index: 1;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: inherit;
+    top: 10px;
 }
 
 
 .emoji {
   font-size: 45px;
   text-align: center;
+  line-height: 200%;
 }
 
 #runInstructions {
-  margin: 1.5% 0 1.5% 0;
+  margin: 0% 0 1.5% 0;
 }
 
 #addInstructions{
-  margin: 1.5% 0 1.5% 0;
+  margin: 0% 0 1.5% 0;
 }
 
 .form-control{
   width: 95%;
+  margin: 1% 0% 1% 0%;
 }
 
 #entered-text {
@@ -71,19 +104,12 @@ body {
 
 .road-to-code {
   font-family: helvetica;
-  font-size: 60px;
+  font-size: 100px;
   font-weight: bolder;
-  margin-top: -5%;
-  padding-bottom: 2%;
+  margin-top: -105px;
+  padding-bottom: 20px;
   color: #d9534f;
   float: left
-}
-
-#points-score {
-  position: absolute;
-  margin-left: 70px;
-  margin-top: 20px;
-  font-size: 30px;
 }
 
 .flipped {
@@ -96,11 +122,10 @@ body {
 }
 
 #instructions{
-  width: 35vw;
-  height: 50vw;
+  width: 700px;
   position: relative;
   background-color: #93d9e8;
-  padding: 3%;
+  padding: 2% 3% 3% 3%;
   border-radius: 20px;
   background: #93d9e8;
 }
@@ -119,20 +144,21 @@ body {
 #modal-win {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   padding-top: 350px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
+  text-align: center;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
 #modal-loss {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   padding-top: 350px;
   left: 0;
   top: 0;
@@ -148,7 +174,7 @@ body {
   position: absolute;
   margin: auto;
   margin-left:5%;
-  width: 70vw;
+  width: 100vw;
   height: 15vw;
   z-index: 9999;
   margin-top: -5%;
@@ -160,14 +186,6 @@ body {
 
 #player-score {
   font-size: 50px;
-}
-
-#timer{
-  display: block;
-  float: right;
-  margin-top: -80px;
-  margin-right: 2.5%;
-  font-size: 35px;
 }
 
 #boxes .window {
@@ -184,7 +202,7 @@ body {
 }
 #boxes #dialog {
   width: 80%;
-  height: 50%;
+  height: 45%;
   padding: 10px;
   background-color: #EFF7F6;
   font-family: 'Segoe UI Light', sans-serif;
@@ -202,42 +220,58 @@ body {
 #suse-thumb{
   width: 18%;
   left: 18%;
+  margin-top: -10%;
   margin-left: 1px;
 }
 
 #mike-thumb{
   width: 18%;
   left: 18%;
+  margin-top: 40px;
   margin-left: 40px;
 }
 
 #luke-thumb{
   width: 18%;
   left: 18%;
+  margin-left: 2%;
   margin-right: 40px;
 }
 
 #dan-thumb{
   width: 18%;
   left: 18%;
-  margin-right: 1px;
+  margin: 1% 1% 0% -1%
 }
 
 #suse-button{
   margin-top: 3%;
-  margin-left: 0%;
+  margin-left: 2%;
+  border-radius: 4px;
+  padding: 10px 18px;
+  font-size: 30px;
+
 }
 #mike-button{
   margin-top: 3%;
-  margin-left: 15%;
+  margin-left: 13%;
+  border-radius: 4px;
+  padding: 10px 18px;
+  font-size: 30px;
 }
 #luke-button{
   margin-top: 3%;
-  margin-left: 15%;
+  margin-left: 13%;
+  border-radius: 4px;
+  padding: 10px 18px;
+  font-size: 30px;
 }
 #dan-button{
   margin-top: 3%;
   margin-left: 15%;
+  border-radius: 4px;
+  padding: 10px 18px;
+  font-size: 30px;
 }
 
 #leaderboard-modal{
@@ -245,9 +279,10 @@ body {
   text-align: center;
   position: absolute;
   margin: auto;
+  z-index: 3;
   margin-left:5%;
   width: 80vw;
-  height: 80vw;
+  height: 50vw;
   z-index: 9999;
   margin-top: -5%;
   border-radius: 15px;
@@ -275,4 +310,89 @@ body {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+#leaderboard-button{
+  display: inline-block;
+  padding: 12px 20px 12px 20px;
+  margin-top: -65px;
+  margin-left: -345px;
+  margin-bottom: 30px;
+  position: absolute;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+#play-again-header{
+  padding: 16px 18px;
+  display: none;
+  margin-top: -65px;
+  margin-left: 12%;
+  margin-bottom: 30px;
+  position: absolute;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+#points-score {
+  display: inline-block;
+  position: absolute;
+  margin-top: -65px;
+  margin-left: 115px;
+  font-size: 28px;
+  border-radius: 10px;
+  border: 7px solid #d9534f;
+  background-color: #d9534f;
+  padding: 1px 20px;
+  color: white;
+}
+
+#timer{
+  display: none;
+  margin-left: 430px;
+  position: absolute;
+  margin-top: -65px;
+  font-size: 28px;
+  border: 7px solid #d9534f;
+  border-radius: 10px;
+  background-color: #d9534f;
+  padding: 1px 20px;
+  color: white;
+}
+
+#play-agian-modal{
+  margin: auto;
+  z-index: 3;
+  padding: 5%;
+  margin-top: 8%;
+}
+#show-leaderboard-button{
+  margin: auto;
+  margin-top: 2%;
+}
+
+#enter-shuffle{
+  width: 95%;
+  float: left;
+}
+
+#submit-shuffle{
+  margin: 0% 0 1.5% 0;
+}
+
+#enter-colour{
+  width: 95%;
+  float: left;
+}
+
+#submit-colour{
+  margin: 0% 0 1.5% 0;
+}
+
+#outer
+{
+    width:100%;
+    text-align: center;
 }
